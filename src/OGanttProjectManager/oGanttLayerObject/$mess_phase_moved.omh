@@ -1,0 +1,13 @@
+;  action     ;; a phase has been moved or resized, we call
+;       ;; our phase_modified which will update the dates in our tree and redraw
+;  params     ;; pPhaseId=phase that has moved
+;       ;; pNewStartDate=new starting date of phase
+;       ;; pNewEndDate=new ending date of phase
+
+If pCallerObj
+	Do method phase_modified (pCallerObj,pParams.pPhaseId)
+	Do method redraw_control (pCallerObj)
+End If
+
+Calculate dt0 as #D
+Do $cinst.$calcdate(dt0,-100) Returns dt1

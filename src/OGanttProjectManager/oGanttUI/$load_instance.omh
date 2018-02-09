@@ -1,0 +1,19 @@
+;  call this method to load class objects with strings from table
+;  this is a generic way that allows us to design windows without needing
+;  to embed square brackets in $text properties, etc
+;
+;  it works by using a class prefix and the object's idents or names
+If ivCanLoad     ;; only load if we managed to load the string-table during construct
+	Calculate ivLoaded as kTrue
+	
+	;  for windows we must load the window title
+	If ivClassRef.$classtype=kWindow&len(ivClassRef.$title)
+		Calculate ivClassRef.$title as StringTable.$gettext(title_id)
+	End If
+	
+	;  load the objects
+	Do $cinst.$load_container(ivClassRef)
+	
+	;  tell class we are done loading resources
+	Do ivClassRef.$message($cinst,$cinst,#NULL,'str_after_load_instance',#NULL)
+End If

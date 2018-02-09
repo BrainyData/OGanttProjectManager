@@ -1,0 +1,9 @@
+Switch ivDurationScaleList.Scale
+	Case kGanttScaleDay
+		Calculate ivProgress as ivPhaseList.Progress/86400
+	Case kGanttScaleHour
+		Calculate ivProgress as ivPhaseList.Progress/3600
+	Case kGanttScaleMinute
+		Calculate ivProgress as ivPhaseList.Progress/60
+End Switch
+Do refProgress.$redraw()

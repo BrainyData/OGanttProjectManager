@@ -1,0 +1,3 @@
+
+Do dataResources.$search($ref.GRES_GRES_ID=pResourceId,1,0,0,0) Returns dataResources.$line
+Quit method dataResources.$line>0

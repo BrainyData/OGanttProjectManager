@@ -1,0 +1,9 @@
+
+Do $cinst.$tlgetcelldata(pResourceId,1) Returns listCell
+Calculate pOutIcon as listCell.[1].Icon
+Calculate pOutName as listCell.[1].Text
+Calculate pOutEnterable as listCell.[1].IsEnterable
+Calculate pOutTextColor as listCell.[1].TextColor
+
+Do $cinst.$tlgetcelldata(pResourceId,4) Returns listCell
+Calculate pOutNotes as listCell.[1].Text

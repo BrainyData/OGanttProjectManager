@@ -1,0 +1,14 @@
+;  define a data list for the tree-list in the gantt component
+Switch pType
+	Case kGanttListTree     ;; this list specifies the data and attributes of the rows for the first tree-list column (the actual tree list)
+		Do pList.$define(Icon,Name,Enterable,IsCategory,TextColor,ParentID,ResourceID,Order)
+		Quit method kTrue
+	Case kGanttListColumn     ;; these lists specify the data and attributes of the rows for subsequent custom tree-list columns
+		Do pList.$define(Icon,Data,Enterable,TextColor,ResourceID,Align)
+		Quit method kTrue
+	Case kGanttListColumnHeader     ;; define the list for specifying the column header details for the tree-list in the gantt component such as column header, color, alignment, etc
+		Do pList.$define(Width,MinWidth,MaxWidth,Icon,Align,TextColor,Text)
+		Quit method kTrue
+	Default
+		Quit method kFalse
+End Switch

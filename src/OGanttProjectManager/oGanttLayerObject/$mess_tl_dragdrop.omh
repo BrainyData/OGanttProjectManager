@@ -1,0 +1,38 @@
+;  action     ;; drag & drop ocured in tree list
+;       ;; we must update the tree and chart and may convert between resources and categories
+;  params     ;; pResouceId=the resource that was dragged
+;       ;; pParentId=the destination resource
+;       ;; pOrder=indicates the new position in parent
+;       ;; pOldParentId=the origional parent
+
+;  first check if the destination parent is a group
+;  if it is not we must convert it to a group
+Do $cinst.$get_data_resource(listResource,pParams.pParentId)
+If not(listResource.IsCategory)
+	Do $cinst.$get_data_resource_phases(listPhases,pParams.pParentId)
+	Do $cinst.$tlmakecategory(pParams.pParentId)
+	Do $cinst.$gmakecategory(pParams.pParentId,listPhases)
+End If
+
+;  now tell external to do the drag & drop work, i.e. moving the resource
+Do $cinst.$tlupdateondd(pParams.pResourceId,pParams.pParentId,pParams.pOrder)
+Do $cinst.$gupdateondd(pParams.pResourceId,pParams.pParentId,pParams.pOrder)
+
+;  finally check the old parent and if it is different and now has no more child resources
+;  we convert it from a group to a resource
+If pParams.pOldParentId&(pParams.pParentId<>pParams.pOldParentId)
+	If not($cinst.$get_data_resource(listResource,pParams.pOldParentId,kTrue))     ;; kTrue = get children
+		Do $cinst.$tlmakeresource(pParams.pOldParentId)
+		Do $cinst.$gmakephase(pParams.pOldParentId)
+	End If
+End If
+
+;  redraw the window control
+If pCallerObj
+	Do method redraw_control (pCallerObj)
+	;  update our tree columns
+	Do method upd_tree_columns (pCallerObj,pParams.pParentId)
+	If pParams.pOldParentId
+		Do method upd_tree_columns (pCallerObj,pParams.pOldParentId)
+	End If
+End If

@@ -1,0 +1,10 @@
+;  return list of relations for the specified phase
+If pPhaseId
+	Do $cinst.$ggetdatalist(kGanttListSuspension) Returns pOutInfo
+	Do pOutInfo.$search($ref.PhaseId=pPhaseId)
+	Do pOutInfo.$remove(kListKeepSelected)
+	Calculate pOutInfo.$line as 1
+Else
+	Do pOutInfo.$clear()
+End If
+Quit method pOutInfo.$linecount>0

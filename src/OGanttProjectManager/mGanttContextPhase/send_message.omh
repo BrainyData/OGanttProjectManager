@@ -1,0 +1,4 @@
+If pPhaseId
+	Do ivGanttUI.$make_params(pPhaseId.$ref,pResourceId.$ref) Returns theParams
+	Do $topwind.$message($topwind,$topwind.$get_gantt(),$topwind.$get_layer(),pMessage,theParams)
+End If

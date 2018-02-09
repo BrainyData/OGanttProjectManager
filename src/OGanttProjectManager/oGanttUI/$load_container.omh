@@ -1,0 +1,27 @@
+If ivClassRef.$classtype
+	Switch ivClassRef.$classtype
+		Case kToolbar,kWindow,kSubwindow
+			;  load all background labels
+			Do pContainerRef.$bobjs.$sendall($cinst.$load_bobj($ref),$ref.$objtype=kLabel|$ref.$objtype=kText)
+			;  load all other fields
+			Do pContainerRef.$objs.$sendall($cinst.$load_obj($ref),$ref.$objtype=kCheckbox|$ref.$objtype=kRadio|$ref.$objtype=kPushbutton|$ref.$objtype=kEntry|$ref.$objtype=kTabStrip)
+			;  load containers
+			Do pContainerRef.$objs.$sendall($cinst.$load_container($ref),$ref.$objtype=kScrollbox|$ref.$objtype=kTabPane|$ref.$objtype=kComplexGrid|$ref.$objtype=kGroupBox|$ref.$objtype=kPagedPane)
+		Case kReport
+			;  for reports we just load $bobjs
+			Do pContainerRef.$bobjs.$sendall($cinst.$load_bobj($ref),$ref.$objtype=kLabel|$ref.$objtype=kText)
+		Case kMenu
+			;  load menu items
+			Do pContainerRef.$objs.$sendall($cinst.$load_obj($ref))
+	End Switch
+Else If ivClassRef.$objtype
+	Switch ivClassRef.$objtype
+		Case kSubwindow
+			;  load all background labels
+			Do pContainerRef.$bobjs.$sendall($cinst.$load_bobj($ref),$ref.$objtype=kLabel|$ref.$objtype=kText)
+			;  load all other fields
+			Do pContainerRef.$objs.$sendall($cinst.$load_obj($ref),$ref.$objtype=kCheckbox|$ref.$objtype=kRadio|$ref.$objtype=kPushbutton|$ref.$objtype=kEntry)
+			;  load containers
+			Do pContainerRef.$objs.$sendall($cinst.$load_container($ref),$ref.$objtype=kScrollbox|$ref.$objtype=kTabPane|$ref.$objtype=kComplexGrid|$ref.$objtype=kGroupBox|$ref.$objtype=kPagedPane)
+	End Switch
+End If

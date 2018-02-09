@@ -1,0 +1,2 @@
+Do ivGanttUI.$str_get_language(language)
+Do $cinst.$objs.$sendall($ref.$checked.$assign($ref().$name=language))

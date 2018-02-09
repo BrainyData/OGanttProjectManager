@@ -1,0 +1,14 @@
+[
+	{
+		"name": "GCHOL_GANTT_ID",
+		"unique": false,
+		"uppercase": false,
+		"parts": [
+			{
+				"name": "GCHOL_GANTT_ID",
+				"fieldlength": 0,
+				"uppercase": false
+			}
+		]
+	}
+]

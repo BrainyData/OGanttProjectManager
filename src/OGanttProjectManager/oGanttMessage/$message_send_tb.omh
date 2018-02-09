@@ -1,0 +1,2 @@
+;  send a message directly to toolbars of this class (assumed to be a window)
+Do ivClassRef.$toolbars.$sendall($ref.$message(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams))

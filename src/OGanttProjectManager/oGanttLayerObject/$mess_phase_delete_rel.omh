@@ -1,0 +1,13 @@
+;  action     ;; delete specified relationship
+;       ;; and redraw the control
+;  params     ;; pRelationId=relationship to be deleted
+
+If pParams.pRelationId
+	;  delete the relationship
+	Do $cinst.$gdelrelation(pParams.pRelationId)
+	
+	;  update control
+	If pCallerObj
+		Do pCallerObj.$gredraw()
+	End If
+End If

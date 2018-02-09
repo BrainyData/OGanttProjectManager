@@ -1,0 +1,21 @@
+{
+	"ident": 1041,
+	"order": 25,
+	"objtype": "kToolCommandButton",
+	"properties": {
+		"enabled": true,
+		"helpfile": 0,
+		"iconid": "k32x32+7376",
+		"text": {
+			"type": 0,
+			"calc": "Drag & Drop"
+		},
+		"tooltip": {
+			"type": 0,
+			"calc": "Open Drag & Drop Example"
+		},
+		"userinfo": "*",
+		"users": "12345678",
+		"varwidthtextplatforms": "kVWTMSWindows,kVWTmacOS,kVWTUnix"
+	}
+}

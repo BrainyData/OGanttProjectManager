@@ -1,0 +1,23 @@
+
+;  get the resource changes from the layer object
+Do pLayerObj.$ggetmodlistphase Returns modList
+Do pLayerObj.$gfreemodlistphase
+
+;  write changes to our DB smart list
+For modList.$line from 1 to modList.$linecount step 1
+	;  Send to trace log {check_mod_list_phase    id=[modList.PhaseId]    reason=[pick(modList.ModReason,'none','Add','Mod','Del')]}
+	Switch modList.ModReason
+		Case kGanttModReasonAdd
+			Do dataPhases.$add(0,#D,#D,dataGantt.G_GANTT_ID,modList.ResourceId,modList.PhaseId,modList.StartDate,modList.EndDate,modList.PhaseColor,modList.TextColor,modList.TextLeft,modList.TextRight,modList.TextTop,modList.TextBottom,modList.Text,modList.Progress,modList.Duration,modList.DurationType,modList.IsLocked,modList.IsCategory)
+			Calculate dataPhases.$line as dataPhases.$linecount
+			Do pLayerObj.$get_data_phase_fields(dataPhases.GPHA_FIELDS)
+		Case kGanttModReasonDel
+			Do dataPhases.$search($ref.GPHA_GPHA_ID=modList.PhaseId,1,0,0,0) Returns dataPhases.$line
+			If dataPhases.$line
+				Do dataPhases.$remove(dataPhases.$line)
+			End If
+		Case kGanttModReasonMod
+			Do method update_phase (modList.PhaseId,modList)
+	End Switch
+	Calculate ivModified as kTrue
+End For

@@ -1,0 +1,49 @@
+{
+	"classtype": "kMenu",
+	"internalversion": 0,
+	"designtaskname": "Startup_Task",
+	"nextident": 1009,
+	"cvardefs": [
+
+	],
+	"ivardefs": [
+		{
+			"name": "ivGanttUI",
+			"order": 1,
+			"type": "kObjectref",
+			"subtype": "oGanttStringTable",
+			"sublen": 0,
+			"initval": "$objects.oGanttUI.$newref($cinst,ivStrTable)"
+		},
+		{
+			"name": "ivStrTable",
+			"order": 3,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 255,
+			"initval": "\"\"",
+			"desc": "Sub-classes can change this in $construct prior to calling Do inherited"
+		}
+	],
+	"properties": {
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2008-09-09 16:37:56",
+		"desc": "",
+		"editor": "",
+		"editordata": "",
+		"enabled": true,
+		"external": true,
+		"helpfile": 0,
+		"helptext": "",
+		"inheritedorder": 0,
+		"issupercomponent": false,
+		"moddate": "2013-10-10 14:24:45",
+		"showascheckedout": false,
+		"title": "",
+		"userinfo": "",
+		"users": "12345678",
+		"version": ""
+	}
+}

@@ -1,0 +1,4 @@
+On evToTop
+	Do ivGanttUI.$message_send_all($cinst,refGantt,$cinst.$get_layer(),'gantt_set_focus')
+On evWindowClick,evClose
+	Do ivGanttUI.$message_send_all($cinst,refGantt,$cinst.$get_layer(),'gantt_kill_focus',theLayer)

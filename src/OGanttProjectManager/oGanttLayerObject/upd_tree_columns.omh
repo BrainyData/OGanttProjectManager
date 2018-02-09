@@ -1,0 +1,51 @@
+
+;  in our implementation we display the start and end dates for a resource in the tree list
+;  so we need to check if our columns in our tree require updating when changes are made
+;  to phases, resources, etc
+
+;  get list of child phases and calculate start and end dates
+Do $cinst.$ggetdatalist(kGanttListPhase) Returns listPhases
+Do listPhases.$search($ref.ResourceID=pResourceID)
+Do listPhases.$remove(kListKeepSelected)
+If listPhases.$linecount
+	Calculate startDate as listPhases.1.StartDate
+	Calculate endDate as listPhases.1.EndDate
+	For listPhases.$line from 2 to listPhases.$linecount step 1
+		If listPhases.StartDate<startDate
+			Calculate startDate as listPhases.StartDate
+		End If
+		If listPhases.EndDate>endDate
+			Calculate endDate as listPhases.EndDate
+		End If
+	End For
+End If
+
+;  check start date column
+Do $cinst.$tlgetcelldata(pResourceID,2) Returns listColumn
+Calculate theDate as listColumn.[1].[2]
+If listPhases.$linecount=0|(theDate<>startDate)
+	Calculate listColumn.[1].[2] as startDate
+	Do $cinst.$tlupdatecell(pResourceID,2,listColumn)
+	Calculate changed as kTrue
+End If
+
+;  check end date column
+Do $cinst.$tlgetcelldata(pResourceID,3) Returns listColumn
+Calculate theDate as listColumn.[1].[2]
+If listPhases.$linecount=0|(theDate<>endDate)
+	Calculate listColumn.[1].[2] as endDate
+	Do $cinst.$tlupdatecell(pResourceID,3,listColumn)
+	Calculate changed as kTrue
+End If
+
+;  if we have a parent resource we must update that too
+Do $cinst.$ggetdatalist(kGanttListResource) Returns listResources
+Do listResources.$search($ref.ResourceID=pResourceID,1,0,0,0) Returns listResources.$line
+If listResources.ParentID
+	Do method upd_tree_columns (pGanttRef,listResources.ParentID) Returns #F
+	If flag true
+		Calculate changed as kTrue
+	End If
+End If
+
+Quit method changed

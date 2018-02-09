@@ -1,0 +1,38 @@
+;  action     ;; create a new resource or category/group
+;       ;; when creating a group, we create a category phase for the group and also create a child resource
+;       ;; when done we rebuild and redraw
+;  params     ;; (none)
+
+;  create a new resource or resource group
+If ivCurrentResource
+	Do $cinst.$ggetdatalist(kGanttListResource) Returns listResources
+	Do listResources.$search($ref.ResourceID=ivCurrentResource,1,0,0,0) Returns listResources.$line
+	If listResources.IsCategory
+		Calculate parentID as listResources.ResourceID
+	Else
+		Calculate parentID as listResources.ParentID
+	End If
+Else
+	Calculate parentID as 0
+End If
+Do method add_resource (pCallerObj,parentID,expandable) Returns resourceID
+
+;  if we are creating a category/group we must create a phase for displaying group duration and
+;  we may as well create a child resource for adding phases
+If expandable
+	;  create phase for group
+	Do method add_phase (pCallerObj,resourceID,kTrue) Returns phaseID
+	Do method rebuild_all (#NULL,#NULL)     ;; we must rebuild at this point
+	;  add child resource
+	;  Do method add_resource (pCallerObj,resourceID,kFalse) Returns childResourceID
+End If
+
+;  update everyone...
+Do method rebuild_all (pCallerObj,pick(childResourceID>0,resourceID,childResourceID))
+;  ...and expand our resources
+If parentID
+	Do $cinst.$tlexpand(parentID)
+	Do $cinst.$gexpand(parentID)
+End If
+Do $cinst.$tlexpand(resourceID)
+Do $cinst.$gexpand(resourceID)

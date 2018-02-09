@@ -1,0 +1,4 @@
+On evClick
+	Calculate pIcon as $cobj.$iconid
+	Do ivGanttUI.$make_params(pIcon.$ref) Returns params
+	Do $topwind.$message($cinst,$cobj,$topwind.$get_layer(),"gantt_tl_set_icon",params)

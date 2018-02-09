@@ -1,0 +1,6 @@
+;  return the list of resources
+;  the output list must have been defined by the caller according to OGantt's requirements     ;; we know what format that is
+
+For dataResources.$line from 1 to dataResources.$linecount step 1
+	Do pOutResources.$add(dataResources.GRES_PARENT_ID,dataResources.GRES_GRES_ID,dataResources.GRES_ORDER,dataResources.GRES_IS_CATEGORY,dataResources.GRES_WORK_HOURS,dataResources.GRES_HOLIDAYS,dataResources.GRES_WORK_HOURS_EX)
+End For

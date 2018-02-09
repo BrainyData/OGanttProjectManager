@@ -1,0 +1,27 @@
+{
+	"ident": 1033,
+	"order": 16389,
+	"objtype": "kLabel",
+	"properties": {
+		"align": "kLeftJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "CtrlLabelMedium",
+		"font": 5,
+		"fontsize": 10,
+		"fontstyle": "kBold",
+		"forecolor": "kColorForeFill",
+		"height": 16,
+		"left": 195,
+		"objlink": 0,
+		"text": "Please enter a name for the new chart",
+		"textcolor": "kColorWindowText",
+		"top": 31,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 280
+	}
+}

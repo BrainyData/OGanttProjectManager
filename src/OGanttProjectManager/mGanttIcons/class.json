@@ -1,0 +1,37 @@
+{
+	"classtype": "kMenu",
+	"internalversion": 0,
+	"superclass": "mGanttSuper",
+	"designtaskname": "Startup_Task",
+	"nextident": 1031,
+	"cvardefs": [
+
+	],
+	"ivardefs": [
+
+	],
+	"properties": {
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2008-09-10 09:00:49",
+		"desc": "",
+		"editor": "",
+		"editordata": "",
+		"enabled": true,
+		"external": true,
+		"helpfile": 0,
+		"helptext": "",
+		"inheritedorder": 0,
+		"issupercomponent": false,
+		"moddate": "2013-10-10 14:24:45",
+		"showascheckedout": false,
+		"title": {
+			"type": 0,
+			"calc": "Icons"
+		},
+		"userinfo": "",
+		"users": "12345678",
+		"version": ""
+	}
+}

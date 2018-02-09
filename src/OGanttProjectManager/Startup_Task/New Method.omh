@@ -1,0 +1,22 @@
+Do #L1.$define(#S1)
+Do #L1.$add(jst("1JAN2011","D:D m 'Y (G)")) Returns #S1
+Do #L1.$add(jst("2JAN2011","D:D m 'Y (G)")) Returns #S1
+Do #L1.$add(jst("3JAN2011","D:D m 'Y (G)")) Returns #S1
+Do #L1.$add(jst("4JAN2011","D:D m 'Y (G)")) Returns #S1
+Do #L1.$add(jst("5JAN2011","D:D m 'Y (G)")) Returns #S1
+Do #L1.$add(jst("6JAN2011","D:D m 'Y (G)")) Returns #S1
+Do #L1.$add(jst("7JAN2011","D:D m 'Y (G)")) Returns #S1
+Do #L1.$add(jst("8JAN2011","D:D m 'Y (G)")) Returns #S1
+Do #L1.$add(jst("9JAN2011","D:D m 'Y (G)")) Returns #S1
+
+Calculate #S1 as dpart(kWeek,"3JAN2011")
+Do #L1.$define(#S1)
+Do #L1.$add(con("1JAN2011 - wk",dpart(kWeek,"1JAN2011")))
+Do #L1.$add(con("2JAN2011 - wk",dpart(kWeek,"2JAN2011")))
+Do #L1.$add(con("3JAN2011 - wk",dpart(kWeek,"3JAN2011")))
+Do #L1.$add(con("4JAN2011 - wk",dpart(kWeek,"4JAN2011")))
+Do #L1.$add(con("5JAN2011 - wk",dpart(kWeek,"5JAN2011")))
+Do #L1.$add(con("6JAN2011 - wk",dpart(kWeek,"6JAN2011")))
+Do #L1.$add(con("7JAN2011 - wk",dpart(kWeek,"7JAN2011")))
+Do #L1.$add(con("8JAN2011 - wk",dpart(kWeek,"8JAN2011")))
+Do #L1.$add(con("9JAN2011 - wk",dpart(kWeek,"9JAN2011")))

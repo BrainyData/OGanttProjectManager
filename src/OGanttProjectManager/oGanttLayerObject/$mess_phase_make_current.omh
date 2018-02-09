@@ -1,0 +1,29 @@
+;  action     ;; change the current phase and resource
+;       ;; and redraw the control
+;  params     ;; pPhaseId=phase to be deleted
+;       ;; pResourceId=resource phase belongs to (optional)
+
+If resourceId
+	;  we have both resource and phase ID
+	Calculate ivCurrentResource as resourceId
+	Calculate ivCurrentPhase as phaseId
+Else
+	;  get the list of phases so we can get the resource ID of the phase
+	Do $cinst.$get_data_phase(listPhases,phaseId)
+	
+	Calculate ivCurrentResource as listPhases.ResourceId
+	Calculate ivCurrentPhase as listPhases.PhaseId
+End If
+
+;  select the resource and phase if required
+If pCallerObj
+	If ivCurrentResource<>pCallerObj.$tlgetselectresource()
+		Do pCallerObj.$tlsetselectresource(ivCurrentResource)
+	End If
+	If ivCurrentPhase<>pCallerObj.$ggetselectphase()
+		Do pCallerObj.$gsetselectphase(ivCurrentPhase)
+	End If
+	Do pCallerObj.$redraw(kFalse,kTrue)
+End If
+
+Do ivGanttUI.$message_send_all(pCallerClass,pCallerObj,$cinst.$objref,'gantt_phase_changed',pParams)

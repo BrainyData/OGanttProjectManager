@@ -1,0 +1,11 @@
+;  check if we have a data file, if not create one
+Do FileOps.$splitpathname($clib.$pathname,_drive,_dir,_name,_ext)
+Calculate path as con(_drive,_dir,_name,".df1")
+Do FileOps.$doesfileexist(path) Returns #F
+If flag true
+	Open data file (Do not close other data) {[path],OGANTT_DATA}
+Else
+	Create data file (Do not close other data) {[path],OGANTT_DATA}
+End If
+;  make sure our file classes are associated with this data file
+Set default data file {fGantt,fGanttCalHolidays,fGanttCalWorkingHours,fGanttMarkers,fGanttPhases,fGanttRelations,fGanttResources,fGanttSuspensions}

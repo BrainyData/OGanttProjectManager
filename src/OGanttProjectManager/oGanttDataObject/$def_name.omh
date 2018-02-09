@@ -1,0 +1,8 @@
+;  return default name for new resource or category
+If pIsCategory
+	Calculate ivLastNewCategory as ivLastNewCategory+1
+	Quit method con(StringTable.$gettext('ogantt.Category'),'_',ivLastNewCategory)
+Else
+	Calculate ivLastNewResource as ivLastNewResource+1
+	Quit method con(StringTable.$gettext('ogantt.Resource'),'_',ivLastNewResource)
+End If

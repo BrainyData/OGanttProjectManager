@@ -1,0 +1,7 @@
+;  override this method to receive messages from other objects
+Switch pMessage
+	Case "gantt_set_focus","gantt_resource_changed","gantt_phase_changed"
+		Do method SetStates (pLayerObj)
+	Case "gantt_kill_focus"
+		Do $cinst.$objs.$sendall($ref.$enabled.$assign(kFalse))
+End Switch

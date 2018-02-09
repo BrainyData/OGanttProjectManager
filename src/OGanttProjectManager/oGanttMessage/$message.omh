@@ -1,0 +1,4 @@
+;  pass the message to the owner class instance
+If ivClassRef.$message.$cando
+	Do ivClassRef.$message(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)
+End If

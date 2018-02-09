@@ -1,0 +1,10 @@
+;  CONSTRUCT METHOD FOR SUB-WINDOWS
+;  do not overide this method
+;  implement all construct code in $construct_init
+
+Set reference refCaller to pCallerRef
+Set reference refGantt to pGanttRef
+Calculate ivLayer as pLayer
+Calculate ivParams as pParams
+
+Do $cinst.$construct_init(pCallerRef,pGanttRef,pLayer,pParams)

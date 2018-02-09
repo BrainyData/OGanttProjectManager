@@ -1,0 +1,44 @@
+{
+	"classtype": "kMenu",
+	"internalversion": 0,
+	"superclass": "mGanttSuper",
+	"designtaskname": "Startup_Task",
+	"nextident": 1014,
+	"cvardefs": [
+		{
+			"name": "kViewNormal",
+			"order": 1,
+			"type": "kInteger",
+			"subtype": "kShortint",
+			"sublen": 0,
+			"initval": "0"
+		}
+	],
+	"ivardefs": [
+
+	],
+	"properties": {
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2008-12-17 14:14:06",
+		"desc": "",
+		"editor": "",
+		"editordata": "",
+		"enabled": true,
+		"external": true,
+		"helpfile": 0,
+		"helptext": "",
+		"inheritedorder": 0,
+		"issupercomponent": false,
+		"moddate": "2013-10-10 14:17:45",
+		"showascheckedout": false,
+		"title": {
+			"type": 0,
+			"calc": "Scale"
+		},
+		"userinfo": "",
+		"users": "12345678",
+		"version": ""
+	}
+}

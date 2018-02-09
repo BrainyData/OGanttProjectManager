@@ -1,0 +1,22 @@
+Begin reversible block
+	Set read-only files {fGantt}
+	Set main file {fGantt}
+End reversible block
+If pID
+	Single file find on fGantt.G_GANTT_ID (Exact match) {pID}
+Else
+	Single file find on fGantt.G_NAME (Exact match) {pName}
+End If
+If flag false
+	;  record does not exist
+	Quit method kFalse
+End If
+
+;  load the record into our smart list
+Do method load_data (fGantt.G_GANTT_ID,'fGantt','G_',dataGantt,kFalse)
+Do dataGantt.$line.$assign(1)
+
+;  load other chart data
+Do method load_chart_data (dataGantt.G_GANTT_ID)
+
+Quit method kTrue

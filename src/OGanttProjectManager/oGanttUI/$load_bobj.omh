@@ -1,0 +1,12 @@
+
+If pObjRef.$userinfo='*'
+	Quit method      ;; ignore
+Else If len(pObjRef.$userinfo)     ;; $userinfo can override standard class prefix
+	Calculate text_id as pObjRef.$userinfo
+End If
+If len(pObjRef.$text)
+	Calculate pObjRef.$text as StringTable.$gettext(text_id)
+	If cvDebug
+		Do $cinst.$debug(pObjRef,pObjRef.$text)
+	End If
+End If

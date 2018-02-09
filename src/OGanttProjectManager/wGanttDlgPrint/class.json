@@ -1,0 +1,114 @@
+{
+	"classtype": "kWindow",
+	"internalversion": 0,
+	"superclass": "wGanttDlgSuper",
+	"designtaskname": "Startup_Task",
+	"nextident": 1056,
+	"lastgroupident": 0,
+	"cvardefs": [
+		{
+			"name": "cvPaperList",
+			"order": 2,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "cvPrintParams",
+			"order": 1,
+			"type": "kRow",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "cvPrintParamsInit",
+			"order": 3,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0
+		}
+	],
+	"ivardefs": [
+
+	],
+	"properties": {
+		"aligntogrid": false,
+		"alpha": 255,
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"contextmenu": "",
+		"createdate": "2008-09-05 16:20:55",
+		"desc": "",
+		"editor": "",
+		"editordata": "",
+		"external": true,
+		"hasmenus": false,
+		"hasstatusbar": false,
+		"height": 392,
+		"helpfile": 0,
+		"horzgrid": 8,
+		"inheritedorder": 1,
+		"issubwindow": false,
+		"issupercomponent": false,
+		"left": 363,
+		"menunames": "",
+		"moddate": "2013-10-10 14:24:45",
+		"showascheckedout": false,
+		"showgrid": false,
+		"sizetogrid": false,
+		"startfield": 0,
+		"statusbarpos": "kSBPosBottom",
+		"title": {
+			"type": 0,
+			"calc": "Print"
+		},
+		"toolbarnames": "",
+		"toolbarpos": "kDockingAreaNone",
+		"top": 254,
+		"userinfo": "",
+		"version": "",
+		"vertgrid": 8,
+		"width": 604
+	},
+	"inheritedproperties": [
+		"bringinfront",
+		"clickbehind",
+		"dropmode",
+		"enablemenuandtoolbars",
+		"keepclicks",
+		"modelessdata",
+		"showcommands",
+		"usesheets",
+		"backcolor",
+		"backgroundskin",
+		"backgroundskinalign",
+		"backgroundtheme",
+		"backpattern",
+		"closebox",
+		"dockingedge",
+		"edgefloat",
+		"effect",
+		"forecolor",
+		"growbox",
+		"helpbutton",
+		"horzscroll",
+		"menuedge",
+		"minimizebox",
+		"minimizeiconid",
+		"showtitle",
+		"statusedge",
+		"style",
+		"toolbaroptions",
+		"vertscroll",
+		"zoombox"
+	],
+	"statusbar": {
+		"properties": {
+			"fieldstyle": "",
+			"font": 1,
+			"fontsize": 0,
+			"helppane": 0
+		}
+	}
+}

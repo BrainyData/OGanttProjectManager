@@ -1,0 +1,27 @@
+{
+	"ident": 1018,
+	"order": 16386,
+	"objtype": "kLabel",
+	"properties": {
+		"align": "kLeftJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "CtrlLabelMedium",
+		"font": 1,
+		"fontsize": 13,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 16,
+		"left": 47,
+		"objlink": 0,
+		"text": "Number of columns to print",
+		"textcolor": "kColorWindowText",
+		"top": 108,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 184
+	}
+}

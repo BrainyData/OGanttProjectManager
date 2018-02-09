@@ -1,0 +1,4 @@
+;  return the name displayed in the tree for the specified resource
+Do $cinst.$tlgetcelldata(pResourceId,1) Returns listCell
+Calculate name as listCell.[1].Text
+Quit method name

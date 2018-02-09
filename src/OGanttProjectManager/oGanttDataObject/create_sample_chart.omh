@@ -1,0 +1,151 @@
+;  create sample chart data
+;  it is assumed that a new empty chart has already been created with smart lists
+;  in place and this method just populate the various lists with sample data
+
+;  ===========================================================================
+;  1. SAMPLE RESOURCES     ;; 1 main project group, 3 sub groups and their tasks, plus one final task for the main project group
+;  the resource DB list is defined from fGanttResources     ;; (right-click file class name and select 'Modify' to view columns)
+
+;  IDs: parent=0 this=1     ;; is group/category
+Do dataResources.$add(0,#D,#D,ganttID,0,1,10,kTrue,10012,"Main Project",kTrue,kBlack,"Description for main project",#NULL,#NULL,#NULL)
+
+;  IDs: parent=1 this=2     ;; is sub-group/category
+Do dataResources.$add(0,#D,#D,ganttID,1,2,20,kTrue,10007,"Preparation",kTrue,kBlack,"Description for preparation stage",#NULL,#NULL,#NULL)
+;  IDs: parent=2 this=3,4,5
+Do dataResources.$add(0,#D,#D,ganttID,2,3,30,kFalse,10022,"Task 1",kTrue,kBlack,"Description for task 1",#NULL,#NULL,#NULL)
+Do dataResources.$add(0,#D,#D,ganttID,2,4,40,kFalse,10022,"Task 2",kTrue,kBlack,"Description for task 2",#NULL,#NULL,#NULL)
+Do dataResources.$add(0,#D,#D,ganttID,2,5,50,kFalse,10022,"Task 3",kTrue,kBlack,"Description for task 3",#NULL,#NULL,#NULL)
+
+;  IDs: parent=1 this=6     ;; is sub-group/category
+Do dataResources.$add(0,#D,#D,ganttID,1,6,60,kTrue,10006,"Venue",kTrue,kBlack,"Description for venue",#NULL,#NULL,#NULL)
+;  IDs: parent=6 this=7,8,9,10
+Do dataResources.$add(0,#D,#D,ganttID,6,7,70,kFalse,10021,"Opening",kTrue,kBlack,"Description for opening",#NULL,#NULL,#NULL)
+Do dataResources.$add(0,#D,#D,ganttID,6,8,80,kFalse,10021,"Part 1",kTrue,kBlack,"Description for part 1",#NULL,#NULL,#NULL)
+Do dataResources.$add(0,#D,#D,ganttID,6,9,90,kFalse,10021,"Part 2",kTrue,kBlack,"Description for part 2",#NULL,#NULL,#NULL)
+Do dataResources.$add(0,#D,#D,ganttID,6,10,100,kFalse,10021,"Close",kTrue,kBlack,"Description for close",#NULL,#NULL,#NULL)
+
+;  IDs: parent=1 this=11     ;; is sub-group/category
+Do dataResources.$add(0,#D,#D,ganttID,1,11,110,kTrue,10008,"Vacate",kTrue,kBlack,"Description for vacate",#NULL,#NULL,#NULL)
+;  IDs: parent=11 this=12,13
+Do dataResources.$add(0,#D,#D,ganttID,11,12,120,kFalse,10023,"Task 1",kTrue,kBlack,"Description for task 1",#NULL,#NULL,#NULL)
+Do dataResources.$add(0,#D,#D,ganttID,11,13,130,kFalse,10023,"Task 2",kTrue,kBlack,"Description for task 2",#NULL,#NULL,#NULL)
+
+;  IDs: parent=1 this=14
+Do dataResources.$add(0,#D,#D,ganttID,1,14,140,kFalse,10024,"Non-Venue Activity",kTrue,kBlack,"Description for non-venue activity",#NULL,#NULL,#NULL)
+
+;  update our last used resource ID
+Calculate ivLast_GRES_ID as 14
+
+;  ===========================================================================
+;  2. SAMPLE PHASES     ;; each phase is linked to a resource, a resource may contain more than one phase
+;  the phases DB list is defined from fGanttPhases     ;; (right-click file class name and select 'Modify' to view columns)
+
+;  phases require a list of field values for a charts graph and total views
+;  what the fields are used for is implementation specific and can be configured as required
+;  our examples use phase fields to calculate and display equipment and wages cost for each phase
+;  a field list consists of two columns
+Do fields.$cols.$add("Value",kNumber,k2dp)     ;; the value, in our case cost
+Do fields.$cols.$add("SplitValue",kBoolean)     ;; if kFalse, the value is for each day for the duration of the phase, if kTrue it is the total for the duration split equaly across days
+
+;  now we create some sample phases for our resources
+;  Note: we must also create one phase each for group/categories for displaying the category bar
+;  the duration of which is calculated from the duration of the child phases
+
+;  IDs: resource=1 phase=1     ;; category phase --------------------------
+Do dataPhases.$add(0,#D,#D,ganttID,1,1,"1SEP2008 9:00","12SEP2008 17:00",kBlue,kBlack,"","","","","",0,-1,kGanttTypeDurFix,kFalse,kFalse,#NULL)
+
+;  IDs: resource=2 phase=2     ;; category phase --------------------------
+Do dataPhases.$add(0,#D,#D,ganttID,2,2,"1SEP2008 9:00","3SEP2008 17:00",kDarkYellow,kBlack,"","","","","",0,-1,kGanttTypeDurFix,kFalse,kFalse,#NULL)
+
+;  prepare field values for the next group of phases
+Do fields.$clear()
+Do fields.$add(100.00,kFalse)
+Do fields.$add(350.00,kFalse)
+;  IDs: resource=3,4,5 phase=3,4,5
+Do dataPhases.$add(0,#D,#D,ganttID,3,3,"1SEP2008 9:00","1SEP2008 17:00",kDarkYellow,kBlack,"A1","","","","",0,-1,kGanttTypeDurFix,kFalse,kFalse,fields)
+Do dataPhases.$add(0,#D,#D,ganttID,4,4,"2SEP2008 9:00","2SEP2008 17:00",kDarkYellow,kBlack,"A2","","","","",0,-1,kGanttTypeDurFix,kFalse,kFalse,fields)
+Do dataPhases.$add(0,#D,#D,ganttID,5,5,"2SEP2008 9:00","3SEP2008 17:00",kDarkYellow,kBlack,"A3","","","","",0,-1,kGanttTypeDurFix,kFalse,kFalse,fields)
+
+;  IDs: resource=6 phase=6     ;; category phase --------------------------
+Do dataPhases.$add(0,#D,#D,ganttID,6,6,"4SEP2008 9:00","10SEP2008 17:00",kDarkGreen,kBlack,"","","","","",0,-1,kGanttTypeDurFix,kFalse,kFalse,#NULL)
+
+;  prepare field values for the next group of phases
+Do fields.$clear()
+Do fields.$add(125.00,kFalse)
+Do fields.$add(450.00,kFalse)
+;  IDs: resource=7,8,9,10 phase=7,8,9,10,11     ;; here we have one resource with two phases
+Do dataPhases.$add(0,#D,#D,ganttID,7,7,"4SEP2008 9:00","4SEP2008 17:00",kDarkGreen,kBlack,"B1","","","","",0,-1,kGanttTypeDurFix,kFalse,kFalse,fields)
+Do dataPhases.$add(0,#D,#D,ganttID,8,8,"5SEP2008 9:00","5SEP2008 17:00",kDarkGreen,kBlack,"B2","","","","",0,-1,kGanttTypeDurFix,kFalse,kFalse,fields)
+Do dataPhases.$add(0,#D,#D,ganttID,8,9,"6SEP2008 9:00","6SEP2008 17:00",kDarkGreen,kBlack,"B3","","","","",0,-1,kGanttTypeDurFix,kFalse,kFalse,fields)
+Do dataPhases.$add(0,#D,#D,ganttID,9,10,"8SEP2008 9:00","9SEP2008 17:00",kDarkGreen,kBlack,"B4","","","","",0,-1,kGanttTypeDurFix,kFalse,kFalse,fields)
+Do dataPhases.$add(0,#D,#D,ganttID,10,11,"10SEP2008 9:00","10SEP2008 17:00",kDarkGreen,kBlack,"B5","","","","",0,-1,kGanttTypeDurFix,kFalse,kFalse,fields)
+
+;  IDs: resource=11 phase=12     ;; category phase --------------------------
+Do dataPhases.$add(0,#D,#D,ganttID,11,12,"11SEP2008 9:00","12SEP2008 17:00",kDarkRed,kBlack,"","","","","",0,-1,kGanttTypeDurFix,kFalse,kFalse,#NULL)
+
+;  prepare field values for the next group of phases
+Do fields.$clear()
+Do fields.$add(80.00,kFalse)
+Do fields.$add(200.00,kFalse)
+;  IDs: resource=12,13 phase=13,14     ;; here we have one resource with two phases
+Do dataPhases.$add(0,#D,#D,ganttID,12,13,"11SEP2008 9:00","11SEP2008 17:00",kDarkRed,kBlack,"C1","","","","",0,-1,kGanttTypeDurFix,kFalse,kFalse,fields)
+Do dataPhases.$add(0,#D,#D,ganttID,13,14,"12SEP2008 9:00","12SEP2008 17:00",kDarkRed,kBlack,"C2","","","","",0,-1,kGanttTypeDurFix,kFalse,kFalse,fields)
+
+;  prepare field values for the final phase (child of main project group)
+Do fields.$clear()
+Do fields.$add(80.00,kFalse)
+Do fields.$add(200.00,kFalse)
+;  IDs: resource=14 phase=15     ;; here we have one resource with two phases
+Do dataPhases.$add(0,#D,#D,ganttID,14,15,"1SEP2008 9:00","12SEP2008 17:00",kDarkMagenta,kBlack,"N1","","","","",0,-1,kGanttTypeDurFix,kFalse,kFalse,fields)
+
+;  update our last used phase ID
+Calculate ivLast_GPHA_ID as 15
+
+;  ===========================================================================
+;  3. SAMPLE RELATIONS     ;; each relation is linked to two phases and specifies the type of the relationship
+;  the relations DB list is defined from fGanttRelations     ;; (right-click file class name and select 'Modify' to view columns)
+
+;  a phase may have more than one relationship
+;  a relation may specify a delay in seconds, i.e. for kGanttRelFinishStart a delay of 86400 (1 day) means
+;  that the next phase cannot start until 1 day after the previous phase is completed
+
+;  IDs: phases=3,4,5 relations=1,2     ;; phases 4 and 5 cannot start until phase 3 is complete
+Do dataRelations.$add(0,#D,#D,ganttID,1,3,4,kGanttRelFinishStart,0)
+Do dataRelations.$add(0,#D,#D,ganttID,2,3,5,kGanttRelFinishStart,0)
+
+;  IDs: phases=7,8,9,10,11 relations=3,4,5,6     ;; all phases daisy chaned
+Do dataRelations.$add(0,#D,#D,ganttID,3,7,8,kGanttRelFinishStart,0)
+Do dataRelations.$add(0,#D,#D,ganttID,4,8,9,kGanttRelFinishStart,0)
+Do dataRelations.$add(0,#D,#D,ganttID,5,9,10,kGanttRelFinishStart,0)
+Do dataRelations.$add(0,#D,#D,ganttID,6,10,11,kGanttRelFinishStart,0)
+
+;  IDs: phases=13,14 relations=7     ;; all phases daisy chaned
+Do dataRelations.$add(0,#D,#D,ganttID,7,13,14,kGanttRelFinishStart,0)
+
+;  update our last used relation ID
+Calculate ivLast_GREL_ID as 7
+
+;  ===========================================================================
+;  4. SAMPLE SUSPENSIONS     ;; each suspension is linked to a phase and spacefies a start and end date
+;  the suspensions DB list is defined from fGanttSuspensions     ;; (right-click file class name and select 'Modify' to view columns)
+
+;  a phase may have more than one suspension but they should not overlap
+
+;  IDs: phases=15 suspension=1
+Do dataSuspensions.$add(0,#D,#D,ganttID,1,14,15,"3SEP2008 17:00","11SEP2008 9:00")
+
+;  update our last used suspension ID
+Calculate ivLast_GSUS_ID as 1
+
+;  ===========================================================================
+;  5. SAMPLE MARKER LIST     ;; a chart may display marker lines for important mile stones and set GANTT start date
+;  the marker DB list is defined from fGanttMarkers     ;; (right-click file class name and select 'Modify' to view columns)
+
+;  we have 4 mile stones in this sample project     ;; including start and finish
+Do dataMarkers.$add(0,#D,#D,ganttID,"1SEP2008",kDarkYellow,2)
+Do dataMarkers.$add(0,#D,#D,ganttID,"4SEP2008",kDarkGreen,2)
+Do dataMarkers.$add(0,#D,#D,ganttID,"11SEP2008",kDarkMagenta,2)
+Do dataMarkers.$add(0,#D,#D,ganttID,"13SEP2008",kDarkRed,2)
+
+;  set the chart start date     ;; initial display date
+Calculate dataGantt.G_START_DATE as "30AUG2008"

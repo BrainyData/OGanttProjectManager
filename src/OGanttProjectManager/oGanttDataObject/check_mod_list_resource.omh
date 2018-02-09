@@ -1,0 +1,26 @@
+
+;  get the resource changes from the layer object
+Do pLayerObj.$ggetmodlistresource Returns modList
+Do pLayerObj.$gfreemodlistresource
+
+;  write changes to our DB smart list
+For modList.$line from 1 to modList.$linecount step 1
+	;  Send to trace log {check_mod_list_resource    id=[modList.ResourceId]    reason=[pick(modList.ModReason,'none','Add','Mod','Del')]}
+	Switch modList.ModReason
+		Case kGanttModReasonAdd
+			Do dataResources.$add(0,#D,#D,dataGantt.G_GANTT_ID,modList.ParentId,modList.ResourceId,modList.Order,modList.IsCategory)
+			Calculate dataResources.$line as dataResources.$linecount
+			Do pLayerObj.$get_data_tree_info(modList.ResourceId,dataResources.GRES_TL_ICON,dataResources.GRES_TL_NAME,dataResources.GRES_TL_ENTERABLE,dataResources.GRES_TL_TEXT_COLOR,dataResources.GRES_TL_NOTES)
+		Case kGanttModReasonDel
+			Do dataResources.$search($ref.GRES_GRES_ID=modList.ResourceId,1,0,0,0) Returns dataResources.$line
+			If dataResources.$line
+				Do dataResources.$remove(dataResources.$line)
+			End If
+		Case kGanttModReasonMod
+			Do dataResources.$search($ref.GRES_GRES_ID=modList.ResourceId,1,0,0,0) Returns dataResources.$line
+			If dataResources.$line
+				Do dataResources.$assigncols(,,#D,dataGantt.G_GANTT_ID,modList.ParentId,modList.ResourceId,modList.Order,modList.IsCategory)
+			End If
+	End Switch
+	Calculate ivModified as kTrue
+End For

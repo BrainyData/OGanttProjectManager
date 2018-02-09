@@ -1,0 +1,3 @@
+On evClick     ;; Event Parameters - pRow( Itemreference )
+	Calculate ivPhaseList.PhaseColor as $cfield.$contents
+	Do method phaseChanged

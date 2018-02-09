@@ -1,0 +1,21 @@
+;  this method should be called once during construct by the window that contains the gantt object
+;  it loads the window gantt chart object with the default day and month names and the tooltip text
+
+;  the day and month names are displayed in the header of the right-hand chart
+Do pGanttRef.$gsetdaymonthname($cinst.$get_list_daymonth())
+
+;  the tooltip text is used when interacting with the chart, i.e. resizing a bar
+Do listTooltip.$define(Text)
+Do listTooltip.$add(con(StringTable.$gettext('ogantt.Completion'),' : '))
+Do listTooltip.$add(con(StringTable.$gettext('ogantt.Start'),' : '))
+Do listTooltip.$add(con(StringTable.$gettext('ogantt.Finish'),' : '))
+Do listTooltip.$add(con(StringTable.$gettext('ogantt.Duration'),' : '))
+Do listTooltip.$add(con(' ',StringTable.$gettext('ogantt.Days')))
+Do listTooltip.$add("D M y H:N")     ;; 2009_09_09_CHANGE_1  optional formating string for start and finish times
+Do pGanttRef.$gsettooltiptext(listTooltip)
+
+;  load our legend text for the graph and total section
+Do pGanttRef.$lsetstringlist($cinst.$get_list_legend())
+
+;  load our total calculations and labels
+Do pGanttRef.$totcalclist.$assign($cinst.$get_list_totcalc())

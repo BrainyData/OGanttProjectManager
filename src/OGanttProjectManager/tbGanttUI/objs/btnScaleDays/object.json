@@ -1,0 +1,18 @@
+{
+	"ident": 1029,
+	"order": 14,
+	"objtype": "kToolCommandButton",
+	"properties": {
+		"enabled": false,
+		"helpfile": 0,
+		"iconid": 10061,
+		"text": {
+			"type": 0,
+			"calc": "Days"
+		},
+		"tooltip": "",
+		"userinfo": "ogantt.Days",
+		"users": "12345678",
+		"varwidthtextplatforms": "kVWTMSWindows,kVWTmacOS,kVWTUnix"
+	}
+}

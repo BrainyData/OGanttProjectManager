@@ -1,0 +1,26 @@
+
+;  intialize this layer object and load our gantt window object
+;  an item reference to the gantt window object should have been
+;  provided by the caller
+
+;  load working hours, holidays and default day/month names
+Do method build_calendar (pGanttRef)
+
+;  load properties and data for the gantt tree
+Do method build_tree (pGanttRef)
+
+;  now we load the data for the gantt chart
+Do method build_chart (pGanttRef)
+
+;  finally we attache this layer object to the window component...
+Do pGanttRef.$addlayer($cinst.$layerid)
+Do pGanttRef.$tluselayer($cinst.$layerid)
+Do pGanttRef.$guselayer($cinst.$layerid)
+;  ...build the chart...
+Do $cinst.$tlbuild(kGanttIsFirstLoad)
+Do $cinst.$gbuild(kGanttIsFirstLoad)
+
+Do pGanttRef.$totrecalc()
+Do pGanttRef.$totredraw()
+
+Do method redraw_control (pGanttRef)

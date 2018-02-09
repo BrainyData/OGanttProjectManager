@@ -1,0 +1,5 @@
+If pOutLanguage<>cvLanguage
+	Calculate pOutLanguage as cvLanguage
+	Quit method kTrue
+End If
+Quit method kFalse

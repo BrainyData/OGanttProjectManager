@@ -1,0 +1,1 @@
+Do $topwind.$message($cinst,$cfield,$topwind.$get_layer(),"gantt_tl_delete",params)

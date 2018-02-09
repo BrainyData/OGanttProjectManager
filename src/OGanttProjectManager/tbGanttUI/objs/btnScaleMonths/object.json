@@ -1,0 +1,18 @@
+{
+	"ident": 1027,
+	"order": 16,
+	"objtype": "kToolCommandButton",
+	"properties": {
+		"enabled": true,
+		"helpfile": 0,
+		"iconid": 10063,
+		"text": {
+			"type": 0,
+			"calc": "Months"
+		},
+		"tooltip": "",
+		"userinfo": "ogantt.Months",
+		"users": "12345678",
+		"varwidthtextplatforms": "kVWTMSWindows,kVWTmacOS,kVWTUnix"
+	}
+}

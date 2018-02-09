@@ -1,0 +1,18 @@
+{
+	"ident": 1042,
+	"order": 11,
+	"objtype": "kToolCommandButton",
+	"properties": {
+		"enabled": true,
+		"helpfile": 0,
+		"iconid": 10058,
+		"text": {
+			"type": 0,
+			"calc": "2Hours"
+		},
+		"tooltip": "",
+		"userinfo": "ogantt.2Hours",
+		"users": "12345678",
+		"varwidthtextplatforms": "kVWTMSWindows,kVWTmacOS,kVWTUnix"
+	}
+}

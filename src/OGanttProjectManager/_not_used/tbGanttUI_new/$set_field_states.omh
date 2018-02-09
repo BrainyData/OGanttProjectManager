@@ -1,0 +1,16 @@
+;  called by super-class $construct after strings have been loaded
+Do ivGanttUI.$load_obj_pick(refExpand,'',ivIsExpanded,"btnExpand","btnCollapse")
+Calculate refModeNormal.$enabled as ivIsModeSplit
+Calculate refModeSplit.$enabled as not(ivIsModeSplit)
+
+Calculate refViewNormal.$enabled as ivView<>kViewNormal
+Calculate refViewGraph.$enabled as ivView<>kViewGraph
+Calculate refViewTotals.$enabled as ivView<>kViewTotals
+Calculate refViewPhase.$enabled as ivView<>kViewPhase
+
+Calculate refScaleMinutes.$enabled as ivScale<>kGanttScaleMinute
+Calculate refScaleHours.$enabled as ivScale<>kGanttScaleHour
+Calculate refScale4Hours.$enabled as ivScale<>kGanttScale4Hour
+Calculate refScaleDays.$enabled as ivScale<>kGanttScaleDay
+Calculate refScaleWeeks.$enabled as ivScale<>kGanttScaleWeek
+Calculate refScaleMonths.$enabled as ivScale<>kGanttScaleMonth

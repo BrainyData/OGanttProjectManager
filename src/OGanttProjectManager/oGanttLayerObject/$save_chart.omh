@@ -1,0 +1,2 @@
+;  save the current chart to the database
+Do ivGanttData.$save_chart()

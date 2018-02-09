@@ -1,0 +1,20 @@
+On evClick     ;; Event Parameters - pRow ( Itemreference )
+	;  CHANGE_08JUN2010_1 begins
+	;  Bug ID 807: Omnis Crash, displaying and other problems using the Effective Checkbox
+	If not(ivEffective)
+		;  if we are turning off effective duration, we must check for suspension periods and add their duration
+		For ivSuspensionsList.$line from 1 to ivSuspensionsList.$linecount step 1
+			Do ivLayer.$calcduration(ivSuspensionsList.StartDate,ivSuspensionsList.EndDate,ivTreeList.ResourceID,0) Returns duration
+			Switch ivDurationScaleList.Scale
+				Case kGanttScaleDay
+					Calculate duration as duration/86400
+				Case kGanttScaleHour
+					Calculate duration as duration/3600
+				Case kGanttScaleMinute
+					Calculate duration as duration/60
+			End Switch
+			Calculate ivDuration as ivDuration+duration
+		End For
+	End If
+	;  CHANGE_08JUN2010_1 ends
+	Do method durationChanged (kFalse)

@@ -1,0 +1,2 @@
+;  return default icon for new resource or category
+Quit method pick(pExpandable,10020,10005)

@@ -1,0 +1,44 @@
+{
+	"classtype": "kMenu",
+	"internalversion": 0,
+	"superclass": "mGanttSuper",
+	"designtaskname": "Startup_Task",
+	"nextident": 1015,
+	"cvardefs": [
+
+	],
+	"ivardefs": [
+		{
+			"name": "refGantt",
+			"order": 1,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.Gantt"
+		}
+	],
+	"properties": {
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2008-09-10 11:19:31",
+		"desc": "",
+		"editor": "",
+		"editordata": "",
+		"enabled": true,
+		"external": true,
+		"helpfile": 0,
+		"helptext": "",
+		"inheritedorder": 0,
+		"issupercomponent": false,
+		"moddate": "2013-10-10 14:17:44",
+		"showascheckedout": false,
+		"title": {
+			"type": 0,
+			"calc": "Chart"
+		},
+		"userinfo": "",
+		"users": "12345678",
+		"version": ""
+	}
+}

@@ -1,0 +1,516 @@
+[
+	{
+		"name": "$=== wGanttDlgEditPhase ===",
+		"ident": 18,
+		"order": 1,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		],
+		"empty": true
+	},
+	{
+		"name": "$construct_init",
+		"ident": 12,
+		"order": 2,
+		"pvardefs": [
+			{
+				"name": "pCallerRef",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pGanttRef",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pLayer",
+				"order": 3,
+				"type": "kObjectref",
+				"subtype": "oGanttObject",
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pParams",
+				"order": 4,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 4
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "loadDurationList",
+		"ident": 4,
+		"order": 3,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$--- message handling ---",
+		"ident": 19,
+		"order": 5,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		],
+		"empty": true
+	},
+	{
+		"name": "$message",
+		"ident": 1,
+		"order": 6,
+		"pvardefs": [
+			{
+				"name": "pCallerClass",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pCallerObj",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pLayerObj",
+				"order": 3,
+				"type": "kObjectref",
+				"subtype": "oGanttLayerObject",
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pMessage",
+				"order": 4,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255,
+				"param": 4
+			},
+			{
+				"name": "pParams",
+				"order": 5,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 5
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "--- data loading ---",
+		"ident": 20,
+		"order": 7,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		],
+		"empty": true
+	},
+	{
+		"name": "loadPhaseDetails",
+		"ident": 0,
+		"order": 8,
+		"pvardefs": [
+			{
+				"name": "pResourceID",
+				"order": 4,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 1,
+				"initval": "ivPhaseList.ResourceID"
+			},
+			{
+				"name": "pPhaseID",
+				"order": 5,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 2,
+				"initval": "ivPhaseList.PhaseID"
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "line",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "new_info",
+				"order": 1,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "loadDuration",
+		"ident": 3,
+		"order": 9,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "loadProgress",
+		"ident": 7,
+		"order": 10,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "loadFields",
+		"ident": 9,
+		"order": 11,
+		"pvardefs": [
+			{
+				"name": "pLayer",
+				"order": 1,
+				"type": "kObjectref",
+				"subtype": "oGanttLayerObject",
+				"sublen": 0,
+				"param": 1,
+				"initval": "ivLayer"
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "loadRelations",
+		"ident": 11,
+		"order": 12,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "LinkedEndDate",
+				"order": 6,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 6
+			},
+			{
+				"name": "LinkedLabel",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255
+			},
+			{
+				"name": "linkedPhase",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "linkedPhaseInfo",
+				"order": 4,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "linkedResourceInfo",
+				"order": 5,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "LinkedStartDate",
+				"order": 1,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 6
+			}
+		]
+	},
+	{
+		"name": "loadSuspensions",
+		"ident": 14,
+		"order": 13,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "--- data changing ---",
+		"ident": 21,
+		"order": 14,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		],
+		"empty": true
+	},
+	{
+		"name": "phaseChanged",
+		"ident": 6,
+		"order": 15,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "pPhaseData",
+				"order": 1,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "theParams",
+				"order": 2,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "durationChanged",
+		"ident": 5,
+		"order": 16,
+		"pvardefs": [
+			{
+				"name": "pTest",
+				"order": 2,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "duration",
+				"order": 1,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "progressChanged",
+		"ident": 8,
+		"order": 17,
+		"pvardefs": [
+			{
+				"name": "pTest",
+				"order": 2,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "progress",
+				"order": 1,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "fieldChanged",
+		"ident": 10,
+		"order": 18,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "suspensionChanged",
+		"ident": 17,
+		"order": 19,
+		"pvardefs": [
+			{
+				"name": "pPhaseId",
+				"order": 3,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 1,
+				"initval": "ivPhaseList.PhaseId"
+			},
+			{
+				"name": "pSuspensionId",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 2,
+				"initval": "ivSuspensionsList.SuspensionId"
+			},
+			{
+				"name": "pStartDate",
+				"order": 4,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 6,
+				"param": 3,
+				"initval": "ivSuspensionsList.StartDate"
+			},
+			{
+				"name": "pEndDate",
+				"order": 5,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 6,
+				"param": 4,
+				"initval": "ivSuspensionsList.EndDate"
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "params",
+				"order": 1,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "deleteRelation",
+		"ident": 13,
+		"order": 20,
+		"pvardefs": [
+			{
+				"name": "pRelationId",
+				"order": 1,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 1,
+				"initval": "ivRelationsList.RelationId"
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "params",
+				"order": 2,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "deleteSuspension",
+		"ident": 15,
+		"order": 21,
+		"pvardefs": [
+			{
+				"name": "pSuspensionId",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 1,
+				"initval": "ivSuspensionsList.SuspensionId"
+			},
+			{
+				"name": "pPhaseId",
+				"order": 3,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 2,
+				"initval": "ivPhaseList.PhaseId"
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "params",
+				"order": 1,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "promptDate",
+		"ident": 16,
+		"order": 22,
+		"pvardefs": [
+			{
+				"name": "pDateTime",
+				"order": 1,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "dateTime",
+				"order": 2,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 6
+			}
+		]
+	}
+]

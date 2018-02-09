@@ -1,0 +1,22 @@
+;  save all chart data
+
+;  if we don't have a GANTT ID we must calculate one now
+;  method save_data will make sure all records are linked to the new ID
+If dataGantt.G_GANTT_ID=0
+	Calculate dataGantt.G_GANTT_ID as $cinst.$get_new_gantt_id(pName)     ;; will return zero if name already used
+End If
+
+;  must save related data first     ;; imprtant for single record storage
+If dataGantt.G_IS_SINGLE_RECORD
+	Do dataGantt.$assigncols(,,,,,,,,,dataResources,dataPhases,dataRelations,dataSuspensions,dataMarkers)
+Else
+	Do method save_data (dataGantt.G_GANTT_ID,'fGanttMarkers','GMAR_',dataMarkers)
+	Do method save_data (dataGantt.G_GANTT_ID,'fGanttResources','GRES_',dataResources)
+	Do method save_data (dataGantt.G_GANTT_ID,'fGanttPhases','GPHA_',dataPhases)
+	Do method save_data (dataGantt.G_GANTT_ID,'fGanttRelations','GREL_',dataRelations)
+	Do method save_data (dataGantt.G_GANTT_ID,'fGanttSuspensions','GSUS_',dataSuspensions)
+End If
+;  now we can save the main record
+Do method save_data (dataGantt.G_GANTT_ID,'fGantt','G_',dataGantt,kFalse)
+
+Calculate ivModified as kFalse

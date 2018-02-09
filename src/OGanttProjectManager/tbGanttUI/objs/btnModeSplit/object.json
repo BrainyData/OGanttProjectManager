@@ -1,0 +1,18 @@
+{
+	"ident": 1019,
+	"order": 24,
+	"objtype": "kToolCommandButton",
+	"properties": {
+		"enabled": true,
+		"helpfile": 0,
+		"iconid": 10027,
+		"text": {
+			"type": 0,
+			"calc": "Split"
+		},
+		"tooltip": "",
+		"userinfo": "",
+		"users": "12345678",
+		"varwidthtextplatforms": "kVWTMSWindows,kVWTmacOS,kVWTUnix"
+	}
+}

@@ -1,0 +1,1 @@
+;  Send to trace log {$begin_update: pMessage=[pMessage]    pCallerClass=[pCallerClass().$name]     pCallerObj=[pCallerObj().$name]    pLayerObj=[pLayerObj().$name]}

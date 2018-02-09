@@ -1,0 +1,87 @@
+Switch pMessage
+	Case 'str_after_load_instance'
+		;  called during string table loading after all fields have been loaded by our string table object
+		;  reset our window title
+		Calculate $cinst.$title as ivGanttName
+		
+	Case 'gantt_set_language'
+		Do $cwind.$toolbars.$sendall($ref.$message(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams))
+		
+	Case "gantt_copy_bitmap"
+		Do refGantt.$getbitmap() Returns bitmap
+		Copy to clipboard bitmap
+		Do ivGanttUI.$show_message(kFalse,'messClipboard','messTitleMessage')
+		
+	Case 'gantt_print'
+		Do $windows.wGanttDlgPrint.$open('*',kWindowCenterRelative,$cwind,$cwind,refGantt,pLayerObj)
+		
+	Case 'gantt_clear'
+		If $cinst.$canclose()
+			;  create a new chart
+			Prompt for input Enter Name for New Chart Returns ivGanttName (Cancel button,Prompt above entry)
+			If flag true
+				;  remove the layer as we are building a new empty chart which will add this layer again
+				Do refGantt.$removelayer(pLayerObj.$layerid)
+				;  clear our layer
+				Do pLayerObj.$tlclear()
+				Do pLayerObj.$gclear()
+				;  create the empty chart
+				Do pLayerObj.$new_chart(refGantt,ivGanttName,kTrue,kFalse)
+				Calculate $cinst.$title as ivGanttName
+			End If
+		End If
+		
+	Case 'gantt_scale'
+		Do method doSetScale (pParams)
+		
+	Case 'gantt_view_normal','gantt_view_graph','gantt_view_totals','gantt_view_phase'
+		Do method doSetView (pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)
+		
+	Case 'gantt_mode_normal'
+		Do refGantt.$gendsplit()
+		Do ivGanttUI.$message_send_tb(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)     ;; inform toolbars also
+		
+	Case 'gantt_mode_split'
+		Do refGantt.$gbeginsplit()
+		Do ivGanttUI.$message_send_tb(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)     ;; inform toolbars also
+		
+	Case 'gantt_phase_delete'
+		Do ivGanttUI.$show_message_ny(kTrue,'messDelPhaseYN','messDelTitle') Returns #F
+		If flag true
+			Do pLayerObj.$message($cinst,refGantt,pLayerObj,pMessage,pParams)
+		End If
+		
+	Case "gantt_phase_edit"
+		Do $cinst.$message(pCallerClass,pCallerObj,pLayerObj,'gantt_view_phase',pParams)
+		
+	Case 'gantt_phase_add_rel'
+		Do $windows.wGanttDlgSetRelation.$open('*',kWindowCenterRelative,$cwind,pCallerClass,pCallerObj,pLayerObj,pParams)
+		
+	Case 'gantt_phase_context_click'
+		Popup menu mGanttContextPhase
+		
+	Case 'gantt_tl_delete'
+		Do ivGanttUI.$show_message_ny(kTrue,'messDelResourceYN','messDelTitle') Returns #F
+		If flag true
+			Do pLayerObj.$message($cinst,refGantt,pLayerObj,pMessage,pParams)
+		End If
+		
+	Case 'gantt_tl_context_click'
+		Popup menu mGanttContextTree
+		
+	Case 'gantt_tl_expand','gantt_tl_collapse'
+		Do pLayerObj.$message(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)
+		Do ivGanttUI.$message_send_tb(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)     ;; inform toolbars also
+		
+	Case 'gantt_tl_expand_collapse'     ;; send by toolbar toggle button
+		Do method doExpandOrCollapse
+		
+	Default
+		;  send all remaining messages to the layer object
+		Do pLayerObj.$message($cinst,refGantt,pLayerObj,pMessage,pParams)
+End Switch
+
+;  send a copy of all messages to our sub-window
+If len(refPhaseDetails.$classname)
+	Do refPhaseDetails.$message(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)
+End If

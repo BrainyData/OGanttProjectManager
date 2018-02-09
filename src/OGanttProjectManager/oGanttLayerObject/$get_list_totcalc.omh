@@ -1,0 +1,23 @@
+;  return our default total calculations
+;  our legend and total calc lists are hard-coded for demonstration purposes
+;  and it may be that hard-coded legend lists are sufficient for most applications
+;  but there is no reason why a legend list could not be user defined and stored in a DB
+;  this would however require some additional work throughout the interface
+;  that deals with editing legend values
+
+;  (TotalType,LayerID,FieldNumber,GroupValues,Label,FontNumber,FontSize,FontStyle,Color)
+Do method define_chart_list (listTotCalcs,kGanttListTotCalcs)
+
+Do listTotCalcs.$add(kGanttTotTotal,$cinst.$layerid,1,kFalse,StringTable.$gettext('ogantt.LegendEquipment'),1,9,kPlain,kDarkGreen)
+Do listTotCalcs.$add(kGanttTotTotal,$cinst.$layerid,2,kFalse,StringTable.$gettext('ogantt.LegendWages'),1,9,kPlain,kRed)
+
+Do listTotCalcs.$add(kGanttTotTotal,$cinst.$layerid,1,kTrue,"",1,12,kPlain,kDarkGreen)
+Do listTotCalcs.$add(kGanttTotTotal,$cinst.$layerid,2,kTrue,"",1,12,kPlain,kRed)
+;
+Do listTotCalcs.$add(kGanttTotProgress,$cinst.$layerid,1,kTrue,"",1,12,kBold,kDarkGreen)
+Do listTotCalcs.$add(kGanttTotProgress,$cinst.$layerid,2,kTrue,"",1,12,kBold,kRed)
+;  we must also tell the layer object how to calculate totals
+Do $cinst.$grsetfuncforfield(1,kGanttCalcTot,0)
+Do $cinst.$grsetfuncforfield(2,kGanttCalcTot,0)
+Do $cinst.$grsetfieldtocalc(1,2,0,kGreen,kRed,0)
+Quit method listTotCalcs

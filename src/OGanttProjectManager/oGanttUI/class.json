@@ -1,0 +1,99 @@
+{
+	"classtype": "kObjectclass",
+	"internalversion": 0,
+	"superclass": "oGanttMessage",
+	"designtaskname": "Startup_Task",
+	"cvardefs": [
+		{
+			"name": "cvDebug",
+			"order": 6,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"initval": "sys(2)=0|sys(2)=16",
+			"desc": "enable debug in dev versions"
+		},
+		{
+			"name": "cvGlobalLoaded",
+			"order": 2,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"initval": "0"
+		},
+		{
+			"name": "cvGlobalTableName",
+			"order": 4,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100,
+			"initval": "'ogantt'",
+			"desc": "the global shared table for ogantt classes"
+		},
+		{
+			"name": "cvLanguage",
+			"order": 1,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 255,
+			"initval": "'English'"
+		},
+		{
+			"name": "cvTableList",
+			"order": 5,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "cvTablePath",
+			"order": 3,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000,
+			"initval": "$cinst.$str_path",
+			"desc": "the default path to the string tables"
+		}
+	],
+	"ivardefs": [
+		{
+			"name": "ivCanLoad",
+			"order": 2,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0
+		},
+		{
+			"name": "ivClassTable",
+			"order": 3,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100,
+			"desc": "Name of the default string table for this class"
+		},
+		{
+			"name": "ivLoaded",
+			"order": 1,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"desc": "if this is false we do not load during language change"
+		}
+	],
+	"properties": {
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2008-08-21 00:03:07",
+		"desc": "",
+		"editor": "",
+		"editordata": "",
+		"external": true,
+		"issupercomponent": false,
+		"moddate": "2013-10-10 14:24:45",
+		"selfcontained": false,
+		"showascheckedout": false,
+		"userinfo": "",
+		"version": ""
+	}
+}

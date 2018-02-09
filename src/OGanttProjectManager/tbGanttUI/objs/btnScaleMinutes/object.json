@@ -1,0 +1,18 @@
+{
+	"ident": 1031,
+	"order": 8,
+	"objtype": "kToolCommandButton",
+	"properties": {
+		"enabled": true,
+		"helpfile": 0,
+		"iconid": "k32x32+10055",
+		"text": {
+			"type": 0,
+			"calc": "Minutes"
+		},
+		"tooltip": "",
+		"userinfo": "ogantt.Minutes",
+		"users": "12345678",
+		"varwidthtextplatforms": "kVWTMSWindows,kVWTmacOS,kVWTUnix"
+	}
+}

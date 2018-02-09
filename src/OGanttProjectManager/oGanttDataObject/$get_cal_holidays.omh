@@ -1,0 +1,6 @@
+;  return the list of holidays
+;  the output list must have been defined by the caller according to OGantt's requirements     ;; we know what format that is
+
+For dataCalHolidays.$line from 1 to dataCalHolidays.$linecount step 1
+	Do pOutHolidays.$add(dataCalHolidays.GCHOL_TYPE,dataCalHolidays.GCHOL_DATE,dataCalHolidays.GCHOL_DAY,dataCalHolidays.GCHOL_YEAR,dataCalHolidays.GCHOL_COLOR)
+End For

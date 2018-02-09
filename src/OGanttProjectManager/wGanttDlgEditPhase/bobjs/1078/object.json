@@ -1,0 +1,30 @@
+{
+	"ident": 1078,
+	"order": 16410,
+	"objtype": "kText",
+	"properties": {
+		"align": "kRightJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFright",
+		"fieldstyle": "CtrlLabelMedium",
+		"font": 1,
+		"fontsize": 13,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 17,
+		"left": 79,
+		"objlink": 17039379,
+		"text": {
+			"type": 14,
+			"calc": ".........[dat(ivSuspensionsList.[ivSuspensionsList.$line].EndDate,\"D m Y H:N\")] "
+		},
+		"textcolor": "kColorWindowText",
+		"top": 22,
+		"userinfo": "*",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 160
+	}
+}

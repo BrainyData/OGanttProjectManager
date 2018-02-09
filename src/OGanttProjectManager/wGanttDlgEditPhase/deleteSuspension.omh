@@ -1,0 +1,4 @@
+
+Do ivGanttUI.$make_params(pPhaseId.$ref,pSuspensionId.$ref) Returns params
+Do ivLayer.$message(refCaller,refGantt,ivLayer,'gantt_phase_delete_susp',params)
+Do method loadSuspensions

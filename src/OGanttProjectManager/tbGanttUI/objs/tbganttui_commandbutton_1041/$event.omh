@@ -1,0 +1,2 @@
+On evClick
+	Do $windows.wDragDrop.$openonce("wDragDrop",kWindowNormal,$cwind.$objs.Gantt)

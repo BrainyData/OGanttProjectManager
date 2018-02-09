@@ -1,0 +1,3225 @@
+[
+	{
+		"name": "$=== oGanttLayerObject ===",
+		"ident": 21,
+		"order": 1,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		],
+		"empty": true
+	},
+	{
+		"name": "$construct",
+		"ident": 19,
+		"order": 2,
+		"pvardefs": [
+			{
+				"name": "pGanttRef",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$destruct",
+		"ident": 20,
+		"order": 3,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$--- MESSAGE HANDLING ---",
+		"ident": 41,
+		"order": 4,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		],
+		"empty": true
+	},
+	{
+		"name": "$message",
+		"ident": 28,
+		"order": 5,
+		"pvardefs": [
+			{
+				"name": "pCallerClass",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pCallerObj",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pLayerObj",
+				"order": 5,
+				"type": "kObjectref",
+				"subtype": "oGanttLayerObject",
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pMessage",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255,
+				"param": 4
+			},
+			{
+				"name": "pParams",
+				"order": 4,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 5
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "listCell",
+				"order": 8,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "listPhases",
+				"order": 11,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "row",
+				"order": 12,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$mess_set_language",
+		"ident": 43,
+		"order": 6,
+		"pvardefs": [
+			{
+				"name": "pCallerClass",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pCallerObj",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pLayerObj",
+				"order": 5,
+				"type": "kObjectref",
+				"subtype": "oGanttLayerObject",
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pMessage",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255,
+				"param": 4
+			},
+			{
+				"name": "pParams",
+				"order": 4,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 5
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$mess_tl_make_current",
+		"ident": 81,
+		"order": 7,
+		"pvardefs": [
+			{
+				"name": "pCallerClass",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pCallerObj",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pLayerObj",
+				"order": 6,
+				"type": "kObjectref",
+				"subtype": "oGanttLayerObject",
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pMessage",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255,
+				"param": 4
+			},
+			{
+				"name": "pParams",
+				"order": 4,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 5
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "listPhases",
+				"order": 5,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "resourceId",
+				"order": 8,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"initval": "pParams.pResourceId"
+			}
+		]
+	},
+	{
+		"name": "$mess_tl_create",
+		"ident": 44,
+		"order": 8,
+		"pvardefs": [
+			{
+				"name": "pCallerClass",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pCallerObj",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pLayerObj",
+				"order": 11,
+				"type": "kObjectref",
+				"subtype": "oGanttLayerObject",
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pMessage",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255,
+				"param": 4
+			},
+			{
+				"name": "pParams",
+				"order": 4,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 5
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "childResourceID",
+				"order": 12,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"initval": "0"
+			},
+			{
+				"name": "expandable",
+				"order": 9,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"initval": "pMessage='gantt_tl_new_cat'"
+			},
+			{
+				"name": "listResources",
+				"order": 5,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "parentID",
+				"order": 6,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"initval": "0"
+			},
+			{
+				"name": "phaseID",
+				"order": 10,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"initval": "0"
+			},
+			{
+				"name": "resourceID",
+				"order": 8,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$mess_tl_delete",
+		"ident": 66,
+		"order": 9,
+		"pvardefs": [
+			{
+				"name": "pCallerClass",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pCallerObj",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pLayerObj",
+				"order": 5,
+				"type": "kObjectref",
+				"subtype": "oGanttLayerObject",
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pMessage",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255,
+				"param": 4
+			},
+			{
+				"name": "pParams",
+				"order": 4,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 5
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "listResource",
+				"order": 6,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "resourceID",
+				"order": 10,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$mess_tl_dragdrop",
+		"ident": 42,
+		"order": 10,
+		"pvardefs": [
+			{
+				"name": "pCallerClass",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pCallerObj",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pLayerObj",
+				"order": 9,
+				"type": "kObjectref",
+				"subtype": "oGanttLayerObject",
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pMessage",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255,
+				"param": 4
+			},
+			{
+				"name": "pParams",
+				"order": 4,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 5
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "listPhases",
+				"order": 6,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "listResource",
+				"order": 5,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$mess_tl_indent",
+		"ident": 67,
+		"order": 11,
+		"pvardefs": [
+			{
+				"name": "pCallerClass",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pCallerObj",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pLayerObj",
+				"order": 5,
+				"type": "kObjectref",
+				"subtype": "oGanttLayerObject",
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pMessage",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255,
+				"param": 4
+			},
+			{
+				"name": "pParams",
+				"order": 4,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 5
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$mess_tl_unindent",
+		"ident": 68,
+		"order": 12,
+		"pvardefs": [
+			{
+				"name": "pCallerClass",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pCallerObj",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pLayerObj",
+				"order": 5,
+				"type": "kObjectref",
+				"subtype": "oGanttLayerObject",
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pMessage",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255,
+				"param": 4
+			},
+			{
+				"name": "pParams",
+				"order": 4,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 5
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$mess_tl_set_icon",
+		"ident": 70,
+		"order": 13,
+		"pvardefs": [
+			{
+				"name": "pCallerClass",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pCallerObj",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pLayerObj",
+				"order": 6,
+				"type": "kObjectref",
+				"subtype": "oGanttLayerObject",
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pMessage",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255,
+				"param": 4
+			},
+			{
+				"name": "pParams",
+				"order": 4,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 5
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "listCell",
+				"order": 5,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$mess_tl_text_changed",
+		"ident": 69,
+		"order": 14,
+		"pvardefs": [
+			{
+				"name": "pCallerClass",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pCallerObj",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pLayerObj",
+				"order": 6,
+				"type": "kObjectref",
+				"subtype": "oGanttLayerObject",
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pMessage",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255,
+				"param": 4
+			},
+			{
+				"name": "pParams",
+				"order": 4,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 5
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "listCell",
+				"order": 5,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$mess_tl_expand",
+		"ident": 73,
+		"order": 15,
+		"pvardefs": [
+			{
+				"name": "pCallerClass",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pCallerObj",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pLayerObj",
+				"order": 5,
+				"type": "kObjectref",
+				"subtype": "oGanttLayerObject",
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pMessage",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255,
+				"param": 4
+			},
+			{
+				"name": "pParams",
+				"order": 4,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 5
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$mess_tl_collapse",
+		"ident": 74,
+		"order": 16,
+		"pvardefs": [
+			{
+				"name": "pCallerClass",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pCallerObj",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pLayerObj",
+				"order": 5,
+				"type": "kObjectref",
+				"subtype": "oGanttLayerObject",
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pMessage",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255,
+				"param": 4
+			},
+			{
+				"name": "pParams",
+				"order": 4,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 5
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$mess_phase_create",
+		"ident": 78,
+		"order": 17,
+		"pvardefs": [
+			{
+				"name": "pCallerClass",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pCallerObj",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pLayerObj",
+				"order": 7,
+				"type": "kObjectref",
+				"subtype": "oGanttLayerObject",
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pMessage",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255,
+				"param": 4
+			},
+			{
+				"name": "pParams",
+				"order": 4,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 5
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "listResources",
+				"order": 6,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "newPhaseId",
+				"order": 8,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "theNewEndDate",
+				"order": 10,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 6,
+				"initval": "pParams.pNewEndDate"
+			},
+			{
+				"name": "theNewStartDate",
+				"order": 9,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 6,
+				"initval": "pParams.pNewStartDate"
+			},
+			{
+				"name": "theResourceId",
+				"order": 5,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"initval": "pParams.pResourceId"
+			}
+		]
+	},
+	{
+		"name": "$mess_phase_delete",
+		"ident": 72,
+		"order": 18,
+		"pvardefs": [
+			{
+				"name": "pCallerClass",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pCallerObj",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pLayerObj",
+				"order": 5,
+				"type": "kObjectref",
+				"subtype": "oGanttLayerObject",
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pMessage",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255,
+				"param": 4
+			},
+			{
+				"name": "pParams",
+				"order": 4,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 5
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$mess_phase_delete_rel",
+		"ident": 31,
+		"order": 19,
+		"pvardefs": [
+			{
+				"name": "pCallerClass",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pCallerObj",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pLayerObj",
+				"order": 3,
+				"type": "kObjectref",
+				"subtype": "oGanttLayerObject",
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pMessage",
+				"order": 4,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255,
+				"param": 4
+			},
+			{
+				"name": "pParams",
+				"order": 5,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 5
+			},
+			{
+				"name": "pGanttRef",
+				"order": 6,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 6,
+				"initval": "refGantt"
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$mess_phase_delete_susp",
+		"ident": 30,
+		"order": 20,
+		"pvardefs": [
+			{
+				"name": "pCallerClass",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pCallerObj",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pLayerObj",
+				"order": 3,
+				"type": "kObjectref",
+				"subtype": "oGanttLayerObject",
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pMessage",
+				"order": 4,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255,
+				"param": 4
+			},
+			{
+				"name": "pParams",
+				"order": 5,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 5
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$mess_phase_make_current",
+		"ident": 77,
+		"order": 21,
+		"pvardefs": [
+			{
+				"name": "pCallerClass",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pCallerObj",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pLayerObj",
+				"order": 6,
+				"type": "kObjectref",
+				"subtype": "oGanttLayerObject",
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pMessage",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255,
+				"param": 4
+			},
+			{
+				"name": "pParams",
+				"order": 4,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 5
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "listPhases",
+				"order": 5,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "phaseId",
+				"order": 8,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"initval": "pParams.pPhaseId"
+			},
+			{
+				"name": "resourceId",
+				"order": 9,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"initval": "pParams.pResourceId"
+			}
+		]
+	},
+	{
+		"name": "$mess_phase_update",
+		"ident": 79,
+		"order": 22,
+		"pvardefs": [
+			{
+				"name": "pCallerClass",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pCallerObj",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pLayerObj",
+				"order": 5,
+				"type": "kObjectref",
+				"subtype": "oGanttLayerObject",
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pMessage",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255,
+				"param": 4
+			},
+			{
+				"name": "pParams",
+				"order": 4,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 5
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$mess_phase_update_susp",
+		"ident": 37,
+		"order": 23,
+		"pvardefs": [
+			{
+				"name": "pCallerClass",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pCallerObj",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pLayerObj",
+				"order": 3,
+				"type": "kObjectref",
+				"subtype": "oGanttLayerObject",
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pMessage",
+				"order": 4,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255,
+				"param": 4
+			},
+			{
+				"name": "pParams",
+				"order": 5,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 5
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$mess_phase_moved",
+		"ident": 80,
+		"order": 24,
+		"pvardefs": [
+			{
+				"name": "pCallerClass",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pCallerObj",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pLayerObj",
+				"order": 5,
+				"type": "kObjectref",
+				"subtype": "oGanttLayerObject",
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pMessage",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255,
+				"param": 4
+			},
+			{
+				"name": "pParams",
+				"order": 4,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 5
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "dt0",
+				"order": 6,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 0
+			},
+			{
+				"name": "dt1",
+				"order": 7,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$mess_phase_add_rel",
+		"ident": 75,
+		"order": 25,
+		"pvardefs": [
+			{
+				"name": "pCallerClass",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pCallerObj",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pLayerObj",
+				"order": 5,
+				"type": "kObjectref",
+				"subtype": "oGanttLayerObject",
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pMessage",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255,
+				"param": 4
+			},
+			{
+				"name": "pParams",
+				"order": 4,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 5
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "result",
+				"order": 8,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "theDelay",
+				"order": 13,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"initval": "pParams.pDelay"
+			},
+			{
+				"name": "thePhaseFromId",
+				"order": 10,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"initval": "pParams.pPhaseFromId"
+			},
+			{
+				"name": "thePhaseToId",
+				"order": 11,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"initval": "pParams.pPhaseToId"
+			},
+			{
+				"name": "theRelationId",
+				"order": 7,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "theType",
+				"order": 12,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"initval": "pParams.pType"
+			}
+		]
+	},
+	{
+		"name": "$mess_phase_add_susp",
+		"ident": 76,
+		"order": 26,
+		"pvardefs": [
+			{
+				"name": "pCallerClass",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pCallerObj",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pLayerObj",
+				"order": 5,
+				"type": "kObjectref",
+				"subtype": "oGanttLayerObject",
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pMessage",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255,
+				"param": 4
+			},
+			{
+				"name": "pParams",
+				"order": 4,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 5
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "thePhaseId",
+				"order": 9,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"initval": "pParams.pPhaseId"
+			},
+			{
+				"name": "theSplitDate",
+				"order": 10,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 6,
+				"initval": "pParams.pSplitDate"
+			},
+			{
+				"name": "theSuspensionID",
+				"order": 6,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$mess_phase_set_color",
+		"ident": 71,
+		"order": 27,
+		"pvardefs": [
+			{
+				"name": "pCallerClass",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pCallerObj",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pLayerObj",
+				"order": 7,
+				"type": "kObjectref",
+				"subtype": "oGanttLayerObject",
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pMessage",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255,
+				"param": 4
+			},
+			{
+				"name": "pParams",
+				"order": 4,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 5
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "listPhases",
+				"order": 5,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "row",
+				"order": 6,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "add_resource",
+		"ident": 54,
+		"order": 28,
+		"pvardefs": [
+			{
+				"name": "pGanttRef",
+				"order": 7,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pParentId",
+				"order": 3,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pExpandable",
+				"order": 1,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 3,
+				"initval": "kFalse"
+			},
+			{
+				"name": "pStartDate",
+				"order": 8,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 6,
+				"param": 4,
+				"initval": "#NULL"
+			},
+			{
+				"name": "pEndDate",
+				"order": 9,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 6,
+				"param": 5,
+				"initval": "#NULL"
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "listCategory",
+				"order": 5,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "listDescription",
+				"order": 12,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "listEndDate",
+				"order": 11,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "listResources",
+				"order": 4,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "listStartDate",
+				"order": 10,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "resourceId",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "add_phase",
+		"ident": 53,
+		"order": 29,
+		"pvardefs": [
+			{
+				"name": "pGanttRef",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pResourceId",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pIsCategory",
+				"order": 8,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 3,
+				"initval": "kFalse"
+			},
+			{
+				"name": "pStartDate",
+				"order": 3,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 6,
+				"param": 4,
+				"initval": "#NULL"
+			},
+			{
+				"name": "pEndDate",
+				"order": 4,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 6,
+				"param": 5,
+				"initval": "#NULL"
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "listFields",
+				"order": 7,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0,
+				"initval": "#NULL"
+			},
+			{
+				"name": "listPhases",
+				"order": 5,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "phaseId",
+				"order": 6,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "phase_modified",
+		"ident": 25,
+		"order": 30,
+		"pvardefs": [
+			{
+				"name": "pGanttRef",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pPhaseID",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 2
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "changed",
+				"order": 5,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0
+			},
+			{
+				"name": "listPhases",
+				"order": 3,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "listRelations",
+				"order": 4,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "rebuild_all",
+		"ident": 24,
+		"order": 31,
+		"pvardefs": [
+			{
+				"name": "pGanttRef",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1,
+				"initval": "#NULL"
+			},
+			{
+				"name": "pResourceId",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 2,
+				"initval": "#NULL"
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "redraw_control",
+		"ident": 58,
+		"order": 32,
+		"pvardefs": [
+			{
+				"name": "pGanttRef",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1,
+				"initval": "refGantt"
+			},
+			{
+				"name": "pRecalcTotals",
+				"order": 2,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 2
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "upd_tree_columns",
+		"ident": 26,
+		"order": 33,
+		"pvardefs": [
+			{
+				"name": "pGanttRef",
+				"order": 4,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pResourceID",
+				"order": 1,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 2
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "changed",
+				"order": 7,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"initval": "kFalse"
+			},
+			{
+				"name": "endDate",
+				"order": 10,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 6
+			},
+			{
+				"name": "listColumn",
+				"order": 6,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "listPhases",
+				"order": 8,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "listResources",
+				"order": 2,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "startDate",
+				"order": 9,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 6
+			},
+			{
+				"name": "theDate",
+				"order": 5,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 6
+			}
+		]
+	},
+	{
+		"name": "$--- SAVING / LOADING ---",
+		"ident": 15,
+		"order": 34,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		],
+		"empty": true
+	},
+	{
+		"name": "$modified",
+		"ident": 13,
+		"order": 35,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$check_chart_name",
+		"ident": 16,
+		"order": 36,
+		"pvardefs": [
+			{
+				"name": "pName",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 80,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$new_chart",
+		"ident": 2,
+		"order": 37,
+		"pvardefs": [
+			{
+				"name": "pGanttRef",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1,
+				"desc": "item reference to the window object"
+			},
+			{
+				"name": "pName",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 80,
+				"param": 2
+			},
+			{
+				"name": "pSingleRecord",
+				"order": 3,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pSampleData",
+				"order": 4,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 4
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$load_chart",
+		"ident": 5,
+		"order": 38,
+		"pvardefs": [
+			{
+				"name": "pGanttRef",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1,
+				"desc": "item reference to the window object"
+			},
+			{
+				"name": "pChartID",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 2,
+				"desc": "Unique ID of the chart to load"
+			},
+			{
+				"name": "pName",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 80,
+				"param": 3,
+				"initval": "''",
+				"desc": "Unique Name if ID is zero"
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$save_chart",
+		"ident": 4,
+		"order": 39,
+		"pvardefs": [
+			{
+				"name": "pGanttRef",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1,
+				"desc": "item reference to the window object"
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "load_chart",
+		"ident": 40,
+		"order": 40,
+		"pvardefs": [
+			{
+				"name": "pGanttRef",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1,
+				"desc": "item reference to the window object"
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "phase_list",
+				"order": 2,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "build_calendar",
+		"ident": 6,
+		"order": 41,
+		"pvardefs": [
+			{
+				"name": "pGanttRef",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "listHolidays",
+				"order": 9,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "listWorkHours",
+				"order": 3,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "listWorkHoursExceptions",
+				"order": 10,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "theDate",
+				"order": 2,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 1,
+				"initval": "0"
+			},
+			{
+				"name": "tmpList",
+				"order": 5,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "build_tree",
+		"ident": 14,
+		"order": 42,
+		"pvardefs": [
+			{
+				"name": "pGanttRef",
+				"order": 5,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "listCategory",
+				"order": 1,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "listDescription",
+				"order": 4,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "listEndDate",
+				"order": 3,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "listStartDate",
+				"order": 2,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "build_chart",
+		"ident": 7,
+		"order": 43,
+		"pvardefs": [
+			{
+				"name": "pGanttRef",
+				"order": 6,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "ganttStartDate",
+				"order": 8,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 1
+			},
+			{
+				"name": "listMarkers",
+				"order": 7,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "listPhases",
+				"order": 3,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "listRelations",
+				"order": 4,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "listResources",
+				"order": 2,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "listSuspensions",
+				"order": 5,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$--- INTERFACE SUPPORT ---",
+		"ident": 22,
+		"order": 44,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		],
+		"empty": true
+	},
+	{
+		"name": "$load_custom_text",
+		"ident": 9,
+		"order": 45,
+		"pvardefs": [
+			{
+				"name": "pGanttRef",
+				"order": 3,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "listTooltip",
+				"order": 4,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "Text",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100
+			}
+		]
+	},
+	{
+		"name": "$get_list_daymonth",
+		"ident": 52,
+		"order": 46,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "listDayMonthNames",
+				"order": 1,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "Text",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100
+			}
+		]
+	},
+	{
+		"name": "$get_list_legend",
+		"ident": 50,
+		"order": 47,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "listLegends",
+				"order": 1,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$get_list_totcalc",
+		"ident": 51,
+		"order": 48,
+		"pvardefs": [
+			{
+				"name": "pGroupTotals",
+				"order": 2,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 1,
+				"initval": "kFalse"
+			},
+			{
+				"name": "pProgressive",
+				"order": 3,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 2,
+				"initval": "kFalse"
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "listTotCalcs",
+				"order": 1,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$get_list_duration_scales",
+		"ident": 35,
+		"order": 49,
+		"pvardefs": [
+			{
+				"name": "pReturnCopy",
+				"order": 5,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "line",
+				"order": 3,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "Scale",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "Text",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100
+			}
+		]
+	},
+	{
+		"name": "$get_list_gantt_scales",
+		"ident": 36,
+		"order": 50,
+		"pvardefs": [
+			{
+				"name": "pReturnCopy",
+				"order": 5,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "line",
+				"order": 4,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "Scale",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "Text",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "$get_data_tree_info",
+		"ident": 10,
+		"order": 51,
+		"pvardefs": [
+			{
+				"name": "pResourceId",
+				"order": 8,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pOutIcon",
+				"order": 1,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pOutName",
+				"order": 2,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pOutEnterable",
+				"order": 3,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 4
+			},
+			{
+				"name": "pOutTextColor",
+				"order": 4,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 5
+			},
+			{
+				"name": "pOutNotes",
+				"order": 5,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 6
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "listCell",
+				"order": 6,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "name",
+				"order": 7,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "$get_data_resource",
+		"ident": 38,
+		"order": 52,
+		"pvardefs": [
+			{
+				"name": "pOutInfo",
+				"order": 1,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pResourceID",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 2,
+				"initval": "ivCurrentResource"
+			},
+			{
+				"name": "pGetChildren",
+				"order": 3,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 3,
+				"initval": "kFalse"
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$get_data_resource_name",
+		"ident": 29,
+		"order": 53,
+		"pvardefs": [
+			{
+				"name": "pResourceId",
+				"order": 1,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "listCell",
+				"order": 2,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "name",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			}
+		]
+	},
+	{
+		"name": "$get_data_resource_description",
+		"ident": 11,
+		"order": 54,
+		"pvardefs": [
+			{
+				"name": "pResourceId",
+				"order": 3,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "description",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100000000
+			},
+			{
+				"name": "listCell",
+				"order": 1,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$get_data_resource_phases",
+		"ident": 65,
+		"order": 55,
+		"pvardefs": [
+			{
+				"name": "pOutInfo",
+				"order": 1,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pResourceID",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 2,
+				"initval": "ivCurrentResource"
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$get_data_phase",
+		"ident": 39,
+		"order": 56,
+		"pvardefs": [
+			{
+				"name": "pOutInfo",
+				"order": 2,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pPhaseId",
+				"order": 1,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 2,
+				"initval": "ivCurrentPhase"
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$get_data_phase_fields",
+		"ident": 12,
+		"order": 57,
+		"pvardefs": [
+			{
+				"name": "pOutInfo",
+				"order": 1,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pPhaseId",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 2,
+				"initval": "ivCurrentPhase"
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "phaseInfo",
+				"order": 3,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$get_data_phase_rel",
+		"ident": 23,
+		"order": 58,
+		"pvardefs": [
+			{
+				"name": "pOutInfo",
+				"order": 1,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pPhaseId",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 2,
+				"initval": "ivCurrentPhase"
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$get_data_phase_susp",
+		"ident": 27,
+		"order": 59,
+		"pvardefs": [
+			{
+				"name": "pOutInfo",
+				"order": 1,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pPhaseId",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 2,
+				"initval": "ivCurrentPhase"
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$get_current_phase",
+		"ident": 59,
+		"order": 60,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$get_current_resource",
+		"ident": 60,
+		"order": 61,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "--- DEFINE LISTS ---",
+		"ident": 3,
+		"order": 62,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "define_calendar_list",
+		"ident": 0,
+		"order": 63,
+		"pvardefs": [
+			{
+				"name": "pList",
+				"order": 3,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pType",
+				"order": 4,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100,
+				"param": 2
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "Color",
+				"order": 10,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "Date",
+				"order": 5,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 6
+			},
+			{
+				"name": "Day",
+				"order": 8,
+				"type": "kInteger",
+				"subtype": "kShortint",
+				"sublen": 0
+			},
+			{
+				"name": "From",
+				"order": 1,
+				"type": "kDate",
+				"subtype": "kTime",
+				"sublen": 0
+			},
+			{
+				"name": "To",
+				"order": 2,
+				"type": "kDate",
+				"subtype": "kTime",
+				"sublen": 0
+			},
+			{
+				"name": "Type",
+				"order": 7,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "WorkingHours",
+				"order": 6,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "Year",
+				"order": 9,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 6
+			}
+		]
+	},
+	{
+		"name": "define_tree_list",
+		"ident": 1,
+		"order": 64,
+		"pvardefs": [
+			{
+				"name": "pList",
+				"order": 9,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pType",
+				"order": 10,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 2,
+				"initval": "kGanttListTree",
+				"desc": "kGanttListTree or kGanttListColumn"
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "Align",
+				"order": 11,
+				"type": "kInteger",
+				"subtype": "kShortint",
+				"sublen": 0,
+				"desc": "kCenterJst, kLeftJst or kRightJst\r"
+			},
+			{
+				"name": "Data",
+				"order": 17,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255
+			},
+			{
+				"name": "Enterable",
+				"order": 3,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"desc": "If true, the name can be modified\r"
+			},
+			{
+				"name": "Icon",
+				"order": 1,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"desc": "Icon to display for this item\r"
+			},
+			{
+				"name": "IsCategory",
+				"order": 4,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"desc": "Set this to true if row has child rows\r"
+			},
+			{
+				"name": "MaxWidth",
+				"order": 14,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"desc": "Maximum width of column in pixels"
+			},
+			{
+				"name": "MinWidth",
+				"order": 13,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"desc": "Minimum width of column in pixels"
+			},
+			{
+				"name": "Name",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100,
+				"desc": "Name of item\r"
+			},
+			{
+				"name": "Order",
+				"order": 8,
+				"type": "kNumber",
+				"subtype": "kFloatdp",
+				"sublen": 0,
+				"desc": "The number that determines the order based on which the nodes are sorted."
+			},
+			{
+				"name": "ParentID",
+				"order": 6,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"desc": "Id of parent group\r"
+			},
+			{
+				"name": "ResourceID",
+				"order": 7,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"desc": "Id of this group or task\r"
+			},
+			{
+				"name": "Text",
+				"order": 15,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 100,
+				"desc": "Text to be displayed in header"
+			},
+			{
+				"name": "TextColor",
+				"order": 5,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"desc": "Text color for the name.\r"
+			},
+			{
+				"name": "Width",
+				"order": 12,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"desc": "Width of column in pixels"
+			}
+		]
+	},
+	{
+		"name": "define_chart_list",
+		"ident": 8,
+		"order": 65,
+		"pvardefs": [
+			{
+				"name": "pList",
+				"order": 1,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pType",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 2
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "Color",
+				"order": 33,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "Date",
+				"order": 32,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 6
+			},
+			{
+				"name": "Duration",
+				"order": 15,
+				"type": "kNumber",
+				"subtype": "k2dp",
+				"sublen": 0
+			},
+			{
+				"name": "DurationChildren",
+				"order": 18,
+				"type": "kNumber",
+				"subtype": "k2dp",
+				"sublen": 0
+			},
+			{
+				"name": "DurationType",
+				"order": 16,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "EndDate",
+				"order": 6,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 6
+			},
+			{
+				"name": "EndPhaseID",
+				"order": 28,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "FieldList",
+				"order": 19,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "FieldNumber",
+				"order": 38,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "FontNumber",
+				"order": 41,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "FontSize",
+				"order": 42,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "FontStyle",
+				"order": 43,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "GroupValues",
+				"order": 39,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0
+			},
+			{
+				"name": "Holidays",
+				"order": 24,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "IsCategory",
+				"order": 22,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0
+			},
+			{
+				"name": "IsLocked",
+				"order": 17,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0
+			},
+			{
+				"name": "Label",
+				"order": 40,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255
+			},
+			{
+				"name": "LayerID",
+				"order": 37,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "Order",
+				"order": 21,
+				"type": "kNumber",
+				"subtype": "kFloatdp",
+				"sublen": 0
+			},
+			{
+				"name": "ParentID",
+				"order": 20,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "PhaseColor",
+				"order": 7,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "PhaseID",
+				"order": 4,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "Progress",
+				"order": 14,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "RelationDelay",
+				"order": 30,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "RelationID",
+				"order": 26,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "RelationType",
+				"order": 29,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "ResourceID",
+				"order": 3,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "SplitValue",
+				"order": 45,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0
+			},
+			{
+				"name": "StartDate",
+				"order": 5,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 6
+			},
+			{
+				"name": "StartPhaseID",
+				"order": 27,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "SuspensionID",
+				"order": 31,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "Text",
+				"order": 13,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255
+			},
+			{
+				"name": "TextBottom",
+				"order": 12,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255
+			},
+			{
+				"name": "TextColor",
+				"order": 8,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "TextLeft",
+				"order": 9,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255
+			},
+			{
+				"name": "TextRight",
+				"order": 10,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255
+			},
+			{
+				"name": "TextTop",
+				"order": 11,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255
+			},
+			{
+				"name": "TotalType",
+				"order": 36,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "Value",
+				"order": 44,
+				"type": "kNumber",
+				"subtype": "k2dp",
+				"sublen": 0
+			},
+			{
+				"name": "Width",
+				"order": 34,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "WorkingHours",
+				"order": 23,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			},
+			{
+				"name": "WorkingHoursExceptions",
+				"order": 25,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	}
+]

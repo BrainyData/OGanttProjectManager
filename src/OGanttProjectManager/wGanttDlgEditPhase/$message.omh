@@ -1,0 +1,17 @@
+Switch pMessage
+	Case 'str_after_load_instance'
+		;  called during string table loading after all fields have been loaded by our string table object
+		;  in here we build interface lists and deal with special case fields
+		Do ivGanttUI.$load_title_string('','',con(ivTreeList.Text,' / ',ivPhaseList.TextLeft))
+		;  fetch our interface lists
+		Do method loadDurationList
+	Case 'gantt_phase_changed'
+		Calculate ivParams as pParams
+		Do method loadPhaseDetails (pParams.pResourceId,pParams.pPhaseId)
+	Case 'gantt_phase_moved','gantt_phase_change_progress','gantt_phase_add_susp','gantt_phase_add_rel'
+		Do method loadPhaseDetails
+	Case 'gantt_set_language'
+		Do method loadFields
+End Switch
+
+Do inherited

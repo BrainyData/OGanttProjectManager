@@ -1,0 +1,15 @@
+;  check all modification lists
+;  when changes are made to a gantt chart after a build, oGantt records all changes
+;  these modifications can be fetched from oGantt in form of lists
+;  these lists are identical in format than the lists used to build the chart but have an extra column
+;  indicating the reason of the modification, i.e. added, modified, deleted
+;  the methods below will transfer these modifications to our DB smart lists
+
+;  Send to trace log {check_mod_list_all('[pMessage]')}
+If pLayerObj.$validref
+	Do method check_mod_list_resource (pLayerObj)
+	Do method check_mod_list_phase (pLayerObj)
+	Do method check_mod_list_rel (pLayerObj)
+	Do method check_mod_list_susp (pLayerObj)
+End If
+;  Send to trace log

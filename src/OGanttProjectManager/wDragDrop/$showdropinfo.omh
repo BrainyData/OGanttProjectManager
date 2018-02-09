@@ -1,0 +1,4 @@
+Calculate ivLog as con(ivLog,pDropInfo,chr(13))
+Redraw {Log}
+Calculate $cinst.$objs.Log.$lastsel as len(ivLog)
+Calculate $cinst.$objs.Log.$firstsel as len(ivLog)

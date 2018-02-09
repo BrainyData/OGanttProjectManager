@@ -1,0 +1,13 @@
+;  our duration is stored in a seperate instance var as we allow the user
+;  to change the display units
+Switch ivDurationScaleList.Scale
+	Case kGanttScaleDay
+		Calculate ivDuration as ivPhaseList.Duration/86400
+	Case kGanttScaleHour
+		Calculate ivDuration as ivPhaseList.Duration/3600
+	Case kGanttScaleMinute
+		Calculate ivDuration as ivPhaseList.Duration/60
+End Switch
+Calculate ivEffective as ivPhaseList.DurationType=kGanttTypeDurEff
+Do refDuration.$redraw()
+Do refEffective.$redraw()

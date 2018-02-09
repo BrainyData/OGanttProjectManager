@@ -1,0 +1,22 @@
+{
+	"ident": 1008,
+	"order": 2,
+	"properties": {
+		"cascade": "",
+		"checked": false,
+		"enabled": true,
+		"fontstyle": "kPlain",
+		"helpfile": 0,
+		"helptext": "",
+		"iconid": 10020,
+		"macshortcutkey": "Cmnd+Shift+I",
+		"text": {
+			"type": 0,
+			"calc": "New Resource"
+		},
+		"unixshortcutkey": "Ctrl+Shift+I",
+		"userinfo": "",
+		"users": "12345678",
+		"winshortcutkey": "Ctrl+Shift+I"
+	}
+}

@@ -1,0 +1,380 @@
+[
+	{
+		"name": "$construct",
+		"ident": 1,
+		"order": 1,
+		"pvardefs": [
+			{
+				"name": "pGanttId",
+				"order": 3,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 1,
+				"desc": "If zero create a new chart"
+			},
+			{
+				"name": "pGanttName",
+				"order": 4,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 80,
+				"param": 2
+			},
+			{
+				"name": "pSingleRecord",
+				"order": 5,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pCreateSampleData",
+				"order": 2,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 4,
+				"initval": "kFalse"
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "lvDate",
+				"order": 1,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$destruct",
+		"ident": 2,
+		"order": 2,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$canclose",
+		"ident": 13,
+		"order": 3,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$event",
+		"ident": 5,
+		"order": 4,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "theLayer",
+				"order": 1,
+				"type": "kObjectref",
+				"subtype": "oGanttObject",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$message",
+		"ident": 11,
+		"order": 5,
+		"pvardefs": [
+			{
+				"name": "pCallerClass",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pCallerObj",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pLayerObj",
+				"order": 7,
+				"type": "kObjectref",
+				"subtype": "oGanttLayerObject",
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pMessage",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255,
+				"param": 4
+			},
+			{
+				"name": "pParams",
+				"order": 4,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 5
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "bitmap",
+				"order": 5,
+				"type": "kPicture",
+				"subtype": 0,
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$get_layer",
+		"ident": 10,
+		"order": 6,
+		"pvardefs": [
+			{
+				"name": "pLayerID",
+				"order": 1,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$get_gantt",
+		"ident": 4,
+		"order": 7,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$get_current_phase",
+		"ident": 6,
+		"order": 8,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "theLayer",
+				"order": 1,
+				"type": "kObjectref",
+				"subtype": "oGanttObject",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "$get_current_resource",
+		"ident": 9,
+		"order": 9,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "theLayer",
+				"order": 1,
+				"type": "kObjectref",
+				"subtype": "oGanttObject",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "--- private ---",
+		"ident": 7,
+		"order": 10,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		],
+		"empty": true
+	},
+	{
+		"name": "doSetView",
+		"ident": 12,
+		"order": 11,
+		"pvardefs": [
+			{
+				"name": "pCallerClass",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pCallerObj",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pLayerObj",
+				"order": 3,
+				"type": "kObjectref",
+				"subtype": "oGanttLayerObject",
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pMessage",
+				"order": 4,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255,
+				"param": 4
+			},
+			{
+				"name": "pParams",
+				"order": 5,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 5
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "phaseId",
+				"order": 7,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"initval": "ivLayer.$get_current_phase"
+			},
+			{
+				"name": "resourceId",
+				"order": 6,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"initval": "ivLayer.$get_current_resource"
+			}
+		]
+	},
+	{
+		"name": "doSetScale",
+		"ident": 0,
+		"order": 12,
+		"pvardefs": [
+			{
+				"name": "pScale",
+				"order": 3,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "MajorDateFormat",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 80,
+				"initval": "''"
+			},
+			{
+				"name": "MinorColWidth",
+				"order": 4,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"initval": "0"
+			},
+			{
+				"name": "MinorDateFormat",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 80,
+				"initval": "''"
+			},
+			{
+				"name": "SnapMinutes",
+				"order": 5,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"initval": "60",
+				"desc": "CHANGE_29JUN10_1"
+			}
+		]
+	},
+	{
+		"name": "doExpandOrCollapse",
+		"ident": 3,
+		"order": 13,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "isExpanded",
+				"order": 2,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0
+			},
+			{
+				"name": "lvResourceList",
+				"order": 1,
+				"type": "kList",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	},
+	{
+		"name": "RedrawGantt",
+		"ident": 8,
+		"order": 15,
+		"pvardefs": [
+			{
+				"name": "pFirstLoad",
+				"order": 1,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 1,
+				"initval": "kFalse"
+			}
+		],
+		"lvardefs": [
+
+		]
+	}
+]

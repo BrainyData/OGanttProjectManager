@@ -1,0 +1,5 @@
+On evDisabled,evEnabled
+	Switch $cobj().$objtype
+		Case kEntry
+			Calculate $cobj.$fieldstyle as pick($cobj.$enabled,"CtrlEditTextDis","CrlEditText")
+	End Switch

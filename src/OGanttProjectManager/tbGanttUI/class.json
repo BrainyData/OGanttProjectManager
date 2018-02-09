@@ -1,0 +1,242 @@
+{
+	"classtype": "kToolbar",
+	"internalversion": 0,
+	"designtaskname": "Startup_Task",
+	"nextident": 1045,
+	"cvardefs": [
+		{
+			"name": "kViewGraph",
+			"order": 2,
+			"type": "kInteger",
+			"subtype": "kShortint",
+			"sublen": 0,
+			"initval": "1"
+		},
+		{
+			"name": "kViewNormal",
+			"order": 1,
+			"type": "kInteger",
+			"subtype": "kShortint",
+			"sublen": 0,
+			"initval": "0"
+		},
+		{
+			"name": "kViewPhase",
+			"order": 4,
+			"type": "kInteger",
+			"subtype": "kShortint",
+			"sublen": 0,
+			"initval": "3"
+		},
+		{
+			"name": "kViewTotals",
+			"order": 3,
+			"type": "kInteger",
+			"subtype": "kShortint",
+			"sublen": 0,
+			"initval": "2"
+		}
+	],
+	"ivardefs": [
+		{
+			"name": "ivGanttUI",
+			"order": 6,
+			"type": "kObjectref",
+			"subtype": "oGanttStringTable",
+			"sublen": 0,
+			"initval": "$objects.oGanttUI.$newref($cinst)"
+		},
+		{
+			"name": "ivIsExpanded",
+			"order": 7,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0
+		},
+		{
+			"name": "ivIsModeSplit",
+			"order": 9,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0
+		},
+		{
+			"name": "ivScale",
+			"order": 14,
+			"type": "kInteger",
+			"subtype": "kShortint",
+			"sublen": 0,
+			"initval": "kGanttScaleDay"
+		},
+		{
+			"name": "ivStrTable",
+			"order": 5,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 255,
+			"initval": "\"\"",
+			"desc": "Sub-classes can change this in $construct prior to calling Do inherited"
+		},
+		{
+			"name": "ivView",
+			"order": 10,
+			"type": "kInteger",
+			"subtype": "kShortint",
+			"sublen": 0,
+			"initval": "kViewNormal"
+		},
+		{
+			"name": "refExpand",
+			"order": 2,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.btnExpand"
+		},
+		{
+			"name": "refModeNormal",
+			"order": 8,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.btnModeNormal"
+		},
+		{
+			"name": "refModeSplit",
+			"order": 4,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.btnModeSplit"
+		},
+		{
+			"name": "refScale15Minutes",
+			"order": 22,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.btnScale15Minutes"
+		},
+		{
+			"name": "refScale2Hours",
+			"order": 20,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.btnScale2Hours",
+			"desc": "CHANGE_2013_08_23"
+		},
+		{
+			"name": "refScale4Hours",
+			"order": 1,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.btnScale4Hours"
+		},
+		{
+			"name": "refScale6Hours",
+			"order": 21,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.btnScale6Hours",
+			"desc": "CHANGE_2013_08_23"
+		},
+		{
+			"name": "refScaleDays",
+			"order": 17,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.btnScaleDays"
+		},
+		{
+			"name": "refScaleHours",
+			"order": 16,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.btnScaleHours"
+		},
+		{
+			"name": "refScaleMinutes",
+			"order": 15,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.btnScaleMinutes"
+		},
+		{
+			"name": "refScaleMonths",
+			"order": 19,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.btnScaleMonths"
+		},
+		{
+			"name": "refScaleWeeks",
+			"order": 18,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.btnScaleWeeks"
+		},
+		{
+			"name": "refViewGraph",
+			"order": 12,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.btnViewGraph"
+		},
+		{
+			"name": "refViewNormal",
+			"order": 11,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.btnViewNormal"
+		},
+		{
+			"name": "refViewPhase",
+			"order": 3,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.btnViewPhase"
+		},
+		{
+			"name": "refViewTotals",
+			"order": 13,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.btnViewTotals"
+		}
+	],
+	"properties": {
+		"allowdrag": false,
+		"allowresize": false,
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2008-08-19 17:02:57",
+		"desc": "",
+		"editor": "",
+		"editordata": "",
+		"enabled": true,
+		"external": true,
+		"helpfile": 0,
+		"inheritedorder": 0,
+		"initialdockingarea": "kDockingAreaTop",
+		"issupercomponent": false,
+		"moddate": "2013-10-10 14:24:45",
+		"showascheckedout": false,
+		"title": "",
+		"userinfo": "",
+		"users": "12345678",
+		"version": ""
+	}
+}

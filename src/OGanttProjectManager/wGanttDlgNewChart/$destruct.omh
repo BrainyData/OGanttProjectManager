@@ -1,0 +1,4 @@
+If ivGanttData.$validref
+	Do ivGanttData.$deleteref()
+End If
+Do inherited

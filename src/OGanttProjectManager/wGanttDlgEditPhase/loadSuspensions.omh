@@ -1,0 +1,3 @@
+;  build list of suspension periods
+Do ivLayer.$get_data_phase_susp(ivSuspensionsList,ivPhaseList.PhaseId) Returns #F
+Do refSuspensionsList.$redraw()

@@ -1,0 +1,22 @@
+{
+	"ident": 1013,
+	"order": 6,
+	"properties": {
+		"cascade": "",
+		"checked": false,
+		"enabled": true,
+		"fontstyle": "kPlain",
+		"helpfile": 0,
+		"helptext": "",
+		"iconid": 10040,
+		"macshortcutkey": "Cmnd+Shift+M",
+		"text": {
+			"type": 0,
+			"calc": "Months"
+		},
+		"unixshortcutkey": "Ctrl+Shift+M",
+		"userinfo": "",
+		"users": "12345678",
+		"winshortcutkey": "Ctrl+Shift+M"
+	}
+}

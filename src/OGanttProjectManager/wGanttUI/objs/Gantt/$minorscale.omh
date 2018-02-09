@@ -1,0 +1,2 @@
+;  called by report for setting report object properties
+Quit method ivScaleMinor

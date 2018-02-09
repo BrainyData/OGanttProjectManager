@@ -1,0 +1,21 @@
+{
+	"ident": 1033,
+	"order": 2,
+	"objtype": "kToolCommandButton",
+	"properties": {
+		"enabled": true,
+		"helpfile": 0,
+		"iconid": 10050,
+		"text": {
+			"type": 0,
+			"calc": "Copy"
+		},
+		"tooltip": {
+			"type": 0,
+			"calc": "Copy image of chart to clipboard"
+		},
+		"userinfo": "",
+		"users": "12345678",
+		"varwidthtextplatforms": "kVWTMSWindows,kVWTmacOS,kVWTUnix"
+	}
+}

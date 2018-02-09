@@ -1,0 +1,13 @@
+;  return our default legend list
+;  our legend and total calc lists are hard-coded for demonstration purposes
+;  and it may be that hard-coded legend lists are sufficient for most applications
+;  but there is no reason why a legend list could not be user defined and stored in a DB
+;  this would however require some additional work throughout the interface
+;  that deals with editing legend values
+
+Do method define_chart_list (listLegends,kGanttListLegend)
+
+;  example legends
+Do listLegends.$add(StringTable.$gettext('ogantt.LegendEquipment'),kDarkGreen)
+Do listLegends.$add(StringTable.$gettext('ogantt.LegendWages'),kRed)
+Quit method listLegends

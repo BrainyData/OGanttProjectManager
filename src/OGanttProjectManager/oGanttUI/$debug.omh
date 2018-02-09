@@ -1,0 +1,3 @@
+If pError<0
+	Send to trace log {error in oGanttUI loading object [pObjRef.$ident] with prefix '[pPrefix]'}
+End If

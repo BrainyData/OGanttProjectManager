@@ -1,0 +1,156 @@
+[
+	{
+		"name": "G_SEQ",
+		"order": 1,
+		"desc": "Unique record #",
+		"type": "kSequence",
+		"subtype": 0,
+		"sublen": 0,
+		"nonull": true,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "G_CREATED",
+		"order": 2,
+		"desc": "Date record was created",
+		"type": "kDate",
+		"subtype": "kDatetime",
+		"sublen": 7,
+		"nonull": true,
+		"initnull": true,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "G_MODIFIED",
+		"order": 3,
+		"desc": "Date record was modified",
+		"type": "kDate",
+		"subtype": "kDatetime",
+		"sublen": 7,
+		"nonull": true,
+		"initnull": true,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "G_GANTT_ID",
+		"order": 4,
+		"desc": "Unique ID of this gantt chart, all gantt records are related to this",
+		"type": "kInteger",
+		"subtype": "k32bitint",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "G_NAME",
+		"order": 5,
+		"desc": "Unique name",
+		"type": "kCharacter",
+		"subtype": "kSimplechar",
+		"sublen": 80,
+		"nonull": true,
+		"initnull": true,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "G_START_DATE",
+		"order": 6,
+		"desc": "Initial display date for chart",
+		"type": "kDate",
+		"subtype": "kDatetime",
+		"sublen": 1,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "G_NOTES",
+		"order": 7,
+		"desc": "For your own use",
+		"type": "kCharacter",
+		"subtype": "kSimplechar",
+		"sublen": 100000000,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "G_SPARE",
+		"order": 8,
+		"desc": "",
+		"type": "kInteger",
+		"subtype": "k32bitint",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "G_IS_SINGLE_RECORD",
+		"order": 9,
+		"desc": "If true all gantt data is stored in this record as list data in the columns that follow",
+		"type": "kBoolean",
+		"subtype": 0,
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "G_fGanttResources",
+		"order": 10,
+		"desc": "",
+		"type": "kList",
+		"subtype": "",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": 0
+	},
+	{
+		"name": "G_fGanttPhases",
+		"order": 11,
+		"desc": "",
+		"type": "kList",
+		"subtype": "",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": 0
+	},
+	{
+		"name": "G_fGanttRelations",
+		"order": 12,
+		"desc": "",
+		"type": "kList",
+		"subtype": "",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": 0
+	},
+	{
+		"name": "G_fGanttSuspensions",
+		"order": 13,
+		"desc": "",
+		"type": "kList",
+		"subtype": "",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": 0
+	},
+	{
+		"name": "G_fGanttMarkers",
+		"order": 14,
+		"desc": "",
+		"type": "kList",
+		"subtype": "",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": 0
+	}
+]

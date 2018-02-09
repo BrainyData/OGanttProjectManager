@@ -1,0 +1,10 @@
+Do refGantt.$tlredraw(pick(pFirstLoad,kGanttNoFirstLoad,kGanttIsFirstLoad))
+Do refGantt.$gredraw(pick(pFirstLoad,kGanttNoFirstLoad,kGanttIsFirstLoad))
+Switch ivView     ;; 11062009_CHANGE begins
+	Case 'gantt_view_graph'
+		Do refGantt.$grsetgraphtype(ivGraphType)
+		Do refGantt.$grredraw()
+	Case 'gantt_view_totals'
+		Do refGantt.$totrecalc()
+		Do refGantt.$totredraw()
+End Switch     ;; 11062009_CHANGE ends

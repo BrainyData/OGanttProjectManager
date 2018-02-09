@@ -1,0 +1,275 @@
+[
+	{
+		"name": "$construct",
+		"ident": 1,
+		"order": 1,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$destruct",
+		"ident": 2,
+		"order": 2,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "$message",
+		"ident": 6,
+		"order": 3,
+		"pvardefs": [
+			{
+				"name": "pCallerClass",
+				"order": 1,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 1
+			},
+			{
+				"name": "pCallerObj",
+				"order": 2,
+				"type": "kItemref",
+				"subtype": "",
+				"sublen": 0,
+				"param": 2
+			},
+			{
+				"name": "pLayerObj",
+				"order": 5,
+				"type": "kObjectref",
+				"subtype": "oGanttLayerObject",
+				"sublen": 0,
+				"param": 3
+			},
+			{
+				"name": "pMessage",
+				"order": 3,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255,
+				"param": 4
+			},
+			{
+				"name": "pParams",
+				"order": 4,
+				"type": "kFieldreference",
+				"subtype": 0,
+				"sublen": 0,
+				"param": 5
+			}
+		],
+		"lvardefs": [
+
+		]
+	},
+	{
+		"name": "InitPrintParams",
+		"ident": 0,
+		"order": 5,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "ColsToPrint",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "kShortint",
+				"sublen": 0,
+				"initval": "4"
+			},
+			{
+				"name": "Copies",
+				"order": 13,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"initval": "1"
+			},
+			{
+				"name": "DiagMaxDim",
+				"order": 4,
+				"type": "kNumber",
+				"subtype": "k3dp",
+				"sublen": 0,
+				"initval": "3.000"
+			},
+			{
+				"name": "DiagMinDim",
+				"order": 3,
+				"type": "kNumber",
+				"subtype": "k3dp",
+				"sublen": 0,
+				"initval": "1.000"
+			},
+			{
+				"name": "EndDate",
+				"order": 7,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 1
+			},
+			{
+				"name": "GHlines",
+				"order": 17,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"initval": "kTrue"
+			},
+			{
+				"name": "GVLines",
+				"order": 18,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"initval": "kTrue"
+			},
+			{
+				"name": "Landscape",
+				"order": 12,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"initval": "kTrue"
+			},
+			{
+				"name": "MarginDown",
+				"order": 11,
+				"type": "kNumber",
+				"subtype": "k3dp",
+				"sublen": 0,
+				"initval": "1.000"
+			},
+			{
+				"name": "MarginLeft",
+				"order": 9,
+				"type": "kNumber",
+				"subtype": "k3dp",
+				"sublen": 0,
+				"initval": "1.000"
+			},
+			{
+				"name": "MarginRight",
+				"order": 8,
+				"type": "kNumber",
+				"subtype": "k3dp",
+				"sublen": 0,
+				"initval": "1.000"
+			},
+			{
+				"name": "MarginUp",
+				"order": 10,
+				"type": "kNumber",
+				"subtype": "k3dp",
+				"sublen": 0,
+				"initval": "1.000"
+			},
+			{
+				"name": "Paper",
+				"order": 19,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "PrintSequence",
+				"order": 5,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"initval": "kFalse"
+			},
+			{
+				"name": "PrintTreeAllPages",
+				"order": 1,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"initval": "kFalse"
+			},
+			{
+				"name": "Scale",
+				"order": 14,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"initval": "100"
+			},
+			{
+				"name": "StartDate",
+				"order": 6,
+				"type": "kDate",
+				"subtype": "kDatetime",
+				"sublen": 1
+			},
+			{
+				"name": "THLines",
+				"order": 15,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"initval": "kTrue"
+			},
+			{
+				"name": "TVLines",
+				"order": 16,
+				"type": "kBoolean",
+				"subtype": 0,
+				"sublen": 0,
+				"initval": "kFalse"
+			}
+		]
+	},
+	{
+		"name": "LoadPaperList",
+		"ident": 4,
+		"order": 6,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+			{
+				"name": "line",
+				"order": 3,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "Paper",
+				"order": 1,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0
+			},
+			{
+				"name": "PaperName",
+				"order": 2,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255
+			}
+		]
+	},
+	{
+		"name": "PaperChanged",
+		"ident": 5,
+		"order": 7,
+		"pvardefs": [
+
+		],
+		"lvardefs": [
+
+		]
+	}
+]

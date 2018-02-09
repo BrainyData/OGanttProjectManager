@@ -1,0 +1,6 @@
+;  return the list of relations
+;  the output list must have been defined by the caller according to OGantt's requirements     ;; we know what format that is
+
+For dataRelations.$line from 1 to dataRelations.$linecount step 1
+	Do pOutRelations.$add(dataRelations.GREL_GREL_ID,dataRelations.GREL_FROM_GPHA_ID,dataRelations.GREL_TO_GPHA_ID,dataRelations.GREL_TYPE,dataRelations.GREL_DELAY)
+End For

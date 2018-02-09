@@ -1,0 +1,4 @@
+;  return the description displayed in the tree for the specified resource
+Do $cinst.$tlgetcelldata(pResourceId,4) Returns listCell
+Calculate description as listCell.[1].Text
+Quit method description

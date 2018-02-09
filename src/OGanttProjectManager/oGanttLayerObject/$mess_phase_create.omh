@@ -1,0 +1,24 @@
+;  action     ;; create a new phase
+;       ;; if no resource ID is specified we create a new resource for the phase
+;       ;; if a resource is specified we add the phase to the existing resource
+;       ;; in the end we rebuild everything
+;  params     ;; pResouceId=if specified phase is added to the resource
+;       ;; pNewStartDate=start date and time of the phase
+;       ;; pNewEndDate=end date and time of the phase
+
+If theResourceId
+	;  if we are adding to existing resource we must still add the resource data to the build lists
+	Do $cinst.$get_data_resource(listResources,theResourceId)
+	Do $cinst.$gsetlist(listResources,kGanttListResource)
+Else
+	;  create a new resource for the phase
+	Do method add_resource (pCallerObj,0,kFalse,theNewStartDate,theNewEndDate) Returns theResourceId
+End If
+
+;  now we add the phase
+Do method add_phase (pCallerObj,theResourceId,kFalse,theNewStartDate,theNewEndDate) Returns newPhaseId
+
+;  update everyone
+Do method rebuild_all (pCallerObj,theResourceId)
+
+Quit method newPhaseId

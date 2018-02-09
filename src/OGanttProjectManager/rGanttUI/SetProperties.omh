@@ -1,0 +1,80 @@
+
+;  layer properties and data
+Calculate refGanttPrint.$layerstringlist as pLayer.$layerid
+Calculate refGanttPrint.$layertree as pLayer.$layerid
+Calculate refGanttPrint.$layergantt as pLayer.$layerid
+Calculate refGanttPrint.$gdaymonthname as pLayer.$get_list_daymonth()
+If pGanttUI.$showdiagram|pGanttUI.$showtotsection
+	Calculate refGanttPrint.$legendstringlist as pLayer.$get_list_legend()
+End If
+If pGanttUI.$showtotsection
+	Calculate refGanttPrint.$totcalclist as pLayer.$get_list_totcalc()
+End If
+
+;  gantt UI specific properties
+Calculate refGanttPrint.$grcurvedrawbox as pGanttUI.$grcurvedrawbox
+Calculate refGanttPrint.$grcurvesum as pGanttUI.$grcurvesum
+Calculate refGanttPrint.$majorscale as pGanttUI.$majorscale
+Calculate refGanttPrint.$minorscale as pGanttUI.$minorscale
+Calculate refGanttPrint.$majorscaledateformat as pGanttUI.$majorscaledateformat     ;; CHANGE_16DEC08_1 begins
+Calculate refGanttPrint.$minorscaledateformat as pGanttUI.$minorscaledateformat
+Calculate refGanttPrint.$minorscalecolwidth as pGanttUI.$minorscalecolwidth     ;; CHANGE_16DEC08_1 ends
+Calculate refGanttPrint.$majorscaleshowyear as pGanttUI.$majorscaleshowyear
+Calculate refGanttPrint.$tlfontname as pGanttUI.$tlfontname
+Calculate refGanttPrint.$tlfontsize as pGanttUI.$tlfontsize
+Calculate refGanttPrint.$tlfontstyle as pGanttUI.$tlfontstyle
+Calculate refGanttPrint.$headfontname as pGanttUI.$headfontname
+Calculate refGanttPrint.$headfontsize as pGanttUI.$headfontsize
+Calculate refGanttPrint.$headfontstyle as pGanttUI.$headfontstyle
+Calculate refGanttPrint.$gfontname as pGanttUI.$gfontname
+Calculate refGanttPrint.$gfontsize as pGanttUI.$gfontsize
+Calculate refGanttPrint.$gfontstyle as pGanttUI.$gfontstyle
+Calculate refGanttPrint.$calfontname as pGanttUI.$calfontname
+Calculate refGanttPrint.$calfontsize as pGanttUI.$calfontsize
+Calculate refGanttPrint.$calfontstyle as pGanttUI.$calfontstyle
+Calculate refGanttPrint.$graphtype as pGanttUI.$graphtype
+Calculate refGanttPrint.$numdecimal as pGanttUI.$numdecimal
+Calculate refGanttPrint.$showdiagram as pGanttUI.$showdiagram
+Calculate refGanttPrint.$showtotsection as pGanttUI.$showtotsection
+Calculate refGanttPrint.$gbarstyle as pGanttUI.$gbarstyle
+Calculate refGanttPrint.$gridhlinestyle as pGanttUI.$gridhlinestyle     ;; CHANGE_29JUN10_2 begins
+Calculate refGanttPrint.$gridhlinecolor as pGanttUI.$gridhlinecolor
+Calculate refGanttPrint.$gridvlinestyle as pGanttUI.$gridvlinestyle
+Calculate refGanttPrint.$gridvlinecolor as pGanttUI.$gridvlinecolor     ;; CHANGE_29JUN10_2 ends
+Calculate refGanttPrint.$grellinestyle as pGanttUI.$grellinestyle     ;; CHANGE_29JUN10_3
+Calculate refGanttPrint.$grscalefontname as pGanttUI.$grscalefontname     ;; CHANGE_29JUN10_4 begins
+Calculate refGanttPrint.$grscalefontsize as pGanttUI.$grscalefontsize
+Calculate refGanttPrint.$grscalefontstyle as pGanttUI.$grscalefontstyle
+Calculate refGanttPrint.$grscalecolor as pGanttUI.$grscalecolor     ;; CHANGE_29JUN10_4 ends
+
+;  printing specific properties
+Calculate refGanttPrint.$tlshowvlines as pPrintParams.TVLines
+Calculate refGanttPrint.$gshowvlines as pPrintParams.GVLines
+Calculate refGanttPrint.$tlshowhlines as pPrintParams.THLines
+Calculate refGanttPrint.$gshowhlines as pPrintParams.GHLines
+Calculate refGanttPrint.$printtreeallpages as pPrintParams.PrintTreeAllPages
+Calculate refGanttPrint.$colstoprint as pPrintParams.ColsToPrint
+Calculate refGanttPrint.$diagmindim as pPrintParams.DiagMinDim
+Calculate refGanttPrint.$diagmaxdim as pPrintParams.DiagMaxDim
+Calculate refGanttPrint.$printsequence as pPrintParams.PrintSequence
+Calculate refGanttPrint.$startdate as pPrintParams.StartDate
+Calculate refGanttPrint.$enddate as pPrintParams.EndDate
+Calculate refGanttPrint.$marginright as pPrintParams.MarginRight
+Calculate refGanttPrint.$marginleft as pPrintParams.MarginLeft
+Calculate refGanttPrint.$marginup as pPrintParams.MarginUp
+Calculate refGanttPrint.$margindown as pPrintParams.MarginDown
+;       ;; 10062009_CHANGE new report positioning $printposmode makes this obsolete
+;  Calculate $cinst.$rightmargin as pPrintParams.MarginRight-0.01     ;; fixes small inaccuracy between OGantt and Omnis
+;  Calculate $cinst.$leftmargin as pPrintParams.MarginLeft
+;  Calculate $cinst.$topmargin as pPrintParams.MarginUp
+;  Calculate $cinst.$bottommargin as pPrintParams.MarginDown-0.01     ;; fixes small inaccuracy between OGantt and Omnis
+;  print options
+Calculate $cinst.$orientation as pick(pPrintParams.Landscape,kOrientPortrait,kOrientLandscape)
+Calculate $cinst.$copies as pPrintParams.Copies
+Calculate $cinst.$scale as pPrintParams.Scale
+Calculate $cinst.$paper as pPrintParams.Paper
+
+;       ;; CHANGE_20130819_2 transfer marker list to print object
+Do pGanttUI.$getmarkerlist(markerList,markersBehind)
+Calculate refGanttPrint.$markerlist as markerList
+Calculate refGanttPrint.$markersbehind as markersBehind

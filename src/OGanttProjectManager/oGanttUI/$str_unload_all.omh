@@ -1,0 +1,5 @@
+;  unload our string table
+For cvTableList.$line from 1 to cvTableList.$linecount step 1
+	Do StringTable.$unloadstringtable(cvTableList.TableName)
+End For
+Do cvTableList.$define()

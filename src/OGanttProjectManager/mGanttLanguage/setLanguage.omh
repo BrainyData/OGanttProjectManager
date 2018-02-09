@@ -1,0 +1,2 @@
+Do ivGanttUI.$str_set_language(pObj().$name)
+Do $cinst.$set_fields

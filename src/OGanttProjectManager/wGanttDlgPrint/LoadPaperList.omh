@@ -1,0 +1,9 @@
+Calculate line as pick(cvPaperList.$line>0,1,cvPaperList.$line)
+Do cvPaperList.$define(Paper,PaperName)
+Do cvPaperList.$add(kPaA4,"A4")
+Do cvPaperList.$add(kPaA3,"A3")
+Do cvPaperList.$add(kPaA2,"A2")
+Do cvPaperList.$add(kPaUsLetter,"US Letter")
+Do cvPaperList.$add(kPaTabloid,"Tabloid")
+Calculate cvPaperList.$line as line
+Do method PaperChanged

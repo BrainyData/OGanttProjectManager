@@ -1,0 +1,6 @@
+;  return the list of suspensions
+;  the output list must have been defined by the caller according to OGantt's requirements     ;; we know what format that is
+
+For dataSuspensions.$line from 1 to dataSuspensions.$linecount step 1
+	Do pOutSuspensions.$add(dataSuspensions.GSUS_GRES_ID,dataSuspensions.GSUS_GPHA_ID,dataSuspensions.GSUS_GSUS_ID,dataSuspensions.GSUS_START_DATE,dataSuspensions.GSUS_END_DATE)
+End For

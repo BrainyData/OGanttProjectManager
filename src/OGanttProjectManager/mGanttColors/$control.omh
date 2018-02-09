@@ -1,0 +1,8 @@
+On evClick
+	If $cobj().$name="More"
+		;  qqq
+	Else
+		Calculate pPhaseColor as kDark[$cobj().$name]
+		Do ivGanttUI.$make_params(pPhaseColor.$ref) Returns params
+		Do $topwind.$message($cinst,$cobj,$topwind.$get_layer(),"gantt_phase_set_color",params)
+	End If

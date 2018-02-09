@@ -1,0 +1,31 @@
+;  action     ;; add a relationship between two phases
+;       ;; first we attempt to add the relation to the layer and test the result
+;       ;; if everything is ok we can update everything
+;  params     ;; pPhaseFromId=create relation from this phase
+;       ;; pPhaseToId=to this phase
+;       ;; pType=the type of the relationship
+;       ;; pDelay=delay of relationship in seconds
+
+;  get a new relation ID
+Calculate theRelationId as ivGanttData.$get_new_phase_rel_id()
+
+;  add the relation
+Do $cinst.$gaddrelation(theRelationId,thePhaseFromId,thePhaseToId,theType,theDelay) Returns result
+Switch result
+	Case kGanttRelAddErrCycle     ;; Attempt to create a circular relation. Operation Cancelled.
+		Do ivGanttUI.$show_message(kTrue,'messErrRelAddCycle','messTitleError')
+	Case kGanttRelAddErrRelated     ;; Attempt to create a second relation. Operation Cancelled.
+		Do ivGanttUI.$show_message(kTrue,'messErrRelAddRelated','messTitleError')
+	Case kGanttRelAddErrParam     ;; Parameter error creating a relation. Operation Cancelled.
+		Do ivGanttUI.$show_message(kTrue,'messErrRelAddParam','messTitleError')
+	Case kGanttRelAddOk     ;; ok!
+		;  we may need to update columns in the left-hand tree
+		If pCallerObj
+			Do method phase_modified (pCallerObj,thePhaseFromId)
+			Do method phase_modified (pCallerObj,thePhaseToId)
+		End If
+End Switch
+If pCallerObj
+	Do pCallerObj.$gredraw()
+End If
+Quit method theRelationId

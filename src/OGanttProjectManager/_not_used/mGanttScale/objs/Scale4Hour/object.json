@@ -1,0 +1,22 @@
+{
+	"ident": 1010,
+	"order": 3,
+	"properties": {
+		"cascade": "",
+		"checked": false,
+		"enabled": true,
+		"fontstyle": "kPlain",
+		"helpfile": 0,
+		"helptext": "",
+		"iconid": 10039,
+		"macshortcutkey": "Cmnd+Shift+J",
+		"text": {
+			"type": 0,
+			"calc": "4 Hours"
+		},
+		"unixshortcutkey": "Ctrl+Shift+J",
+		"userinfo": "",
+		"users": "12345678",
+		"winshortcutkey": "Ctrl+Shift+J"
+	}
+}

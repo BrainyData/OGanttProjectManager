@@ -1,0 +1,8 @@
+
+If len(pPrefix)
+	Calculate prefix as pPrefix
+End If
+Calculate pObjRef.$text as StringTable.$gettext(text_id)
+If cvDebug
+	Do $cinst.$debug(pObjRef,pObjRef.$text)
+End If

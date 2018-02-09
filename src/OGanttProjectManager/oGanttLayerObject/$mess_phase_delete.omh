@@ -1,0 +1,25 @@
+;  action     ;; delete current or specified phase
+;       ;; and redraw the control
+;  params     ;; (none or pPhaseId and pResourceId)
+;       ;; pPhaseId=phase to be deleted
+;       ;; pResourceId=resource phase belongs to
+
+;  these two calls willl only append and assign the value to pParams if it isn't already there
+Do ivGanttUI.$append_param_named(pParams,'pResourceId',ivCurrentResource.$ref,kFalse)
+Do ivGanttUI.$append_param_named(pParams,'pPhaseId',ivCurrentPhase.$ref,kFalse)
+
+If pParams.pPhaseId
+	;  clear current phase?
+	If ivCurrentPhase=pParams.pPhaseId
+		Calculate ivCurrentPhase as 0
+	End If
+	
+	;  delete the current phase
+	Do $cinst.$gdelphase(pParams.pPhaseId)
+	
+	;  update control
+	If pCallerObj
+		Do method redraw_control (pCallerObj)
+		Do method upd_tree_columns (pCallerObj,pParams.pResourceId)
+	End If
+End If

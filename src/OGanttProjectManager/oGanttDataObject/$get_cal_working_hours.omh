@@ -1,0 +1,30 @@
+;  return list of working hours
+;  the output list must have been defined by the caller according to OGantt's requirements     ;; we know what format that is
+
+If pStandardOnly
+	;  only return un-dated working hours
+	For dataCalWorkingHours.$line from 1 to dataCalWorkingHours.$linecount step 1
+		If dataCalWorkingHours.GCWH_DATE
+		Else
+			Do pOutWorkHours.$add(dataCalWorkingHours.GCWH_FROM,dataCalWorkingHours.GCWH_TO)
+		End If
+	End For
+Else
+	;  return dated working hours where date is greater than specified date
+	;  our working hours list should already be sorted by date
+	
+	;  find first row where date is greater than supplied date
+	Do dataCalWorkingHours.$search($ref.GCWH_DATE>pInOutDate,1,0,0,0) Returns dataCalWorkingHours.$line
+	If dataCalWorkingHours.$line
+		Calculate pInOutDate as dataCalWorkingHours.GCWH_DATE
+		;  loop through rows adding to output list until date changes
+		For dataCalWorkingHours.$line from dataCalWorkingHours.$line to dataCalWorkingHours.$linecount step 1
+			If dataCalWorkingHours.GCWH_DATE=pInOutDate
+				Do pOutWorkHours.$add(dataCalWorkingHours.GCWH_FROM,dataCalWorkingHours.GCWH_TO)
+			Else
+				Break to end of loop
+			End If
+		End For
+	End If
+End If
+Quit method pOutWorkHours.$linecount>0

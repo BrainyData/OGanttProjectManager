@@ -1,0 +1,11 @@
+;  action     ;; request to update data of a phase
+;       ;; we give the data to the external layer object and call
+;       ;; our phase_modified which will update our tree and redraw
+;  params     ;; pPhaseId=phase to be updated
+;       ;; pPhaseData=row with new data for phase
+
+Do $cinst.$gupdphase(pParams.pPhaseId,pParams.pPhaseData)
+If pCallerObj
+	Do method phase_modified (pCallerObj,pParams.pPhaseId)
+	Do method redraw_control (pCallerObj,kTrue)
+End If

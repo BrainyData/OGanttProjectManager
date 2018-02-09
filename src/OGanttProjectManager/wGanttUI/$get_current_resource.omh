@@ -1,0 +1,2 @@
+Calculate theLayer as $cinst.$get_layer()
+Quit method theLayer.$get_current_resource()

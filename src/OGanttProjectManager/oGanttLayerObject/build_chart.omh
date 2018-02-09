@@ -1,0 +1,44 @@
+;  in this method we build all the data required by the gantt chart that is displayed in the right pane of the component
+;  the example data, if used, was created in $new_example_chart
+
+;  1. Load the resource list
+;  the resource list typically matches the tree list that we build for the left-hand tree
+Do method define_chart_list (listResources,kGanttListResource)
+Do ivGanttData.$get_resources(listResources)
+
+Do $cinst.$gsetlist(listResources,kGanttListResource)
+
+;  2. Load the phase list
+;  the phase list specifies the data and properties for the bars
+Do method define_chart_list (listPhases,kGanttListPhase)
+Do ivGanttData.$get_phases(listPhases)
+
+Do $cinst.$gsetlist(listPhases,kGanttListPhase)
+
+
+;  3. Load the relation list
+;  the relation list specifies the relation-ships between phases
+Do method define_chart_list (listRelations,kGanttListRelation)
+Do ivGanttData.$get_relations(listRelations)
+
+Do $cinst.$gsetlist(listRelations,kGanttListRelation)
+
+
+;  4. Load the suspension list
+;  the suspension list specifies periods during which phases are suspended
+Do method define_chart_list (listSuspensions,kGanttListSuspension)
+Do ivGanttData.$get_suspensions(listSuspensions)
+Do listSuspensions.$sort($ref.PhaseId)     ;; hmm, unless I sort this list here it doesn't show newly added suspensions (bug in OGantt?)
+Do $cinst.$gsetlist(listSuspensions,kGanttListSuspension)
+
+
+;  5. Load the marker list and set display date
+;  the marker list can be used to visualy show important dates in a project
+;  it draws a vertical line
+If pGanttRef     ;; the marker list and start date assigns directly to the GanttUI window component
+	Do method define_chart_list (listMarkers,kGanttListMarker)
+	Do ivGanttData.$get_markers(listMarkers,ganttStartDate)
+	
+	Do pGanttRef.$setmarkerlist(listMarkers,kTrue)     ;; CHNAGE_20130819_1 paint markers behind phases and relation lines
+	Do pGanttRef.$gsetstartdate(ganttStartDate)
+End If

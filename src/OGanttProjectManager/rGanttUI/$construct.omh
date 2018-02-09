@@ -1,0 +1,8 @@
+;  prepare our report object
+Do method SetProperties (pLayer,pGanttUI,pPrintParams)
+
+;  while we have more chart to print, keep printing records     ;; (1 record per page)
+Repeat
+	Do $cinst.$printrecord()
+Until ivPrintResult<>kGanttPrintResultContinue
+Do $cinst.$endprint()

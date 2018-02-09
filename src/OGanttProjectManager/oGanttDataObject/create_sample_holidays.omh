@@ -1,0 +1,12 @@
+;  create global sample holidays
+
+;  add weekend days
+Do dataCalHolidays.$add(0,#D,#D,0,kGanttHolWeekDayRep,#NULL,0,#NULL,kGray)     ;; sunday
+Do dataCalHolidays.$add(0,#D,#D,0,kGanttHolWeekDayRep,#NULL,6,#NULL,kGray)     ;; saturday
+;  sample bank holidays     ;; XMas and New Year
+Do dataCalHolidays.$add(0,#D,#D,0,kGanttHolYearDayRep,#NULL,#NULL,'1JAN2007',kYellow)     ;; new year's day
+Do dataCalHolidays.$add(0,#D,#D,0,kGanttHolYearDayRep,#NULL,#NULL,'25DEC2007',kYellow)     ;; XMas Day
+Do dataCalHolidays.$add(0,#D,#D,0,kGanttHolYearDayRep,#NULL,#NULL,'26DEC2007',kYellow)     ;; Boxing Day
+
+;  update DB emidietly
+Do method save_data (0,'fGanttCalHolidays','GCHOL_',dataCalHolidays,kFalse)

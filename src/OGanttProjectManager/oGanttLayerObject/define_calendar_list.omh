@@ -1,0 +1,13 @@
+Switch pType
+	Case kCalendarWorkingHours     ;; define list for specifying working hours
+		Do pList.$define(From,To)
+		Quit method kTrue
+	Case kCalendarWorkingHoursEx     ;; define list for specifying working hours on a specific day as an exception
+		Do pList.$define(Date,WorkingHours)
+		Quit method kTrue
+	Case kCalendarHolidays
+		Do pList.$define(Type,Date,Day,Year,Color)
+		Quit method kTrue
+	Default
+		Quit method kFalse
+End Switch

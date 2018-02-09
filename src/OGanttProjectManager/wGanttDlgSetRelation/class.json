@@ -1,0 +1,159 @@
+{
+	"classtype": "kWindow",
+	"internalversion": 0,
+	"superclass": "wGanttDlgSuper",
+	"designtaskname": "Startup_Task",
+	"nextident": 1042,
+	"lastgroupident": 0,
+	"cvardefs": [
+		{
+			"name": "cvBlockDelay",
+			"order": 2,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"initval": "kTrue"
+		},
+		{
+			"name": "cvDelay",
+			"order": 3,
+			"type": "kNumber",
+			"subtype": "k2dp",
+			"sublen": 0
+		},
+		{
+			"name": "cvLanguage",
+			"order": 5,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 255
+		},
+		{
+			"name": "cvListDurationScale",
+			"order": 1,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "cvRelationType",
+			"order": 4,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0,
+			"desc": "this do not relate to the kGanttRel... constants"
+		}
+	],
+	"ivardefs": [
+		{
+			"name": "ivPhaseFromID",
+			"order": 5,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "ivPhaseToID",
+			"order": 6,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0
+		},
+		{
+			"name": "refDelay",
+			"order": 1,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.cvDelay"
+		},
+		{
+			"name": "refDelayScaleList",
+			"order": 2,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.cvListDurationScale"
+		}
+	],
+	"properties": {
+		"aligntogrid": false,
+		"alpha": 255,
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"contextmenu": "",
+		"createdate": "2008-08-20 16:11:36",
+		"desc": "",
+		"editor": "",
+		"editordata": "",
+		"external": true,
+		"hasmenus": false,
+		"hasstatusbar": false,
+		"height": 253,
+		"helpfile": 0,
+		"horzgrid": 8,
+		"inheritedorder": 1,
+		"issubwindow": false,
+		"issupercomponent": false,
+		"left": 129,
+		"menunames": "",
+		"moddate": "2013-10-10 14:24:45",
+		"showascheckedout": false,
+		"showgrid": false,
+		"sizetogrid": false,
+		"startfield": 0,
+		"statusbarpos": "kSBPosBottom",
+		"title": {
+			"type": 0,
+			"calc": "Set Realtion"
+		},
+		"toolbarnames": "",
+		"toolbarpos": "kDockingAreaNone",
+		"top": 421,
+		"userinfo": "",
+		"version": "",
+		"vertgrid": 8,
+		"width": 397
+	},
+	"inheritedproperties": [
+		"style",
+		"effect",
+		"backgroundskin",
+		"backcolor",
+		"backgroundskinalign",
+		"backgroundtheme",
+		"backpattern",
+		"closebox",
+		"dockingedge",
+		"edgefloat",
+		"forecolor",
+		"growbox",
+		"helpbutton",
+		"horzscroll",
+		"menuedge",
+		"minimizebox",
+		"minimizeiconid",
+		"showtitle",
+		"statusedge",
+		"toolbaroptions",
+		"vertscroll",
+		"zoombox",
+		"bringinfront",
+		"clickbehind",
+		"dropmode",
+		"enablemenuandtoolbars",
+		"keepclicks",
+		"modelessdata",
+		"showcommands",
+		"usesheets"
+	],
+	"statusbar": {
+		"properties": {
+			"fieldstyle": "",
+			"font": 1,
+			"fontsize": 0,
+			"helppane": 0
+		}
+	}
+}

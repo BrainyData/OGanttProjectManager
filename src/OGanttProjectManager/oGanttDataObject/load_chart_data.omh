@@ -1,0 +1,62 @@
+;  load all required data for a chart, and initialize variables
+
+;  load related data
+If not(pGanttId)
+	;  this is a new chart, just define the chart lists
+	Do dataMarkers.$define('fGanttMarkers')
+	Do dataResources.$define('fGanttResources')
+	Do dataPhases.$define('fGanttPhases')
+	Do dataRelations.$define('fGanttRelations')
+	Do dataSuspensions.$define('fGanttSuspensions')
+	If not(dataGantt.G_IS_SINGLE_RECORD)
+		Calculate dataMarkers.$smartlist as kTrue
+		Calculate dataResources.$smartlist as kTrue
+		Calculate dataPhases.$smartlist as kTrue
+		Calculate dataRelations.$smartlist as kTrue
+		Calculate dataSuspensions.$smartlist as kTrue
+	End If
+Else If dataGantt.G_IS_SINGLE_RECORD
+	;  chart is stored as a single record, load lists from main record
+	Do dataGantt.$loadcols(,,,,,,,,,dataResources,dataPhases,dataRelations,dataSuspensions,dataMarkers)
+Else
+	;  chart data is stored with relational links
+	Do method load_data (pGanttId,'fGanttMarkers','GMAR_',dataMarkers)
+	Do method load_data (pGanttId,'fGanttResources','GRES_',dataResources)
+	Do method load_data (pGanttId,'fGanttPhases','GPHA_',dataPhases)
+	Do method load_data (pGanttId,'fGanttRelations','GREL_',dataRelations)
+	Do method load_data (pGanttId,'fGanttSuspensions','GSUS_',dataSuspensions)
+End If
+;  the change below has been removed as this issue has now been resolved in the external     ;; CHANGE_2013_10_02_1
+;  the phase list no longer requires sorting prior to building the GANTT chart
+;  Do dataPhases.$sort($ref.GPHA_GRES_ID,kFalse,$ref.GPHA_GPHA_ID)     ;; CHANGE_2013_08_25_2
+
+;  calculate our ivLast_... variables     ;; (unless it is a new chart)
+If pGanttId
+	Do dataResources.$sendall(ivLast_GRES_ID.$assign(dataResources.GRES_GRES_ID),$ref.GRES_GRES_ID>ivLast_GRES_ID)
+	Do dataPhases.$sendall(ivLast_GPHA_ID.$assign(dataPhases.GPHA_GPHA_ID),$ref.GPHA_GPHA_ID>ivLast_GPHA_ID)
+	Do dataRelations.$sendall(ivLast_GREL_ID.$assign(dataRelations.GREL_GREL_ID),$ref.GREL_GREL_ID>ivLast_GREL_ID)
+	Do dataSuspensions.$sendall(ivLast_GSUS_ID.$assign(dataSuspensions.GSUS_GSUS_ID),$ref.GSUS_GSUS_ID>ivLast_GSUS_ID)
+End If
+
+;  load calendar details
+;  the chart may have its own calendar records, if not we must load the global records
+;  if there are no global records we create sample working hours and holidays     ;; (for the benefit of these examples)
+
+Do method load_data (pGanttId,'fGanttCalHolidays','GCHOL_',dataCalHolidays,kFalse)
+If not(dataCalHolidays.$linecount)
+	Do method load_data (0,'fGanttCalHolidays','GCHOL_',dataCalHolidays,kFalse)
+	If not(dataCalHolidays.$linecount)
+		Do method create_sample_holidays
+	End If
+End If
+
+Do method load_data (pGanttId,'fGanttCalWorkingHours','GCWH_',dataCalWorkingHours,kFalse)
+If not(dataCalWorkingHours.$linecount)
+	Do method load_data (0,'fGanttCalWorkingHours','GCWH_',dataCalWorkingHours,kFalse)
+	If not(dataCalWorkingHours.$linecount)
+		Do method create_sample_workhours
+	End If
+End If
+Do dataCalWorkingHours.$sort($ref.GCWH_DATE,kFalse)     ;; working hours must be sorted by date
+
+Quit method kTrue

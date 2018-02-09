@@ -1,0 +1,9 @@
+
+Calculate dateTime as pDateTime
+Do $windows.wGanttDlgGetDate.$open('*',kWindowCenterRelative,$cwind,refCaller,refGantt,ivLayer,dateTime)
+If flag true
+	Calculate pDateTime as dateTime
+	Quit method kTrue
+Else
+	Quit method kFalse
+End If

@@ -1,0 +1,4 @@
+
+Calculate ivFieldsList as ivPhaseList.FieldList
+Calculate ivLegendList as pLayer.$get_list_legend()
+Do refFieldList.$redraw()

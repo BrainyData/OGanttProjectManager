@@ -1,0 +1,10 @@
+;  action     ;; collapse specified resource in both the tree and chart
+;       ;; and redraw the control
+;  params     ;; pResouceId=the resource to be collapsed
+
+;  collapse all groups
+Do $cinst.$tlcollapse(pParams.pResourceId)
+Do $cinst.$gcollapse(pParams.pResourceId)
+If pCallerObj
+	Do method redraw_control (pCallerObj)
+End If

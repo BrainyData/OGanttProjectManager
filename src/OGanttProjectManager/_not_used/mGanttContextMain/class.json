@@ -1,0 +1,36 @@
+{
+	"classtype": "kMenu",
+	"internalversion": 0,
+	"designtaskname": "Startup_Task",
+	"nextident": 1011,
+	"cvardefs": [
+
+	],
+	"ivardefs": [
+
+	],
+	"properties": {
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2008-09-11 17:32:32",
+		"desc": "",
+		"editor": "",
+		"editordata": "",
+		"enabled": true,
+		"external": true,
+		"helpfile": 0,
+		"helptext": "",
+		"inheritedorder": 0,
+		"issupercomponent": false,
+		"moddate": "2013-10-10 14:17:44",
+		"showascheckedout": false,
+		"title": {
+			"type": 0,
+			"calc": "Totals"
+		},
+		"userinfo": "",
+		"users": "12345678",
+		"version": ""
+	}
+}

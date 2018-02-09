@@ -1,0 +1,4 @@
+On evClick
+	Calculate theScale as kGantt[$cobj().$name]
+	Do $topwind.$message($cinst,$cobj,$topwind.$get_layer(),"gantt_scale",theScale)
+	Do $cinst.$set_field_states

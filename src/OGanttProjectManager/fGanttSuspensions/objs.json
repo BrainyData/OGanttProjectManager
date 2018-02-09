@@ -1,0 +1,101 @@
+[
+	{
+		"name": "GSUS_SEQ",
+		"order": 1,
+		"desc": "Unique record #",
+		"type": "kSequence",
+		"subtype": 0,
+		"sublen": 0,
+		"nonull": true,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GSUS_CREATED",
+		"order": 2,
+		"desc": "Date record was created",
+		"type": "kDate",
+		"subtype": "kDatetime",
+		"sublen": 7,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GSUS_MODIFIED",
+		"order": 3,
+		"desc": "Date record was modified",
+		"type": "kDate",
+		"subtype": "kDatetime",
+		"sublen": 7,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GSUS_GANTT_ID",
+		"order": 4,
+		"desc": "ID of the GANTT chart this item belongs to",
+		"type": "kInteger",
+		"subtype": "k32bitint",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GSUS_GSUS_ID",
+		"order": 5,
+		"desc": "ID of this suspension",
+		"type": "kInteger",
+		"subtype": "k32bitint",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GSUS_GRES_ID",
+		"order": 6,
+		"desc": "ID of the resource the phase belongs to",
+		"type": "kInteger",
+		"subtype": "k32bitint",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GSUS_GPHA_ID",
+		"order": 7,
+		"desc": "ID of the pahse the suspension belongs to",
+		"type": "kInteger",
+		"subtype": "k32bitint",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GSUS_START_DATE",
+		"order": 8,
+		"desc": "Start date of the suspension",
+		"type": "kDate",
+		"subtype": "kDatetime",
+		"sublen": 6,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GSUS_END_DATE",
+		"order": 9,
+		"desc": "End date of the suspension",
+		"type": "kDate",
+		"subtype": "kDatetime",
+		"sublen": 6,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	}
+]

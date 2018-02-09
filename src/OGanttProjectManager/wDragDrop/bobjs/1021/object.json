@@ -1,0 +1,27 @@
+{
+	"ident": 1021,
+	"order": 16386,
+	"objtype": "kLabel",
+	"properties": {
+		"align": "kLeftJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "CtrlLabelLarge",
+		"font": 1,
+		"fontsize": 13,
+		"fontstyle": "kBold",
+		"forecolor": "kColorForeFill",
+		"height": 16,
+		"left": 17,
+		"objlink": 0,
+		"text": "Tree List",
+		"textcolor": "kColorWindowText",
+		"top": 7,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 120
+	}
+}

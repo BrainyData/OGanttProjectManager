@@ -1,0 +1,9 @@
+;  MAIN CONSTRUCT METHOD FOR BOTH WINDOWS AND SUB-WINDOWS
+;  overide and implement construct code in this method
+;  you must call Do inherited when done or prior to code
+;  that requires strings to be loaded
+
+;  load text from string table
+Do ivGanttUI.$load_instance
+;  call sub-class to set states of fields
+Do $cinst.$set_field_states

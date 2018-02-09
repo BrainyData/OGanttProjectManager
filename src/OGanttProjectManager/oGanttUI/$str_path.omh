@@ -1,0 +1,5 @@
+;  called when intializing the variable strStringTablePath
+;  return the path to this libraries string table folder
+;  all our strings are located in a folder named after our library with the an extra "_res" appended to the folder name
+Do FileOps.$splitpathname($clib.$pathname,_drive,_dir,_name,_ext)
+Quit method con(_drive,_dir,_name,"_res",sys(9))

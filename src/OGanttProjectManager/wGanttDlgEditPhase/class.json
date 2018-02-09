@@ -1,0 +1,247 @@
+{
+	"classtype": "kWindow",
+	"internalversion": 0,
+	"superclass": "wGanttDlgSuper",
+	"designtaskname": "Startup_Task",
+	"nextident": 1085,
+	"lastgroupident": 0,
+	"cvardefs": [
+
+	],
+	"ivardefs": [
+		{
+			"name": "ivDuration",
+			"order": 8,
+			"type": "kNumber",
+			"subtype": "k2dp",
+			"sublen": 0
+		},
+		{
+			"name": "ivDurationScaleList",
+			"order": 11,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivEffective",
+			"order": 13,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0
+		},
+		{
+			"name": "ivFieldsList",
+			"order": 9,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivIsNew",
+			"order": 6,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0
+		},
+		{
+			"name": "ivLegendList",
+			"order": 10,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivPhaseList",
+			"order": 3,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivProgress",
+			"order": 1,
+			"type": "kNumber",
+			"subtype": "k2dp",
+			"sublen": 0
+		},
+		{
+			"name": "ivRelationsList",
+			"order": 18,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivSuspensionsList",
+			"order": 20,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "ivTreeList",
+			"order": 7,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "refDuration",
+			"order": 12,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.ivDuration"
+		},
+		{
+			"name": "refEffective",
+			"order": 14,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.btnEffective"
+		},
+		{
+			"name": "refEndDate",
+			"order": 16,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$bobjs.1024"
+		},
+		{
+			"name": "refFieldList",
+			"order": 17,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.FieldList"
+		},
+		{
+			"name": "refPhaseColor",
+			"order": 5,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.btnPhaseColor"
+		},
+		{
+			"name": "refProgress",
+			"order": 2,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.ivProgress"
+		},
+		{
+			"name": "refRelationsList",
+			"order": 19,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.RelationsList"
+		},
+		{
+			"name": "refStartDate",
+			"order": 15,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$bobjs.1020"
+		},
+		{
+			"name": "refSuspensionsList",
+			"order": 21,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.SuspensionsList"
+		},
+		{
+			"name": "refTextColor",
+			"order": 4,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.btnTextColor"
+		}
+	],
+	"properties": {
+		"aligntogrid": false,
+		"alpha": 255,
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"contextmenu": "",
+		"createdate": "2008-08-22 07:36:05",
+		"desc": "",
+		"editor": "",
+		"editordata": "",
+		"external": true,
+		"hasmenus": false,
+		"hasstatusbar": false,
+		"height": 509,
+		"helpfile": 0,
+		"horzgrid": 8,
+		"inheritedorder": 1,
+		"issubwindow": false,
+		"issupercomponent": false,
+		"left": 95,
+		"menunames": "",
+		"moddate": "2013-10-10 14:24:45",
+		"showascheckedout": false,
+		"showgrid": false,
+		"sizetogrid": false,
+		"startfield": 0,
+		"statusbarpos": "kSBPosBottom",
+		"title": "",
+		"toolbarnames": "",
+		"toolbarpos": "kDockingAreaNone",
+		"top": 329,
+		"userinfo": "",
+		"version": "",
+		"vertgrid": 8,
+		"width": 926
+	},
+	"inheritedproperties": [
+		"bringinfront",
+		"clickbehind",
+		"dropmode",
+		"enablemenuandtoolbars",
+		"keepclicks",
+		"modelessdata",
+		"showcommands",
+		"usesheets",
+		"backcolor",
+		"backgroundskin",
+		"backgroundskinalign",
+		"backgroundtheme",
+		"backpattern",
+		"closebox",
+		"dockingedge",
+		"edgefloat",
+		"effect",
+		"forecolor",
+		"growbox",
+		"helpbutton",
+		"horzscroll",
+		"menuedge",
+		"minimizebox",
+		"minimizeiconid",
+		"showtitle",
+		"statusedge",
+		"style",
+		"toolbaroptions",
+		"vertscroll",
+		"zoombox"
+	],
+	"statusbar": {
+		"properties": {
+			"fieldstyle": "",
+			"font": 1,
+			"fontsize": 0,
+			"helppane": 0
+		}
+	}
+}

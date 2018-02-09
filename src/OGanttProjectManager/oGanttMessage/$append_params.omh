@@ -1,0 +1,18 @@
+;  append specified fields to row variable     ;; currently max of 6
+
+Calculate col as pParams.$cols.$count+1
+For cnt from 1 to $cparmcount-1 step 1
+	Set reference ref to p[cnt].$ref
+	Calculate theName as replace(nam(ref),"$root.","")
+	If pParams.$cols.$findname(theName)
+		Calculate pParams.[theName] as ref
+	Else
+		If ref.$type=kNumber     ;; fixes issue with Omnis and strange floating number field event parameter
+			Do pParams.$cols.$add(theName,kCharacter,kSimplechar,255)
+		Else
+			Do pParams.$cols.$add(theName,ref.$type,ref.$subtype,ref.$sublen)
+		End If
+		Calculate pParams.C[col] as ref
+		Calculate col as col+1
+	End If
+End For

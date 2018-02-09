@@ -1,0 +1,79 @@
+[
+	{
+		"name": "GCWH_SEQ",
+		"order": 1,
+		"desc": "Unique record #",
+		"type": "kSequence",
+		"subtype": 0,
+		"sublen": 0,
+		"nonull": true,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GCWH_CREATED",
+		"order": 2,
+		"desc": "Date record was created",
+		"type": "kDate",
+		"subtype": "kDatetime",
+		"sublen": 7,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GCWH_MODIFIED",
+		"order": 3,
+		"desc": "Date record was modified",
+		"type": "kDate",
+		"subtype": "kDatetime",
+		"sublen": 7,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GCWH_GANTT_ID",
+		"order": 4,
+		"desc": "ID of the GANTT chart this item belongs to (0 means default working hours)",
+		"type": "kInteger",
+		"subtype": "k32bitint",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GCWH_FROM",
+		"order": 5,
+		"desc": "Working hours start",
+		"type": "kDate",
+		"subtype": "kTime",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GCWH_TO",
+		"order": 6,
+		"desc": "Working hours end",
+		"type": "kDate",
+		"subtype": "kTime",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GCWH_DATE",
+		"order": 7,
+		"desc": "If not NULL, these are working hours for the specified day. If NULL these are the default working hours.",
+		"type": "kDate",
+		"subtype": "kDatetime",
+		"sublen": 1,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	}
+]

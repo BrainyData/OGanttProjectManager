@@ -1,0 +1,5 @@
+Do dataPhases.$search($ref.GPHA_GPHA_ID=pPhaseData.PhaseId,1,0,0,0) Returns dataPhases.$line
+If dataPhases.$line
+	;  Note: column prior to pPhaseData.DurationChildren (second from last) is the field list which is not provided on an update     ;; 11062009_CHANGE added DurationChildren
+	Do dataPhases.$assigncols(,,#D,dataGantt.G_GANTT_ID,pPhaseData.ResourceId,pPhaseData.PhaseId,pPhaseData.StartDate,pPhaseData.EndDate,pPhaseData.PhaseColor,pPhaseData.TextColor,pPhaseData.TextLeft,pPhaseData.TextRight,pPhaseData.TextTop,pPhaseData.TextBottom,pPhaseData.Text,pPhaseData.Progress,pPhaseData.Duration,pPhaseData.DurationType,pPhaseData.IsLocked,pPhaseData.IsCategory,,pPhaseData.DurationChildren)
+End If

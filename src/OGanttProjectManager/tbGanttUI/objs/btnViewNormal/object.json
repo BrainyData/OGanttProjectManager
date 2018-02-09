@@ -1,0 +1,21 @@
+{
+	"ident": 1023,
+	"order": 18,
+	"objtype": "kToolCommandButton",
+	"properties": {
+		"enabled": false,
+		"helpfile": 0,
+		"iconid": 10031,
+		"text": {
+			"type": 0,
+			"calc": "Normal"
+		},
+		"tooltip": {
+			"type": 0,
+			"calc": "Normal View"
+		},
+		"userinfo": "",
+		"users": "12345678",
+		"varwidthtextplatforms": "kVWTMSWindows,kVWTmacOS,kVWTUnix"
+	}
+}

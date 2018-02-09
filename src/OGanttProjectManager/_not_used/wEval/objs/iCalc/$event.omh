@@ -1,0 +1,5 @@
+On evBefore     ;; Event Parameters - pRow ( Itemreference )
+	
+On evAfter     ;; Event Parameters - pClickedField, pClickedWindow, pMenuLine, pCommandNumber, pRow
+	Calculate iResult as eval(iCalc)
+	Do $cinst.$redraw()

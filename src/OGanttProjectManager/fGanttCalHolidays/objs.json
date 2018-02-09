@@ -1,0 +1,101 @@
+[
+	{
+		"name": "GCHOL_SEQ",
+		"order": 1,
+		"desc": "Unique record #",
+		"type": "kSequence",
+		"subtype": 0,
+		"sublen": 0,
+		"nonull": true,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GCHOL_CREATED",
+		"order": 2,
+		"desc": "Date record was created",
+		"type": "kDate",
+		"subtype": "kDatetime",
+		"sublen": 7,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GCHOL_MODIFIED",
+		"order": 3,
+		"desc": "Date record was modified",
+		"type": "kDate",
+		"subtype": "kDatetime",
+		"sublen": 7,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GCHOL_GANTT_ID",
+		"order": 4,
+		"desc": "ID of the GANTT chart this item belongs to (0 means default holidays)",
+		"type": "kInteger",
+		"subtype": "k32bitint",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GCHOL_TYPE",
+		"order": 5,
+		"desc": "The type of the holiday, one of the kGanttHol... constants",
+		"type": "kInteger",
+		"subtype": "k32bitint",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GCHOL_DATE",
+		"order": 6,
+		"desc": "Date for kGanttHolFixedDay",
+		"type": "kDate",
+		"subtype": "kDatetime",
+		"sublen": 1,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GCHOL_DAY",
+		"order": 7,
+		"desc": "Week day number for kGanttHolWeekDayRep",
+		"type": "kInteger",
+		"subtype": "kShortint",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GCHOL_YEAR",
+		"order": 8,
+		"desc": "Date for kGanttHolYearDayRep",
+		"type": "kDate",
+		"subtype": "kDatetime",
+		"sublen": 1,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GCHOL_COLOR",
+		"order": 9,
+		"desc": "Background color for this holiday",
+		"type": "kInteger",
+		"subtype": "k32bitint",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	}
+]

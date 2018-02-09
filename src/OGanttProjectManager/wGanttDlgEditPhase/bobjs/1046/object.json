@@ -1,0 +1,27 @@
+{
+	"ident": 1046,
+	"order": 16398,
+	"objtype": "kLabel",
+	"properties": {
+		"align": "kLeftJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "CtrlLabelMedium",
+		"font": 1,
+		"fontsize": 13,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 18,
+		"left": 282,
+		"objlink": 0,
+		"text": "Phase Color",
+		"textcolor": "kColorWindowText",
+		"top": 112,
+		"userinfo": "",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 98
+	}
+}

@@ -1,0 +1,14 @@
+;  action     ;; the language has been changed
+;       ;; update our column headers,tooltip and legend text
+;  params     ;; (none)
+
+;  we need to update our column headers in the left-hand tree
+Calculate ivColumnHeaders.[1].Text as StringTable.$gettext('ogantt.Categories')
+Calculate ivColumnHeaders.[2].Text as StringTable.$gettext('ogantt.StartDate')
+Calculate ivColumnHeaders.[3].Text as StringTable.$gettext('ogantt.EndDate')
+Calculate ivColumnHeaders.[4].Text as StringTable.$gettext('ogantt.Description')
+Do $cinst.$tlsetheader(ivColumnHeaders)
+Do $cinst.$tlbuild(kGanttNoFirstLoad)
+;  update our custom text
+Do $cinst.$load_custom_text(refGantt)
+Do method redraw_control (refGantt)

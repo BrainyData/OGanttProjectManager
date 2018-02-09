@@ -1,0 +1,5 @@
+On evClick     ;; Event Parameters - pRow( Itemreference )
+	Do method promptDate (ivSuspensionsList.EndDate) Returns #F
+	If flag true
+		Do method suspensionChanged
+	End If

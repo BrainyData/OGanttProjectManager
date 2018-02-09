@@ -1,0 +1,14 @@
+[
+	{
+		"name": "GMAR_GANTT_ID",
+		"unique": false,
+		"uppercase": false,
+		"parts": [
+			{
+				"name": "GMAR_GANTT_ID",
+				"fieldlength": 0,
+				"uppercase": false
+			}
+		]
+	}
+]

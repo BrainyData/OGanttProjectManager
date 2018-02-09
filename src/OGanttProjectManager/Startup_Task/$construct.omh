@@ -1,0 +1,5 @@
+Calculate tStrings as $objects.oGanttUI.$newref($cinst,"ogantt")     ;; handles our string table(s)
+Do method OpenDataFile
+Install menu mGanttUI
+Do tStrings.$str_set_language('English')
+Open window instance wGanttDlgLoadChart/CEN ($cinst)

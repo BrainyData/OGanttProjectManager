@@ -1,0 +1,18 @@
+;  fetch resource data for display
+Do ivLayer.$tlgetdatalist(kGanttListTree) Returns ivTreeList
+Do ivTreeList.$search($ref.ResourceID=pResourceID,1,0,0,0) Returns ivTreeList.$line
+;  fetch the list of phases
+Do ivLayer.$ggetdatalist(kGanttListPhase) Returns ivPhaseList
+;  position the row for editing
+Do ivPhaseList.$search($ref.PhaseID=pPhaseID,1,0,0,0) Returns ivPhaseList.$line
+;  load other related data
+Do method loadDuration
+Do method loadProgress
+Do method loadFields
+Do method loadRelations
+Do method loadSuspensions
+;  redraw
+Calculate refTextColor.$contents as ivPhaseList.TextColor
+Calculate refPhaseColor.$contents as ivPhaseList.PhaseColor
+Do $cinst.$bobjs.$sendall($ref.$redraw())
+Do $cinst.$redraw()

@@ -1,0 +1,16 @@
+;  populate the tree list columns
+;  our implementation displays 4 columns in the tree list
+;  the first column is the actual tree displaying the resource names
+;  the next two coulmns are the start and end date of the phases belonging to the resource     ;; (we must calculate those)
+;  and the fourth column shows the resource description
+
+;  iterate through our resources and populate the output lists as we go
+For dataResources.$line from 1 to dataResources.$linecount step 1
+	;  calculate start and end date for columns 2 and 3     ;; this is done by getting dates of the phases belonging to this resource
+	Do method get_res_start_end_dates (dataResources.GRES_GRES_ID,resStartDate,resEndDate)
+	;  add data to the output lists
+	Do pOutCategories.$add(dataResources.GRES_TL_ICON,dataResources.GRES_TL_NAME,dataResources.GRES_TL_ENTERABLE,dataResources.GRES_IS_CATEGORY,dataResources.GRES_TL_TEXT_COLOR,dataResources.GRES_PARENT_ID,dataResources.GRES_GRES_ID,dataResources.GRES_ORDER)
+	Do pOutStartDate.$add(0,resStartDate,kTrue,dataResources.GRES_TL_TEXT_COLOR,dataResources.GRES_GRES_ID,kRightJst)
+	Do pOutEndDate.$add(0,resEndDate,kTrue,dataResources.GRES_TL_TEXT_COLOR,dataResources.GRES_GRES_ID,kRightJst)
+	Do pOutDescription.$add(0,dataResources.GRES_TL_NOTES,kTrue,dataResources.GRES_TL_TEXT_COLOR,dataResources.GRES_GRES_ID,kLeftJst)
+End For

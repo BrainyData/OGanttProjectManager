@@ -1,0 +1,13 @@
+;  action     ;; the user changed the text in a cell in the tree
+;       ;; we must manually update the apropriate cell in our tree data
+;       ;; and redraw the control
+;  params     ;; pResouceId=the resource that was altered
+;       ;; pColumnNumber=column that was altered
+
+;  the user changed the text in a cell, we do the actual work here
+Do $cinst.$tlgetcelldata(pParams.pResourceId,pParams.pColumnNumber) Returns listCell
+Calculate listCell.[1].C2 as pParams.pNewText
+Do $cinst.$tlupdatecell(pParams.pResourceId,pParams.pColumnNumber,listCell)
+If pCallerObj
+	Do pCallerObj.$tlredraw()
+End If

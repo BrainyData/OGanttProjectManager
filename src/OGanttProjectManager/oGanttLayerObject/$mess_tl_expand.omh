@@ -1,0 +1,9 @@
+;  action     ;; expand specified resource in both the tree and chart
+;       ;; and redraw the control
+;  params     ;; pResouceId=the resource to be expanded
+
+Do $cinst.$tlexpand(pParams.pResourceId)
+Do $cinst.$gexpand(pParams.pResourceId)
+If pCallerObj
+	Do method redraw_control (pCallerObj)
+End If

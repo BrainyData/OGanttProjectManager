@@ -1,0 +1,12 @@
+;  construct a row vraibale from the given fields     ;; currently max of 6
+
+For cnt from 1 to $cparmcount step 1
+	Set reference ref to p[cnt].$ref
+	If ref.$type=kNumber     ;; fixes issue with Omnis and strange floating number field event parameter
+		Do theRow.$cols.$add(replace(nam(ref),"$root.",""),kCharacter,kSimplechar,255)
+	Else
+		Do theRow.$cols.$add(replace(nam(ref),"$root.",""),ref.$type,ref.$subtype,ref.$sublen)
+	End If
+	Calculate theRow.C[cnt] as ref
+End For
+Quit method theRow

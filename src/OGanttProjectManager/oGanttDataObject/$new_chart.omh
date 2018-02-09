@@ -1,0 +1,20 @@
+;  create a new chart record and then call $load_chart_data
+;  that will create our other empty smart lists that we need
+If $cinst.$check_chart_name(pName)
+	Do dataGantt.$define('fGantt')
+	Do dataGantt.$smartlist.$assign(kTrue)
+	Do dataGantt.$add(0,#D,#D,0,pName,#D,"",#NULL,pSingleRecord,#NULL,#NULL,#NULL,#NULL,#NULL)
+	Do dataGantt.$line.$assign(1)
+	
+	;  load other chart data     ;; there isn't any yet but we use this to define all our smart lists and to load calendar data
+	Do method load_chart_data (0)
+	
+	If pSampleData
+		Do method create_sample_chart     ;; this will create sample data
+	End If
+	
+	Calculate ivModified as kTrue
+	Quit method kTrue
+Else
+	Quit method kFalse
+End If

@@ -1,0 +1,7 @@
+;  return the list of phases
+;  the output list must have been defined by the caller according to OGantt's requirements     ;; we know what format that is
+
+For dataPhases.$line from 1 to dataPhases.$linecount step 1
+	;  11062009_CHANGE added dataPhases.GPHA_DURATION_CHILDREN
+	Do pOutPhases.$add(dataPhases.GPHA_GRES_ID,dataPhases.GPHA_GPHA_ID,dataPhases.GPHA_START_DATE,dataPhases.GPHA_END_DATE,dataPhases.GPHA_PHASE_COLOR,dataPhases.GPHA_TEXT_COLOR,dataPhases.GPHA_TEXT_LEFT,dataPhases.GPHA_TEXT_RIGHT,dataPhases.GPHA_TEXT_TOP,dataPhases.GPHA_TEXT_BOTTOM,dataPhases.GPHA_TEXT,dataPhases.GPHA_PROGRESS,dataPhases.GPHA_DURATION,dataPhases.GPHA_DURATION_TYPE,dataPhases.GPHA_LOCKED,dataPhases.GPHA_IS_CATEGORY,dataPhases.GPHA_FIELDS,dataPhases.GPHA_DURATION_CHILDREN)
+End For

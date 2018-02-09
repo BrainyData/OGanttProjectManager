@@ -1,0 +1,14 @@
+;  return the data in a single row lists for the specified resource
+If pResourceID
+	Do $cinst.$ggetdatalist(kGanttListResource) Returns pOutInfo
+	If pGetChildren
+		Do pOutInfo.$search($ref.ParentID=pResourceID)
+	Else
+		Do pOutInfo.$search($ref.ResourceID=pResourceID)
+	End If
+	Do pOutInfo.$remove(kListKeepSelected)
+	Calculate pOutInfo.$line as 1
+Else
+	Do pOutInfo.$clear()
+End If
+Quit method pOutInfo.$linecount>0

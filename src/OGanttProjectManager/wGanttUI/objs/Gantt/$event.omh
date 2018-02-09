@@ -1,0 +1,130 @@
+Send to trace log {[pEventCode]}
+On evBefore
+	Calculate theLayer as $cinst.$get_layer()
+	Do ivGanttUI.$message_send_all($cinst,$cfield,theLayer,'gantt_set_focus',theParams)     ;; inform all instances about the focus change
+	
+On evExpand
+	Calculate theLayer as $cinst.$get_layer()
+	Do ivGanttUI.$make_params(pResourceId.$ref) Returns theParams
+	Do $cinst.$message($cinst,$cfield,theLayer,'gantt_tl_expand',theParams)
+	
+On evCollapse
+	Calculate theLayer as $cinst.$get_layer()
+	Do ivGanttUI.$make_params(pResourceId.$ref) Returns theParams
+	Do $cinst.$message($cinst,$cfield,theLayer,'gantt_tl_collapse',theParams)
+	
+On evDragDropExt
+	Calculate theLayer as $cinst.$get_layer(pLayerId)
+	Do ivGanttUI.$make_params(pResourceId.$ref,pParentId.$ref,pOrder.$ref) Returns theParams
+	Do $cinst.$message($cinst,$cfield,theLayer,'gantt_tl_dragdrop_ext',theParams)
+	
+On evGCreate
+	Do $cinst.$get_layer() Returns theLayer
+	Do ivGanttUI.$make_params(pResourceId.$ref,pNewStartDate.$ref,pNewEndDate.$ref) Returns theParams
+	Do $cinst.$message($cinst,$cfield,theLayer,'gantt_phase_create',theParams)
+	
+On evGAddRel
+	Calculate theLayer as $cinst.$get_layer(pLayerId)
+	Do ivGanttUI.$make_params(pPhaseFromId.$ref,pPhaseToId.$ref) Returns theParams
+	Do $cinst.$message($cinst,$cfield,theLayer,'gantt_phase_add_rel',theParams)
+	Do $cfield.$gredraw()     ;; erase tooltip
+	
+On evGAddSusp
+	Calculate theLayer as $cinst.$get_layer(pLayerId)
+	Do ivGanttUI.$make_params(pPhaseId.$ref,pSplitDate.$ref) Returns theParams
+	Do $cinst.$message($cinst,$cfield,theLayer,'gantt_mode_normal',theParams)
+	Do $cinst.$message($cinst,$cfield,theLayer,'gantt_phase_make_current',theParams)
+	Do $cinst.$message($cinst,$cfield,theLayer,'gantt_phase_add_susp',theParams)
+	
+On evGChangeProgress
+	Calculate theLayer as $cinst.$get_layer()
+	Do ivGanttUI.$make_params(pPhaseId.$ref,pNewProgress.$ref) Returns theParams
+	Do $cinst.$message($cinst,$cfield,theLayer,'gantt_phase_change_progress',theParams)
+	
+On evGDblClick
+	If pPhaseId
+		Do $cinst.$get_layer() Returns theLayer
+		Do ivGanttUI.$make_params(pPhaseId.$ref,pResourceId.$ref) Returns theParams
+		Do $cinst.$message($cinst,$cfield,theLayer,'gantt_phase_make_current',theParams)
+		Do $cinst.$message($cinst,$cfield,theLayer,'gantt_phase_edit',theParams)
+	End If
+	
+On evGRClick
+	If pPhaseId
+		Do $cinst.$get_layer() Returns theLayer
+		Do ivGanttUI.$make_params(pPhaseId.$ref,pResourceId.$ref) Returns theParams
+		Do $cinst.$message($cinst,$cfield,theLayer,'gantt_phase_make_current',theParams)
+		Do $cinst.$message($cinst,$cfield,theLayer,'gantt_phase_context_click',theParams)
+	End If
+	
+On evGMove,evGResize
+	Do $cinst.$get_layer() Returns theLayer
+	Do ivGanttUI.$make_params(pPhaseId.$ref,pNewStartDate.$ref,pNewEndDate.$ref) Returns theParams
+	Do $cinst.$message($cinst,$cfield,theLayer,'gantt_phase_moved',theParams)
+	
+On evGSelected
+	Do $cinst.$get_layer() Returns theLayer
+	Do ivGanttUI.$make_params(pPhaseId.$ref,pResourceId.$ref) Returns theParams
+	Do $cinst.$message($cinst,$cfield,theLayer,'gantt_phase_make_current',theParams)
+	
+On evTLSelected
+	Do $cinst.$get_layer() Returns theLayer
+	Do ivGanttUI.$make_params(pResourceId.$ref) Returns theParams
+	Do $cinst.$message($cinst,$cfield,theLayer,'gantt_tl_make_current',theParams)
+	
+On evTLDblClick
+	Do $cinst.$get_layer() Returns theLayer
+	Do ivGanttUI.$make_params(pResourceId.$ref) Returns theParams
+	Do $cinst.$message($cinst,$cfield,theLayer,'gantt_tl_make_current',theParams)
+	
+On evTLRClick
+	Do $cinst.$get_layer() Returns theLayer
+	Do ivGanttUI.$make_params(pResourceId.$ref) Returns theParams
+	Do $cinst.$message($cinst,$cfield,theLayer,'gantt_tl_make_current',theParams)
+	Do $cinst.$message($cinst,$cfield,theLayer,'gantt_tl_context_click',theParams)
+	
+On evTLTextChanged
+	Do $cinst.$get_layer() Returns theLayer
+	Do ivGanttUI.$make_params(pResourceId.$ref,pColumnNumber.$ref,pNewText.$ref) Returns theParams
+	Do $cinst.$message($cinst,$cfield,theLayer,"gantt_tl_text_changed",theParams)
+	;  Send to trace log {[pEventCode](pResourceID=[pResourceId],pColumnNumber=[pColumnNumber],pNewText=[pNewText])}
+	
+On evDragDrop
+	Do $cinst.$get_layer() Returns theLayer
+	Do ivGanttUI.$make_params(pResourceId.$ref,pParentId.$ref,pOrder.$ref,pOldParentId.$ref) Returns theParams
+	Do $cinst.$message($cinst,$cfield,theLayer,"gantt_tl_dragdrop",theParams)
+	
+On evHeadLClick
+	Do $cinst.$get_layer() Returns theLayer
+	Do ivGanttUI.$make_params(pColumnNumber.$ref) Returns theParams
+	Do $cinst.$message($cinst,$cfield,theLayer,"gantt_tl_head_click",theParams)
+	
+On evHeadRClick
+	Do $cinst.$get_layer() Returns theLayer
+	Do ivGanttUI.$make_params(pColumnNumber.$ref) Returns theParams
+	Do $cinst.$message($cinst,$cfield,theLayer,"gantt_tl_head_context_click",theParams)
+	
+On evDrop
+	Begin text block
+	Text: {[pEventCode] - [pDragField().$name]: $ddwhere=[[}
+	If bitand($cfield.$ddwhere,kGanttDropTreeList)
+		Text: {kGanttDropTreeList+}
+	End If
+	If bitand($cfield.$ddwhere,kGanttDropGantt)
+		Text: {kGanttDropGantt+}
+	End If
+	If bitand($cfield.$ddwhere,kGanttDropPhase)
+		Text: {kGanttDropPhase+}
+	End If
+	If bitand($cfield.$ddwhere,kGanttDropBefore)
+		Text: {kGanttDropBefore+}
+	End If
+	If bitand($cfield.$ddwhere,kGanttDropAfter)
+		Text: {kGanttDropAfter+}
+	End If
+	Text: {] $ddresourceid=[$cfield.$ddresourceid] $ddphaseid=[$cfield.$ddphaseid]}
+	End text block
+	Get text block ddInfo
+	Calculate ddInfo as replace(ddInfo,"+]","]")
+	Do $iwindows.wDragDrop.$showdropinfo(ddInfo)
+	Quit event handler (Pass to next handler)

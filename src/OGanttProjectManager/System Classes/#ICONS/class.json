@@ -1,0 +1,514 @@
+{
+	"classtype": "kSystemtable",
+	"internalversion": 0,
+	"iconversion": 0,
+	"nextident": 5,
+	"properties": {
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2007-03-05 09:49:54",
+		"desc": "",
+		"external": false,
+		"moddate": "2013-08-23 21:28:54",
+		"showascheckedout": false,
+		"userinfo": "",
+		"version": ""
+	},
+	"iconids": [
+		{
+			"iconid": 10000,
+			"pageid": 1,
+			"iconpos": 1,
+			"defaultsize": 1,
+			"flags": 0,
+			"hotspots": [
+				{
+					"x": 0,
+					"y": 0
+				},
+				{
+					"x": 0,
+					"y": 0
+				},
+				{
+					"x": 0,
+					"y": 0
+				},
+				{
+					"x": 0,
+					"y": 0
+				}
+			]
+		},
+		{
+			"iconid": 10001,
+			"pageid": 1,
+			"iconpos": 6,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10003,
+			"pageid": 1,
+			"iconpos": 16,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10005,
+			"pageid": 2,
+			"iconpos": 1,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10026,
+			"pageid": 2,
+			"iconpos": 17,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10025,
+			"pageid": 2,
+			"iconpos": 16,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10024,
+			"pageid": 2,
+			"iconpos": 15,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10023,
+			"pageid": 2,
+			"iconpos": 14,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10022,
+			"pageid": 2,
+			"iconpos": 13,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10021,
+			"pageid": 2,
+			"iconpos": 12,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10020,
+			"pageid": 2,
+			"iconpos": 11,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10006,
+			"pageid": 2,
+			"iconpos": 2,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10007,
+			"pageid": 2,
+			"iconpos": 3,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10008,
+			"pageid": 2,
+			"iconpos": 4,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10009,
+			"pageid": 2,
+			"iconpos": 5,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10010,
+			"pageid": 2,
+			"iconpos": 6,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10011,
+			"pageid": 2,
+			"iconpos": 7,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10002,
+			"pageid": 1,
+			"iconpos": 11,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10012,
+			"pageid": 2,
+			"iconpos": 8,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10013,
+			"pageid": 2,
+			"iconpos": 9,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10027,
+			"pageid": 2,
+			"iconpos": 18,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10030,
+			"pageid": 3,
+			"iconpos": 1,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10035,
+			"pageid": 3,
+			"iconpos": 6,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10036,
+			"pageid": 3,
+			"iconpos": 7,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10037,
+			"pageid": 3,
+			"iconpos": 8,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10038,
+			"pageid": 3,
+			"iconpos": 9,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10031,
+			"pageid": 3,
+			"iconpos": 2,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10032,
+			"pageid": 3,
+			"iconpos": 3,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10033,
+			"pageid": 3,
+			"iconpos": 4,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10040,
+			"pageid": 3,
+			"iconpos": 11,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10041,
+			"pageid": 3,
+			"iconpos": 12,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10042,
+			"pageid": 3,
+			"iconpos": 13,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10043,
+			"pageid": 3,
+			"iconpos": 14,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10044,
+			"pageid": 3,
+			"iconpos": 15,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10045,
+			"pageid": 3,
+			"iconpos": 16,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10046,
+			"pageid": 3,
+			"iconpos": 17,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10047,
+			"pageid": 3,
+			"iconpos": 18,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10048,
+			"pageid": 3,
+			"iconpos": 19,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10049,
+			"pageid": 3,
+			"iconpos": 20,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10039,
+			"pageid": 3,
+			"iconpos": 10,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10050,
+			"pageid": 4,
+			"iconpos": 1,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10051,
+			"pageid": 4,
+			"iconpos": 2,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10034,
+			"pageid": 3,
+			"iconpos": 5,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10055,
+			"pageid": 4,
+			"iconpos": 6,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10060,
+			"pageid": 4,
+			"iconpos": 11,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10065,
+			"pageid": 4,
+			"iconpos": 16,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10070,
+			"pageid": 5,
+			"iconpos": 16,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10056,
+			"pageid": 4,
+			"iconpos": 7,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10057,
+			"pageid": 4,
+			"iconpos": 8,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10058,
+			"pageid": 4,
+			"iconpos": 9,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10059,
+			"pageid": 4,
+			"iconpos": 10,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10061,
+			"pageid": 4,
+			"iconpos": 12,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10062,
+			"pageid": 4,
+			"iconpos": 13,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10063,
+			"pageid": 4,
+			"iconpos": 14,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10052,
+			"pageid": 4,
+			"iconpos": 3,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10053,
+			"pageid": 4,
+			"iconpos": 4,
+			"defaultsize": 1,
+			"flags": 0
+		},
+		{
+			"iconid": 10054,
+			"pageid": 4,
+			"iconpos": 5,
+			"defaultsize": 1,
+			"flags": 0
+		}
+	],
+	"pages": [
+		{
+			"pageid": 1,
+			"name": "Multistate",
+			"bitmapid": 1,
+			"flags": 803
+		},
+		{
+			"pageid": 2,
+			"name": "Gantt",
+			"bitmapid": 2,
+			"flags": 1838
+		},
+		{
+			"pageid": 3,
+			"name": "Gantt2",
+			"bitmapid": 3,
+			"flags": 1838
+		},
+		{
+			"pageid": 4,
+			"name": "Gantt3",
+			"bitmapid": 4,
+			"flags": 1838
+		},
+		{
+			"pageid": 5,
+			"name": "Disk",
+			"bitmapid": 5,
+			"flags": 1856
+		}
+	],
+	"bitmaps": [
+		{
+			"bitmapid": 1,
+			"solid": {
+				"$png": "solid1.png"
+			},
+			"alpha": {
+				"$png": "alpha1.png"
+			}
+		},
+		{
+			"bitmapid": 2,
+			"solid": {
+				"$png": "solid2.png"
+			},
+			"alpha": {
+				"$png": "alpha2.png"
+			}
+		},
+		{
+			"bitmapid": 3,
+			"solid": {
+				"$png": "solid3.png"
+			},
+			"alpha": {
+				"$png": "alpha3.png"
+			}
+		},
+		{
+			"bitmapid": 4,
+			"solid": {
+				"$png": "solid4.png"
+			},
+			"alpha": {
+				"$png": "alpha4.png"
+			}
+		},
+		{
+			"bitmapid": 5,
+			"solid": {
+				"$png": "solid5.png"
+			},
+			"alpha": {
+				"$png": "alpha5.png"
+			}
+		}
+	]
+}

@@ -1,0 +1,2 @@
+;  send a message to all message object instances of this class
+Do $cclass.$insts.$sendall($ref.$message(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams))

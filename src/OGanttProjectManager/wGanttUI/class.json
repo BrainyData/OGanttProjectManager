@@ -1,0 +1,187 @@
+{
+	"classtype": "kWindow",
+	"internalversion": 0,
+	"designtaskname": "Startup_Task",
+	"nextident": 1030,
+	"lastgroupident": 0,
+	"cvardefs": [
+
+	],
+	"ivardefs": [
+		{
+			"name": "ivGanttName",
+			"order": 8,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 80
+		},
+		{
+			"name": "ivGanttUI",
+			"order": 4,
+			"type": "kObjectref",
+			"subtype": "oGanttStringTable",
+			"sublen": 0,
+			"initval": "$objects.oGanttUI.$newref($cinst,ivStrPrefix)"
+		},
+		{
+			"name": "ivGraphType",
+			"order": 2,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0,
+			"initval": "kGanttGraphTypeNone"
+		},
+		{
+			"name": "ivLayer",
+			"order": 1,
+			"type": "kObjectref",
+			"subtype": "oGanttObject",
+			"sublen": 0,
+			"initval": "$clib.$objects.oGanttLayerObject.$newref(refGantt)",
+			"desc": "must create this here for anyone that accesses during construct"
+		},
+		{
+			"name": "ivScaleMajor",
+			"order": 5,
+			"type": "kInteger",
+			"subtype": "kShortint",
+			"sublen": 0,
+			"initval": "kGanttScaleWeek"
+		},
+		{
+			"name": "ivScaleMinor",
+			"order": 6,
+			"type": "kInteger",
+			"subtype": "kShortint",
+			"sublen": 0,
+			"initval": "kGanttScaleDay"
+		},
+		{
+			"name": "ivStrPrefix",
+			"order": 9,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100,
+			"initval": "\"\"",
+			"desc": "Sub-classes can change this in $construct prior to calling Do inherited"
+		},
+		{
+			"name": "ivView",
+			"order": 10,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100,
+			"initval": "'gantt_view_normal'",
+			"desc": "11062009_CHANGE"
+		},
+		{
+			"name": "refGantt",
+			"order": 3,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.Gantt"
+		},
+		{
+			"name": "refPhaseDetails",
+			"order": 7,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.PhaseDetails"
+		}
+	],
+	"properties": {
+		"aligntogrid": false,
+		"alpha": 255,
+		"backcolor": "kColor3DFace",
+		"backgroundskin": 0,
+		"backgroundskinalign": "kPALtopLeft",
+		"backgroundtheme": "kBGThemeWindow",
+		"backpattern": 0,
+		"bringinfront": false,
+		"clickbehind": true,
+		"closebox": true,
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"contextmenu": "",
+		"createdate": "2008-08-19 12:42:51",
+		"desc": "",
+		"dockingedge": "kBorderChisel",
+		"dropmode": "kAcceptNone",
+		"edgefloat": "kEFnone",
+		"editor": "",
+		"editordata": "",
+		"effect": "kBorderNone",
+		"enablemenuandtoolbars": true,
+		"external": true,
+		"forecolor": "kColor3DFace",
+		"growbox": true,
+		"hasmenus": false,
+		"hasstatusbar": true,
+		"height": 812,
+		"helpbutton": false,
+		"helpfile": 0,
+		"horzgrid": 4,
+		"horzscroll": false,
+		"inheritedorder": 1,
+		"issubwindow": false,
+		"issupercomponent": false,
+		"keepclicks": true,
+		"left": 442,
+		"menuedge": "kBorderChisel",
+		"menunames": "",
+		"minimizebox": false,
+		"minimizeiconid": 2006,
+		"moddate": "2013-10-10 14:24:45",
+		"modelessdata": true,
+		"showascheckedout": false,
+		"showcommands": false,
+		"showgrid": false,
+		"showtitle": false,
+		"sizetogrid": false,
+		"startfield": 0,
+		"statusbarpos": "kSBPosBottom",
+		"statusedge": "kBorderChisel",
+		"style": "kTitle",
+		"title": "",
+		"toolbarnames": "",
+		"toolbaroptions": "kTBOptionShowText,kTBOptionLargeIcons,kTBOptionVarTextWidth",
+		"toolbarpos": "kDockingAreaTop",
+		"top": 314,
+		"userinfo": "",
+		"usesheets": true,
+		"version": "",
+		"vertgrid": 4,
+		"vertscroll": false,
+		"width": 1313,
+		"zoombox": true
+	},
+	"statusbar": {
+		"properties": {
+			"fieldstyle": "",
+			"font": 1,
+			"fontsize": 0,
+			"helppane": -1
+		},
+		"panes": [
+			{
+				"align": "kLeftJst",
+				"effect": "kBorderInset",
+				"hasborder": true,
+				"hassep": false,
+				"sizing": "kFixed",
+				"width": 127
+			},
+			{
+				"align": "kLeftJst",
+				"effect": "kBorderInset",
+				"hasborder": true,
+				"hassep": false,
+				"sizing": "kElastic",
+				"width": 664
+			}
+		]
+	}
+}

@@ -1,0 +1,8 @@
+;  return the list of GANTT marker dates and GANTT start date
+;  the output list must have been defined by the caller according to OGantt's requirements     ;; we know what format that is
+
+For dataMarkers.$line from 1 to dataMarkers.$linecount step 1
+	Do pOutMarkers.$add(dataMarkers.GMAR_DATE,dataMarkers.GMAR_COLOR,dataMarkers.GMAR_WIDTH)
+End For
+
+Calculate pOutStartDate as dataGantt.G_START_DATE

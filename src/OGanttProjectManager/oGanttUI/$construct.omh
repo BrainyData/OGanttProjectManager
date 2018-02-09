@@ -1,0 +1,19 @@
+Do inherited
+
+;  establish the string-table to be used
+If len(pClassTable)
+	Calculate ivClassTable as pClassTable
+Else If len(pClassRef.$classname)
+	Calculate ivClassTable as pClassRef.$classname
+Else
+	Calculate ivClassTable as pClassRef.$class().$name
+End If
+
+;  make sure our global string-table is loaded     ;; contains messages, ok, cancel etc
+If not(cvGlobalLoaded)
+	Do $cinst.$str_load_table(cvGlobalTableName)
+	Calculate cvGlobalLoaded as kTrue
+End If
+
+;  load table for this class
+Do $cinst.$str_load_table(ivClassTable) Returns ivCanLoad

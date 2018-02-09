@@ -1,0 +1,7 @@
+;  load an existing chart
+
+;  load a chart data from DB
+Do ivGanttData.$load_chart(pChartID,pName)
+
+;  load the chart for display
+Do method load_chart (pGanttRef)

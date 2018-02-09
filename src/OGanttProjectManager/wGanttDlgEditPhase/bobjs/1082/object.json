@@ -1,0 +1,27 @@
+{
+	"ident": 1082,
+	"order": 16412,
+	"objtype": "kLabel",
+	"properties": {
+		"align": "kLeftJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "CtrlLabelMedium",
+		"font": 1,
+		"fontsize": 13,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 16,
+		"left": 366,
+		"objlink": 0,
+		"text": "End Date",
+		"textcolor": "kColorWindowText",
+		"top": 211,
+		"userinfo": "ogantt.EndDate",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 70
+	}
+}

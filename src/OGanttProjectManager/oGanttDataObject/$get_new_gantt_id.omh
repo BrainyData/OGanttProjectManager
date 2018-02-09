@@ -1,0 +1,14 @@
+;  return the next aunused ID for a new GANTT chart
+Begin reversible block
+	Set read-only files {fGantt}
+	Set main file {fGantt}
+End reversible block
+;  first check if the name is already in use
+Single file find on fGantt.G_NAME (Exact match) {pName}
+If flag true
+	Quit method 0     ;; record already exists
+End If
+;  now calculate new ID
+Find last on fGantt.G_GANTT_ID
+Calculate newGanttId as fGantt.G_GANTT_ID+1
+Quit method newGanttId

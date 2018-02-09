@@ -1,0 +1,26 @@
+
+
+If resourceId<>ivCurrentResource
+	Do $cinst.$ggetdatalist(kGanttListPhase) Returns listPhases
+	Do listPhases.$search($ref.ResourceID=resourceId,1,0,0,0) Returns listPhases.$line
+	
+	If listPhases.$line
+		Calculate ivCurrentPhase as listPhases.PhaseID
+		;  Else
+		;  Calculate ivCurrentPhase as 0
+	End If
+	Calculate ivCurrentResource as resourceId
+End If
+
+;  select the resource and phase if required
+If pCallerObj&resourceId
+	If ivCurrentResource<>pCallerObj.$tlgetselectresource()
+		Do pCallerObj.$tlsetselectresource(ivCurrentResource)
+	End If
+	If ivCurrentPhase<>pCallerObj.$ggetselectphase()
+		Do pCallerObj.$gsetselectphase(ivCurrentPhase)
+	End If
+	Do pCallerObj.$redraw(kFalse,kTrue)
+End If
+
+Do ivGanttUI.$message_send_all(pCallerClass,pCallerObj,$cinst.$objref,"gantt_resource_changed",pParams)

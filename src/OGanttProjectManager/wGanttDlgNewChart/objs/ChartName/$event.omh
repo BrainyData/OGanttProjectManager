@@ -1,0 +1,3 @@
+On evKey     ;; Event Parameters - pRow ( Itemreference )
+	Process event and continue
+	Do $cinst.$set_field_states

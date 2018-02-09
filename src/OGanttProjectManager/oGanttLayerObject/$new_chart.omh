@@ -1,0 +1,11 @@
+;  create a new empty gantt chart
+
+;  tell DB object to create a new chart
+Do ivGanttData.$new_chart(pName,pSingleRecord,pSampleData) Returns #F
+If flag false
+	;  name is probably in use
+	Quit method kFalse
+End If
+
+;  load the chart for display
+Do method load_chart (pGanttRef)

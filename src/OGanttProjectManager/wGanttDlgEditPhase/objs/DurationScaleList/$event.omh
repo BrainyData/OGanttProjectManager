@@ -1,0 +1,3 @@
+On evClick
+	Do method loadDuration
+	Do method loadProgress

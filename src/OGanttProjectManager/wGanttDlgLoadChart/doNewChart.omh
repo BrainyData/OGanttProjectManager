@@ -1,0 +1,2 @@
+Do $windows.wGanttDlgNewChart.$open('*',kWindowCenter)
+Do $cinst.$close()

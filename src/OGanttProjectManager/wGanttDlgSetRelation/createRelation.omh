@@ -1,0 +1,22 @@
+Switch cvRelationType
+	Case 0
+		Calculate pType as pick(cvBlockDelay,kGanttRelStartStart,kGanttRelStartStartBlock)
+	Case 1
+		Calculate pType as pick(cvBlockDelay,kGanttRelFinishFinish,kGanttRelFinishFinishBlock)
+	Case 2
+		Calculate pType as pick(cvBlockDelay,kGanttRelFinishStart,kGanttRelFinishStartBlock)
+	Case 3
+		Calculate pType as pick(cvBlockDelay,kGanttRelStartFinish,kGanttRelStartFinishBlock)
+End Switch
+
+Switch cvListDurationScale.C2
+	Case kGanttScaleDay
+		Calculate pDelay as cvDelay*86400
+	Case kGanttScaleHour
+		Calculate pDelay as cvDelay*3600
+	Case kGanttScaleMinute
+		Calculate pDelay as cvDelay*60
+End Switch
+
+Do ivGanttUI.$append_params(ivParams,pType.$ref,pDelay.$ref)
+Do ivLayer.$message(refCaller,refGantt,ivLayer,'gantt_phase_add_rel',ivParams)

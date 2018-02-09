@@ -1,0 +1,6 @@
+Begin reversible block
+	Set read-only files {fGantt}
+	Set main file {fGantt}
+End reversible block
+Single file find on fGantt.G_NAME (Exact match) {pName}
+Quit method #F=kFalse

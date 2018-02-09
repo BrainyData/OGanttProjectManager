@@ -1,0 +1,16 @@
+;  complete set of scales supported by oGantt
+If ivGanttUI.$str_get_language(cvListGanttScalesLang)
+	Calculate line as cvListGanttScales.$line
+	Do cvListGanttScales.$define(Text,Scale)
+	Do cvListGanttScales.$add(StringTable.$gettext("ogantt.Months"),kGanttScaleMonth)
+	Do cvListGanttScales.$add(StringTable.$gettext("ogantt.Weeks"),kGanttScaleWeek)
+	Do cvListGanttScales.$add(StringTable.$gettext("ogantt.Days"),kGanttScaleDay)
+	Do cvListGanttScales.$add(StringTable.$gettext("ogantt.Hours"),kGanttScaleHour)
+	Do cvListGanttScales.$add(StringTable.$gettext("ogantt.Minutes"),kGanttScaleMinute)
+	Calculate cvListGanttScales.$line as pick(line>0,3,line)     ;; default minor scale is days
+End If
+If pReturnCopy
+	Quit method cvListGanttScales
+Else
+	Quit method cvListGanttScales.$ref
+End If

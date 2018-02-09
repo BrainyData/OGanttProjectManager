@@ -1,0 +1,2 @@
+;  destroy our string table object
+Do ivGanttUI.$deleteref()

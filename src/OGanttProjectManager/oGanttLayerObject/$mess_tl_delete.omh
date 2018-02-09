@@ -1,0 +1,31 @@
+;  action     ;; delete the resource in the tree and the chart, this will also delete any associated phases
+;       ;; if no resource is specified, we add the current resource to pParams
+;  params     ;; (none or pResourceId)
+
+Do ivGanttUI.$append_param_named(pParams,'pResourceId',ivCurrentResource.$ref,kFalse)
+
+If pParams.pResourceId
+	
+	;  clear our current settings
+	If pParams.pResourceId=ivCurrentResource
+		Calculate ivCurrentResource as 0
+		Calculate ivCurrentPhase as 0
+	End If
+	
+	;  remember the parent ID so we can update our tree
+	Do $cinst.$get_data_resource(listResource,pParams.pResourceId)
+	
+	;  delete the resource entries from the tree and chart
+	;  this will also remove all related phases
+	Do $cinst.$gdelresource(pParams.pResourceId)
+	Do $cinst.$tldelnode(pParams.pResourceId)
+	
+	;  update our control
+	If pCallerObj
+		Do method redraw_control (pCallerObj)
+		If listResource.ParentID
+			Do method upd_tree_columns (pCallerObj,listResource.ParentID)
+		End If
+	End If
+	
+End If

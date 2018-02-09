@@ -1,0 +1,2 @@
+Do $windows.wGanttUI.$open('*',kWindowCenter,ivChartList.G_GANTT_ID,ivChartList.G_NAME,kFalse)
+Do $cinst.$close()

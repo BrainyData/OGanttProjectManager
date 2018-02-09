@@ -1,0 +1,12 @@
+;  load the data for a single file
+
+Begin reversible block
+	Set read-only files {[pFileName]}
+	Set main file {[pFileName]}
+	Set current list pList
+End reversible block
+
+Do eval(define_calc)
+Calculate [pFileName].[field_GANTT_ID] as pGanttId
+Build list from file on [pFileName].[field_GANTT_ID] (Exact match)
+Do pList.$smartlist.$assign(kTrue)

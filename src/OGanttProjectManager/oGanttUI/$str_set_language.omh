@@ -1,0 +1,7 @@
+If pLanguage<>cvLanguage
+	Calculate cvLanguage as pLanguage
+	For cvTableList.$line from 1 to cvTableList.$linecount step 1
+		Do StringTable.$setcolumn(con(cvTableList.TableName,".",cvLanguage))
+	End For
+	Do $cinst.$message_send_all($cinst,$cinst,#NULL,"gantt_set_language")
+End If

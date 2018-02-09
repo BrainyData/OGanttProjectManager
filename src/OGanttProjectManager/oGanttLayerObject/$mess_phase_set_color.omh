@@ -1,0 +1,12 @@
+;  set the fill color of the phase
+
+Do ivGanttUI.$append_param_named(pParams,'pPhaseId',ivCurrentPhase.$ref,kFalse)
+
+If pParams.pPhaseId
+	Do $cinst.$get_data_phase(listPhases,pParams.pPhaseId)
+	Calculate listPhases.PhaseColor as pParams.pPhaseColor
+	Do $cinst.$gupdphase(listPhases.PhaseID,listPhases)
+	If pCallerObj
+		Do pCallerObj.$gredraw()
+	End If
+End If

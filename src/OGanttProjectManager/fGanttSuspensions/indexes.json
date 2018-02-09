@@ -1,0 +1,50 @@
+[
+	{
+		"name": "GSUS_GANTT_ID",
+		"unique": false,
+		"uppercase": false,
+		"parts": [
+			{
+				"name": "GSUS_GANTT_ID",
+				"fieldlength": 0,
+				"uppercase": false
+			}
+		]
+	},
+	{
+		"name": "GSUS_GSUS_ID",
+		"unique": false,
+		"uppercase": false,
+		"parts": [
+			{
+				"name": "GSUS_GSUS_ID",
+				"fieldlength": 0,
+				"uppercase": false
+			}
+		]
+	},
+	{
+		"name": "GSUS_GRES_ID",
+		"unique": false,
+		"uppercase": false,
+		"parts": [
+			{
+				"name": "GSUS_GRES_ID",
+				"fieldlength": 0,
+				"uppercase": false
+			}
+		]
+	},
+	{
+		"name": "GSUS_GPHA_ID",
+		"unique": false,
+		"uppercase": false,
+		"parts": [
+			{
+				"name": "GSUS_GPHA_ID",
+				"fieldlength": 0,
+				"uppercase": false
+			}
+		]
+	}
+]

@@ -1,0 +1,38 @@
+;  in this method we build all the data required by the gantt tree that is displayed in the left pane of the component
+;  the gantt tree is very flexible in that it allows us to specify custom columns in addition to the standard tree column
+
+;  1. first we create our column headers for the gantt tree list
+;  we can specify the with, icon, text color, etc, for each column heading in the tree
+;  our list will be defined as Width,MinWidth,MaxWidth,Icon,Align,TextColor,Text
+Do method define_tree_list (ivColumnHeaders,kGanttListColumnHeader)
+
+;  the first row displays the actual tree of groups and tasks
+Do ivColumnHeaders.$add(150,50,0,0,kCenterJst,kBlack,StringTable.$gettext('ogantt.Categories'))
+;  subsequent columns are up to us, in this example we display, start and end dates plus a description
+Do ivColumnHeaders.$add(100,50,0,0,kCenterJst,kBlack,StringTable.$gettext('ogantt.StartDate'))
+Do ivColumnHeaders.$add(100,50,0,0,kCenterJst,kBlack,StringTable.$gettext('ogantt.EndDate'))
+Do ivColumnHeaders.$add(200,50,0,0,kCenterJst,kBlack,StringTable.$gettext('ogantt.Description'))
+
+;  finally we give the list to this layer object
+Do $cinst.$tlsetheader(ivColumnHeaders)
+
+;  2. now we populate the tree with the actual data rows
+;  we must build a list for each column displayed in the tree
+;  effectively, each cell in the tree has its own set of properties such as text, color, ID etc.
+
+;  define our lists, one for each column, the first column displays the actual gantt tree
+;  our listCategory will be defined as Icon,Name,Enterable,HasChildren,TextColor,ParentID,NodeID,Order
+;  our other lists will be defined as Icon,Name,Enterable,TextColor,NodeID,Align
+Do method define_tree_list (listCategory,kGanttListTree)
+Do method define_tree_list (listStartDate,kGanttListColumn)
+Do method define_tree_list (listEndDate,kGanttListColumn)
+Do method define_tree_list (listDescription,kGanttListColumn)
+
+;  populate the lists with data from our DB
+Do ivGanttData.$get_tree_columns(listCategory,listStartDate,listEndDate,listDescription)
+
+;  now we give our lists to this layer object (in the correct order)
+Do $cinst.$tlsetlist(listCategory,kGanttListTree)
+Do $cinst.$tlsetlist(listStartDate,kGanttListColumn)
+Do $cinst.$tlsetlist(listEndDate,kGanttListColumn)
+Do $cinst.$tlsetlist(listDescription,kGanttListColumn)

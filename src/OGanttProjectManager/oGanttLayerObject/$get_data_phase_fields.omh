@@ -1,0 +1,10 @@
+;  return the list of fields for the specified phase
+If pPhaseId
+	Do $cinst.$ggetdatalist(kGanttListPhase) Returns phaseInfo
+	Do phaseInfo.$search($ref.PhaseId=pPhaseId,1,0,0,0) Returns phaseInfo.$line
+	Calculate pOutInfo as phaseInfo.FieldList
+	Quit method kTrue
+Else
+	Do pOutInfo.$clear()
+	Quit method kFalse
+End If

@@ -1,0 +1,4 @@
+On evTabSelected     ;; Event Parameters - pTabNumber ( Itemreference )
+	Calculate refFieldList.$visible as pTabNumber=1
+	Calculate refRelationsList.$visible as pTabNumber=2
+	Calculate refSuspensionsList.$visible as pTabNumber=3

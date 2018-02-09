@@ -1,0 +1,14 @@
+;  CONSTRUCT METHOD FOR WINDOWS
+;  do not overide this method if this window can be used as a sub-window
+;  implement all construct code in $construct_init
+
+;  pCallerRef will be NULL if we are a sub-window
+If pCallerRef
+	;  we are open as a window and can call $construct_init from here
+	Set reference refCaller to pCallerRef
+	Set reference refGantt to pGanttRef
+	Calculate ivLayer as pLayer
+	Calculate ivParams as pParams
+	
+	Do $cinst.$construct_init(pCallerRef,pGanttRef,pLayer,pParams)
+End If

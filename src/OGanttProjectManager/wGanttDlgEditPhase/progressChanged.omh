@@ -1,0 +1,14 @@
+Switch ivDurationScaleList.Scale
+	Case kGanttScaleDay
+		Calculate progress as ivProgress*86400
+	Case kGanttScaleHour
+		Calculate progress as ivProgress*3600
+	Case kGanttScaleMinute
+		Calculate progress as ivProgress*60
+End Switch
+If pTest&ivPhaseList.Progress=progress
+	Quit method kFalse
+End If
+Calculate ivPhaseList.Progress as progress
+Do method phaseChanged
+Quit method kTrue

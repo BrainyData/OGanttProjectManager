@@ -1,0 +1,15 @@
+Switch ivDurationScaleList.Scale
+	Case kGanttScaleDay
+		Calculate duration as ivDuration*86400
+	Case kGanttScaleHour
+		Calculate duration as ivDuration*3600
+	Case kGanttScaleMinute
+		Calculate duration as ivDuration*60
+End Switch
+If pTest&ivPhaseList.Duration=duration
+	Quit method kFalse
+End If
+Calculate ivPhaseList.Duration as duration
+Calculate ivPhaseList.DurationType as pick(ivEffective,kGanttTypeDurFix,kGanttTypeDurEff)
+Do method phaseChanged
+Quit method kTrue

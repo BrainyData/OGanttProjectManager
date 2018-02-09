@@ -1,0 +1,22 @@
+
+If pObjRef.$userinfo='*'
+	Quit method      ;; ignore
+Else If len(pObjRef.$userinfo)     ;; $userinfo can override standard class prefix
+	Calculate text_id as pObjRef.$userinfo
+End If
+If len(pObjRef.$text)
+	If pObjRef.$objtype=kTabStrip
+		Calculate pObjRef.$tabs as StringTable.$gettext(text_id)
+	Else
+		Calculate pObjRef.$text as StringTable.$gettext(text_id)
+	End If
+	If cvDebug
+		Do $cinst.$debug(pObjRef,pObjRef.$text)
+	End If
+End If
+If len(pObjRef.$tooltip)
+	Calculate pObjRef.$tooltip as StringTable.$gettext(tooltip_id)
+	If cvDebug
+		Do $cinst.$debug(pObjRef,pObjRef.$text)
+	End If
+End If

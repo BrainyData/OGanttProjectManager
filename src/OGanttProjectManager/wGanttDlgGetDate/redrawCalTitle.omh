@@ -1,0 +1,2 @@
+Calculate refCalTitle.$text as con(StringTable.$gettext(str_id),' ',dtcy(ivCurDate))
+Do refCalTitle.$redraw()

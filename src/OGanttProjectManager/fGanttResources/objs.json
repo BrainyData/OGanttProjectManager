@@ -1,0 +1,178 @@
+[
+	{
+		"name": "GRES_SEQ",
+		"order": 1,
+		"desc": "Unique record #",
+		"type": "kSequence",
+		"subtype": 0,
+		"sublen": 0,
+		"nonull": true,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GRES_CREATED",
+		"order": 2,
+		"desc": "Date record was created",
+		"type": "kDate",
+		"subtype": "kDatetime",
+		"sublen": 7,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GRES_MODIFIED",
+		"order": 3,
+		"desc": "Date record was modified",
+		"type": "kDate",
+		"subtype": "kDatetime",
+		"sublen": 7,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GRES_GANTT_ID",
+		"order": 4,
+		"desc": "ID of the GANTT chart this item belongs to",
+		"type": "kInteger",
+		"subtype": "k32bitint",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GRES_PARENT_ID",
+		"order": 5,
+		"desc": "Resource ID of the parent",
+		"type": "kInteger",
+		"subtype": "k32bitint",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GRES_GRES_ID",
+		"order": 6,
+		"desc": "ID of this resource unique within entire chart",
+		"type": "kInteger",
+		"subtype": "k32bitint",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GRES_ORDER",
+		"order": 7,
+		"desc": "Order number for sorting GANTT list",
+		"type": "kNumber",
+		"subtype": "kFloatdp",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GRES_IS_CATEGORY",
+		"order": 8,
+		"desc": "If true, resource is a group with child resources",
+		"type": "kBoolean",
+		"subtype": 0,
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GRES_TL_ICON",
+		"order": 9,
+		"desc": "Icon to be displayed in left-hand tree",
+		"type": "kInteger",
+		"subtype": "k32bitint",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GRES_TL_NAME",
+		"order": 10,
+		"desc": "Name to be displayed in left-hand tree",
+		"type": "kCharacter",
+		"subtype": "kSimplechar",
+		"sublen": 100,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GRES_TL_ENTERABLE",
+		"order": 11,
+		"desc": "If true, NAME can be edited",
+		"type": "kBoolean",
+		"subtype": 0,
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GRES_TL_TEXT_COLOR",
+		"order": 12,
+		"desc": "Text color",
+		"type": "kInteger",
+		"subtype": "k32bitint",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GRES_TL_NOTES",
+		"order": 13,
+		"desc": "Optional notes displayed in the tree list",
+		"type": "kCharacter",
+		"subtype": "kSimplechar",
+		"sublen": 255,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": -1
+	},
+	{
+		"name": "GRES_WORK_HOURS",
+		"order": 14,
+		"desc": "Working hours for this resource (use globals if empty or null)",
+		"type": "kList",
+		"subtype": "",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": 0
+	},
+	{
+		"name": "GRES_WORK_HOURS_EX",
+		"order": 15,
+		"desc": "Working hours exceptions for this resource (use globals if empty or null)",
+		"type": "kList",
+		"subtype": "",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": 0
+	},
+	{
+		"name": "GRES_HOLIDAYS",
+		"order": 16,
+		"desc": "Holidays for this resource (use globals if empty or null)",
+		"type": "kList",
+		"subtype": "",
+		"sublen": 0,
+		"nonull": false,
+		"initnull": false,
+		"odbcaccessmask": 0
+	}
+]

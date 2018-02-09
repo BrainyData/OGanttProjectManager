@@ -1,0 +1,3 @@
+;  return the specified layer
+;  as this example only uses one layer object we simply return it
+Quit method ivLayer

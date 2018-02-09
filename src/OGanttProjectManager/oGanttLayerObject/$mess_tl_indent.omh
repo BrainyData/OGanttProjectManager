@@ -1,0 +1,21 @@
+;  action     ;; indent the selected resource in the tree and chart, this will change the resources parent
+;       ;; if no resource is specified, we add the current resource to pParams
+;  params     ;; (none or pResourceId)
+
+Do ivGanttUI.$append_param_named(pParams,'pResourceId',ivCurrentResource.$ref,kFalse)
+
+;  indent the current resource
+If pParams.pResourceId
+	
+	;  do the indenting
+	Do $cinst.$gindent(pParams.pResourceId)
+	Do $cinst.$tlindent(pParams.pResourceId)
+	
+	;  update window control
+	If pCallerObj
+		Do pCallerObj.$tlsetselectresource(pParams.pResourceId)
+		Do method redraw_control (pCallerObj)
+		Do method phase_modified (pCallerObj)
+	End If
+	
+End If

@@ -1,0 +1,13 @@
+;  return outer start and end dates for the specified resource by looking at its phases
+Do dataPhases.$search($ref.GPHA_GRES_ID=pResId)
+Do dataPhases.$first(kTrue)
+Calculate pOutStartDate as dataPhases.GPHA_START_DATE
+Calculate pOutEndDate as dataPhases.GPHA_END_DATE
+While dataPhases.$next(0,kTrue)
+	If dataPhases.GPHA_START_DATE<pOutStartDate
+		Calculate pOutStartDate as dataPhases.GPHA_START_DATE
+	End If
+	If dataPhases.GPHA_END_DATE>pOutEndDate
+		Calculate pOutEndDate as dataPhases.GPHA_END_DATE
+	End If
+End While

@@ -1,0 +1,26 @@
+[
+	{
+		"name": "G_GANTT_ID",
+		"unique": true,
+		"uppercase": false,
+		"parts": [
+			{
+				"name": "G_GANTT_ID",
+				"fieldlength": 0,
+				"uppercase": false
+			}
+		]
+	},
+	{
+		"name": "G_GANTT_NAME",
+		"unique": true,
+		"uppercase": false,
+		"parts": [
+			{
+				"name": "G_NAME",
+				"fieldlength": 75,
+				"uppercase": false
+			}
+		]
+	}
+]

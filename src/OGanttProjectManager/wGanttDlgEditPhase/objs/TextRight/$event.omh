@@ -1,0 +1,4 @@
+On evAfter     ;; Event Parameters - pClickedField, pClickedWindow, pMenuLine, pCommandNumber, pRow
+	If #MODIFIED
+		Do method phaseChanged
+	End If

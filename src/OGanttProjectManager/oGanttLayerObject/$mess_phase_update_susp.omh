@@ -1,0 +1,12 @@
+;  action     ;; update specified suspension period
+;       ;; and redraw the control
+;  params     ;; pPhaseId=id of the phase
+;       ;; pSuspensionId=suspension period to be deleted
+;       ;; pStartDate=new start date and time
+;       ;; pEndDate=new end date and time
+
+Do $cinst.$gupdsuspension(pParams.pPhaseId,pParams.pSuspensionId,pParams.pStartDate,pParams.pEndDate)
+If pCallerObj
+	Do method phase_modified (pCallerObj,pParams.pPhaseId)
+	Do method redraw_control (pCallerObj)
+End If

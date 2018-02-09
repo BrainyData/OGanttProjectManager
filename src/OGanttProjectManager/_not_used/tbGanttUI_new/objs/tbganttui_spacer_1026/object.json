@@ -1,0 +1,9 @@
+{
+	"ident": 1026,
+	"order": 12,
+	"objtype": "kToolSpacer",
+	"properties": {
+		"blank": false,
+		"flexible": false
+	}
+}

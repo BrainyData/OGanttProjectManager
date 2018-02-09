@@ -1,0 +1,30 @@
+{
+	"ident": 1029,
+	"order": 16387,
+	"objtype": "kText",
+	"properties": {
+		"align": "kLeftJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFnone",
+		"fieldstyle": "CtrlLabelMedium",
+		"font": 5,
+		"fontsize": 10,
+		"fontstyle": "kBold",
+		"forecolor": "kColorForeFill",
+		"height": 164,
+		"left": 19,
+		"objlink": 0,
+		"text": {
+			"type": 14,
+			"calc": "\u001B\b90000BC2# Multiple Layers\r\u001B\b90000BC2# Working Hours\r\u001B\b90000BC2# Holidays\r\u001B\b90000BC2# Suspensions\r\u001B\b90000BC2# Phase Styles\r\u001B\b90000BC2# Printing\r\u001B\b90000BC2# Custom Graph\r\u001B\b90000BC2# Custom Totals\r\u001B\b90000BC2# Custom Tree\r... and more"
+		},
+		"textcolor": "kColorWindowText",
+		"top": 58,
+		"userinfo": "*",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 150
+	}
+}

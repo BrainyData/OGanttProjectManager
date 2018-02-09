@@ -1,0 +1,29 @@
+
+;  get a new resource ID
+Calculate resourceId as ivGanttData.$get_new_resource_id()
+
+;  add a new resource to the resource list
+;  ParentID,ResourceID,Order,IsCategory,WorkingHours,Holidays,WorkingHoursExceptions
+Do method define_chart_list (listResources,kGanttListResource)
+Do listResources.$add(pParentId,resourceId,0,pExpandable,#NULL,#NULL,#NULL)
+Do $cinst.$gsetlist(listResources,kGanttListResource)
+
+;  add a new resource to the tree list
+;  Icon,Name,Enterable,IsCategory,TextColor,ParentID,ResourceID,Order
+Do method define_tree_list (listCategory,kGanttListTree)
+Do listCategory.$add(ivGanttData.$def_icon(pExpandable),ivGanttData.$def_name(pExpandable),kTrue,pExpandable,ivGanttData.$def_text_color,pParentId,resourceId,0)
+Do $cinst.$tlsetlist(listCategory,kGanttListTree)
+
+Do method define_tree_list (listStartDate,kGanttListColumn)
+Do listStartDate.$add(0,pStartDate,kFalse,ivGanttData.$def_text_color,resourceId,kRightJst)
+Do $cinst.$tlsetlist(listStartDate,kGanttListColumn)
+
+Do method define_tree_list (listEndDate,kGanttListColumn)
+Do listEndDate.$add(0,pEndDate,kFalse,ivGanttData.$def_text_color,resourceId,kRightJst)
+Do $cinst.$tlsetlist(listEndDate,kGanttListColumn)
+
+Do method define_tree_list (listDescription,kGanttListColumn)
+Do listDescription.$add(0,'',kTrue,ivGanttData.$def_text_color,resourceId,kLeftJst)
+Do $cinst.$tlsetlist(listDescription,kGanttListColumn)
+
+Quit method resourceId

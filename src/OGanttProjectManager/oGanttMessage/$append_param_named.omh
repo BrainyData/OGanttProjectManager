@@ -1,0 +1,14 @@
+;  if column name exists change its value otherwise add column with value
+
+If pParams.$cols.$findname(pName)
+	If pCanAssignIfExists
+		Calculate pParams.[pName] as pValue
+	End If
+Else
+	If pValue.$type=kNumber     ;; fixes issue with Omnis and strange floating number field event parameter
+		Do pParams.$cols.$add(pName,kCharacter,kSimplechar,255)
+	Else
+		Do pParams.$cols.$add(pName,pValue.$type,pValue.$subtype,pValue.$sublen)
+	End If
+	Calculate pParams.[pName] as pValue
+End If

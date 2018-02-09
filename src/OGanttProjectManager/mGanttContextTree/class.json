@@ -1,0 +1,91 @@
+{
+	"classtype": "kMenu",
+	"internalversion": 0,
+	"superclass": "mGanttSuper",
+	"designtaskname": "Startup_Task",
+	"nextident": 1025,
+	"cvardefs": [
+		{
+			"name": "kViewNormal",
+			"order": 1,
+			"type": "kInteger",
+			"subtype": "kShortint",
+			"sublen": 0,
+			"initval": "0"
+		}
+	],
+	"ivardefs": [
+		{
+			"name": "refDelete",
+			"order": 5,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.Delete"
+		},
+		{
+			"name": "refIcon",
+			"order": 6,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.Icon"
+		},
+		{
+			"name": "refIndent",
+			"order": 4,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.Indent"
+		},
+		{
+			"name": "refNewGrp",
+			"order": 1,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.NewGrp"
+		},
+		{
+			"name": "refNewRes",
+			"order": 2,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.NewRes"
+		},
+		{
+			"name": "refUnindent",
+			"order": 3,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"initval": "$cinst.$objs.Unindent"
+		}
+	],
+	"properties": {
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2008-09-09 16:48:37",
+		"desc": "",
+		"editor": "",
+		"editordata": "",
+		"enabled": true,
+		"external": true,
+		"helpfile": 0,
+		"helptext": "",
+		"inheritedorder": 0,
+		"issupercomponent": false,
+		"moddate": "2013-10-10 14:24:45",
+		"showascheckedout": false,
+		"title": {
+			"type": 0,
+			"calc": "Context Tree"
+		},
+		"userinfo": "",
+		"users": "12345678",
+		"version": ""
+	}
+}

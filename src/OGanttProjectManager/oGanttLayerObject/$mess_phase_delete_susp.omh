@@ -1,0 +1,14 @@
+;  action     ;; delete specified suspension period
+;       ;; and redraw the control
+;  params     ;; pPhaseId=id of the phase
+;       ;; pSuspensionId=suspension period to be deleted
+
+If pParams.pPhaseId&pParams.pSuspensionId
+	;  delete the suspension period
+	Do $cinst.$gdelsuspension(pParams.pPhaseId,pParams.pSuspensionId)
+	
+	;  update control
+	If pCallerObj
+		Do pCallerObj.$gredraw()
+	End If
+End If

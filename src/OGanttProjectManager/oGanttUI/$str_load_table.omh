@@ -1,0 +1,20 @@
+;  here we load the requested string table
+
+;  first check if it is already loaded
+Do cvTableList.$search($ref.TableName=pTableName,1,0,0,0) Returns cvTableList.$line
+If not(cvTableList.$line)
+	;  check that the file exists
+	If not(FileOps.$doesfileexist(path))
+		Quit method kFalse
+	End If
+	
+	;  if not add the table name to our loaded list and load the string table
+	If not(cvTableList.$linecount)
+		Do cvTableList.$cols.$add('TableName',kCharacter,kSimplechar,100)
+	End If
+	Do cvTableList.$add(pTableName)
+	
+	Do StringTable.$loadstringtable(pTableName,path)
+	Do StringTable.$setcolumn(con(pTableName,".",cvLanguage))
+End If
+Quit method kTrue

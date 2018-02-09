@@ -1,0 +1,18 @@
+{
+	"ident": 1039,
+	"order": 4,
+	"objtype": "kToolCommandButton",
+	"properties": {
+		"enabled": true,
+		"helpfile": 0,
+		"iconid": "k32x32+2032",
+		"text": {
+			"type": 0,
+			"calc": "New"
+		},
+		"tooltip": "",
+		"userinfo": "ogantt.New",
+		"users": "12345678",
+		"varwidthtextplatforms": "kVWTMSWindows,kVWTmacOS,kVWTUnix"
+	}
+}

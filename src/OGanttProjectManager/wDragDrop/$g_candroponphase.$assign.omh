@@ -1,0 +1,5 @@
+If pValue
+	Calculate refGantt.$gddcandrop as bitor(refGantt.$gddcandrop,kGanttCanDropOnPhase)
+Else
+	Calculate refGantt.$gddcandrop as bitand(refGantt.$gddcandrop,bitor(kGanttCanDropBetweenRows,kGanttCanDropOnRow))
+End If

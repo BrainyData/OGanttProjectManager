@@ -1,0 +1,18 @@
+{
+	"ident": 1011,
+	"order": 13,
+	"objtype": "kToolCommandButton",
+	"properties": {
+		"enabled": true,
+		"helpfile": 0,
+		"iconid": 10013,
+		"text": {
+			"type": 0,
+			"calc": "Expand"
+		},
+		"tooltip": "",
+		"userinfo": "",
+		"users": "12345678",
+		"varwidthtextplatforms": "kVWTMSWindows,kVWTmacOS,kVWTUnix"
+	}
+}

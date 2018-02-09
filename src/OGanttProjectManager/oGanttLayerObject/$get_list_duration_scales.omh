@@ -1,0 +1,14 @@
+;  a limited set of scales for specifying durations for bars
+If ivGanttUI.$str_get_language(cvListDurationScalesLang)
+	Calculate line as cvListDurationScales.$line
+	Do cvListDurationScales.$define(Text,Scale)
+	Do cvListDurationScales.$add(StringTable.$gettext("ogantt.Days"),kGanttScaleDay)
+	Do cvListDurationScales.$add(StringTable.$gettext("ogantt.Hours"),kGanttScaleHour)
+	Do cvListDurationScales.$add(StringTable.$gettext("ogantt.Minutes"),kGanttScaleMinute)
+	Calculate cvListDurationScales.$line as pick(line>0,2,line)
+End If
+If pReturnCopy
+	Quit method cvListDurationScales
+Else
+	Quit method cvListDurationScales.$ref
+End If

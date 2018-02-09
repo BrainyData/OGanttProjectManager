@@ -1,0 +1,22 @@
+;  pass 1 - find out if we are fully extended
+Calculate isExpanded as kTrue
+Do ivLayer.$ggetdatalist(kGanttListResource) Returns lvResourceList
+For lvResourceList.$line from 1 to lvResourceList.$linecount step 1
+	If not(ivLayer.$tlisexpanded(lvResourceList.C2))
+		Calculate isExpanded as kFalse
+	End If
+End For
+;  pass 2 - expand or collapse
+For lvResourceList.$line from 1 to lvResourceList.$linecount step 1
+	If isExpanded
+		Do ivLayer.$tlcollapse(lvResourceList.C2)
+		Do ivLayer.$gcollapse(lvResourceList.C2)
+	Else
+		Do ivLayer.$tlexpand(lvResourceList.C2)
+		Do ivLayer.$gexpand(lvResourceList.C2)
+	End If
+End For
+Do method RedrawGantt
+Calculate isExpanded as not(isExpanded)
+Do ivGanttUI.$message_send_tb($cinst,refGantt,$cinst.$get_layer(),pick(isExpanded,'gantt_tl_collapse','gantt_tl_expand'))
+Quit method isExpanded

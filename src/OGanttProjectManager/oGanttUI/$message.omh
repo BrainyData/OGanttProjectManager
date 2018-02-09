@@ -1,0 +1,8 @@
+;  deal with messages of interest to this object
+Switch pMessage
+	Case "gantt_set_language"
+		If ivLoaded     ;; only load again if the class called us initially
+			Do $cinst.$load_instance()
+		End If
+End Switch
+Do inherited

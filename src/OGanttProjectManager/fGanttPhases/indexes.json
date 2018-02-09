@@ -1,0 +1,38 @@
+[
+	{
+		"name": "GPHA_GANTT_ID",
+		"unique": false,
+		"uppercase": false,
+		"parts": [
+			{
+				"name": "GPHA_GANTT_ID",
+				"fieldlength": 0,
+				"uppercase": false
+			}
+		]
+	},
+	{
+		"name": "GPHA_GRES_ID",
+		"unique": false,
+		"uppercase": false,
+		"parts": [
+			{
+				"name": "GPHA_GRES_ID",
+				"fieldlength": 0,
+				"uppercase": false
+			}
+		]
+	},
+	{
+		"name": "GPHA_GPHA_ID",
+		"unique": false,
+		"uppercase": false,
+		"parts": [
+			{
+				"name": "GPHA_GPHA_ID",
+				"fieldlength": 0,
+				"uppercase": false
+			}
+		]
+	}
+]

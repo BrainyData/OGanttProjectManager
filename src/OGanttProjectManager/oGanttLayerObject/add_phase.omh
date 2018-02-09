@@ -1,0 +1,18 @@
+
+;  calculate a new phase ID
+Calculate phaseId as ivGanttData.$get_new_phase_id()
+
+;  create the phase
+If not(pIsCategory)
+	Do method define_chart_list (listFields,kGanttListFieldList)     ;; our field list for totals and graphs
+	Do listFields.$add(0.00,kFalse)
+	Do listFields.$add(0.00,kFalse)
+End If
+
+Do method define_chart_list (listPhases,kGanttListPhase)
+
+Do listPhases.$add(pResourceId,phaseId,pStartDate,pEndDate,ivGanttData.$def_fill_color,ivGanttData.$def_text_color,'','','','','',0,-1,kGanttTypeDurFix,kFalse,pIsCategory,listFields)
+
+Do $cinst.$gsetlist(listPhases,kGanttListPhase)
+
+Quit method phaseId

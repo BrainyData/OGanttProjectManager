@@ -1,0 +1,10 @@
+;  return list of phases belonging to this resource
+If pResourceID
+	Do $cinst.$ggetdatalist(kGanttListPhase) Returns pOutInfo
+	Do pOutInfo.$search($ref.ResourceID=pResourceID)
+	Do pOutInfo.$remove(kListKeepSelected)
+	Calculate pOutInfo.$line as 1
+Else
+	Do pOutInfo.$clear()
+End If
+Quit method pOutInfo.$linecount>0

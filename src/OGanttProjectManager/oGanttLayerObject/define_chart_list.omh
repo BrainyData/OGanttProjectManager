@@ -1,0 +1,28 @@
+Switch pType
+	Case kGanttListResource
+		Do pList.$define(ParentID,ResourceID,Order,IsCategory,WorkingHours,Holidays,WorkingHoursExceptions)
+		Quit method kTrue
+	Case kGanttListPhase
+		Do pList.$define(ResourceID,PhaseID,StartDate,EndDate,PhaseColor,TextColor,TextLeft,TextRight,TextTop,TextBottom,Text,Progress,Duration,DurationType,IsLocked,IsCategory,FieldList,DurationChildren)     ;; 11062009_CHANGE added DurationChildren
+		Quit method kTrue
+	Case kGanttListRelation
+		Do pList.$define(RelationID,StartPhaseID,EndPhaseID,RelationType,RelationDelay)
+		Quit method kTrue
+	Case kGanttListSuspension
+		Do pList.$define(ResourceID,PhaseID,SuspensionID,StartDate,EndDate)
+		Quit method kTrue
+	Case kGanttListMarker
+		Do pList.$define(Date,Color,Width)
+		Quit method kTrue
+	Case kGanttListLegend
+		Do pList.$define(Text,TextColor)
+		Quit method kTrue
+	Case kGanttListTotCalcs
+		Do pList.$define(TotalType,LayerID,FieldNumber,GroupValues,Label,FontNumber,FontSize,FontStyle,Color)
+		Quit method kTrue
+	Case kGanttListFieldList
+		Do pList.$define(Value,SplitValue)
+		Quit method kTrue
+	Default
+		Quit method kFalse
+End Switch

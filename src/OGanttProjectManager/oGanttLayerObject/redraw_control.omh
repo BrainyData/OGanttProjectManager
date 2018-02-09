@@ -1,0 +1,7 @@
+If pRecalcTotals
+	Do pGanttRef.$totrecalc()
+End If
+Do pGanttRef.$tlredraw()
+Do pGanttRef.$gredraw()
+Do pGanttRef.$grredraw()
+Do pGanttRef.$totredraw()

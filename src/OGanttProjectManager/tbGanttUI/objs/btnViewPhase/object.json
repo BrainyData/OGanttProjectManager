@@ -1,0 +1,18 @@
+{
+	"ident": 1036,
+	"order": 21,
+	"objtype": "kToolCommandButton",
+	"properties": {
+		"enabled": true,
+		"helpfile": 0,
+		"iconid": 10034,
+		"text": {
+			"type": 0,
+			"calc": "Phase"
+		},
+		"tooltip": "",
+		"userinfo": "",
+		"users": "12345678",
+		"varwidthtextplatforms": "kVWTMSWindows,kVWTmacOS,kVWTUnix"
+	}
+}

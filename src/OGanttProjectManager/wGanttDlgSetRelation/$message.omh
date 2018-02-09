@@ -1,0 +1,9 @@
+;  override this method to receive messages from other objects
+Switch pMessage
+	Case 'str_after_load_instance'
+		;  called during string table loading after all fields have been loaded by our string table object
+		;  in here we build interface lists and deal with special case fields
+		Do ivLayer.$get_list_duration_scales(kFalse) Returns cvListDurationScale
+End Switch
+
+Do inherited

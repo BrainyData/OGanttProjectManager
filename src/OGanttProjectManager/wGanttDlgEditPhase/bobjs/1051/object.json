@@ -1,0 +1,30 @@
+{
+	"ident": 1051,
+	"order": 16400,
+	"objtype": "kText",
+	"properties": {
+		"align": "kLeftJst",
+		"backcolor": "kColorBackFill",
+		"backpattern": 15,
+		"designactive": true,
+		"edgefloat": "kEFright",
+		"fieldstyle": "CtrlLabelMedium",
+		"font": 1,
+		"fontsize": 13,
+		"fontstyle": "kPlain",
+		"forecolor": "kColorForeFill",
+		"height": 17,
+		"left": 2,
+		"objlink": 17039373,
+		"text": {
+			"type": 14,
+			"calc": "[ivLegendList.[ivFieldsList.$line].C1]"
+		},
+		"textcolor": "kColorWindowText",
+		"top": 2,
+		"userinfo": "*",
+		"vertcentertext": false,
+		"visible": true,
+		"width": 176
+	}
+}

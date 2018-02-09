@@ -1,0 +1,28 @@
+;  all our messages are in the global string table
+Calculate theMessage as StringTable.$gettext(text_id)
+If len(pTitleID)
+	Calculate theTitle as StringTable.$gettext(title_id)
+End If
+Switch pType
+	Case 'ok'
+		If pShowIcon
+			OK message [theTitle] (Icon,Sound bell) {[theMessage]}
+		Else
+			OK message [theTitle] (Sound bell) {[theMessage]}
+		End If
+		Quit method kTrue
+	Case 'ny'
+		If pShowIcon
+			No/Yes message [theTitle] (Icon,Sound bell) {[theMessage]}
+		Else
+			No/Yes message [theTitle] (Sound bell) {[theMessage]}
+		End If
+		Quit method #F
+	Case 'ync'
+		If pShowIcon
+			Yes/No message [theTitle] (Icon,Sound bell,Cancel button) {[theMessage]}
+		Else
+			Yes/No message [theTitle] (Sound bell,Cancel button) {[theMessage]}
+		End If
+		Quit method #F
+End Switch

@@ -1,0 +1,193 @@
+{
+	"classtype": "kObjectclass",
+	"internalversion": 1,
+	"superclass": ".Gantt.GanttObject",
+	"designtaskname": "Startup_Task",
+	"cvardefs": [
+		{
+			"name": "cvListDurationScales",
+			"order": 6,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "cvListDurationScalesLang",
+			"order": 7,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100
+		},
+		{
+			"name": "cvListGanttScales",
+			"order": 8,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0
+		},
+		{
+			"name": "cvListGanttScalesLang",
+			"order": 9,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100
+		},
+		{
+			"name": "kCalendarHolidays",
+			"order": 4,
+			"type": "kInteger",
+			"subtype": "kShortint",
+			"sublen": 0,
+			"initval": "3"
+		},
+		{
+			"name": "kCalendarWorkingHours",
+			"order": 2,
+			"type": "kInteger",
+			"subtype": "kShortint",
+			"sublen": 0,
+			"initval": "1"
+		},
+		{
+			"name": "kCalendarWorkingHoursEx",
+			"order": 3,
+			"type": "kInteger",
+			"subtype": "kShortint",
+			"sublen": 0,
+			"initval": "2"
+		},
+		{
+			"name": "kGanttListColumnHeader",
+			"order": 1,
+			"type": "kInteger",
+			"subtype": "kShortint",
+			"sublen": 0,
+			"initval": "101"
+		},
+		{
+			"name": "kGanttListFieldList",
+			"order": 12,
+			"type": "kInteger",
+			"subtype": "kShortint",
+			"sublen": 0,
+			"initval": "105"
+		},
+		{
+			"name": "kGanttListLegend",
+			"order": 10,
+			"type": "kInteger",
+			"subtype": "kShortint",
+			"sublen": 0,
+			"initval": "103"
+		},
+		{
+			"name": "kGanttListMarker",
+			"order": 5,
+			"type": "kInteger",
+			"subtype": "kShortint",
+			"sublen": 0,
+			"initval": "102"
+		},
+		{
+			"name": "kGanttListTotCalcs",
+			"order": 11,
+			"type": "kInteger",
+			"subtype": "kShortint",
+			"sublen": 0,
+			"initval": "104"
+		}
+	],
+	"ivardefs": [
+		{
+			"name": "ivColumnHeaders",
+			"order": 13,
+			"type": "kList",
+			"subtype": "",
+			"sublen": 0,
+			"desc": "our list that defines the column headers, we keep it here in case the language is changed"
+		},
+		{
+			"name": "ivCurrentPhase",
+			"order": 10,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0,
+			"desc": "id of the current phase"
+		},
+		{
+			"name": "ivCurrentResource",
+			"order": 11,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0,
+			"desc": "id of the current resource"
+		},
+		{
+			"name": "ivGanttData",
+			"order": 15,
+			"type": "kObjectref",
+			"subtype": "oGanttDataObject",
+			"sublen": 0,
+			"desc": "object that manages the Gantt data in the DB"
+		},
+		{
+			"name": "ivGanttUI",
+			"order": 12,
+			"type": "kObjectref",
+			"subtype": "oGanttStringTable",
+			"sublen": 0,
+			"desc": "object that manages string tables and calls our $message when the language changes"
+		},
+		{
+			"name": "ivLastNewCategory",
+			"order": 16,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0,
+			"initval": "0",
+			"desc": "used for initialy naming new categories"
+		},
+		{
+			"name": "ivLastNewResource",
+			"order": 20,
+			"type": "kInteger",
+			"subtype": "k32bitint",
+			"sublen": 0,
+			"initval": "0",
+			"desc": "used for initialy naming new resources"
+		},
+		{
+			"name": "ivUseSingleRecord",
+			"order": 1,
+			"type": "kBoolean",
+			"subtype": 0,
+			"sublen": 0,
+			"initval": "kFalse",
+			"desc": "if kTrue we will store a single record for each chart in the database"
+		},
+		{
+			"name": "refGantt",
+			"order": 8,
+			"type": "kItemref",
+			"subtype": "",
+			"sublen": 0,
+			"desc": "reference to the window object that this layer object is attached to"
+		}
+	],
+	"properties": {
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2008-08-06 19:19:27",
+		"desc": "",
+		"editor": "",
+		"editordata": "",
+		"external": true,
+		"issupercomponent": false,
+		"moddate": "2018-02-09 11:24:39",
+		"selfcontained": false,
+		"showascheckedout": false,
+		"userinfo": "",
+		"version": ""
+	}
+}

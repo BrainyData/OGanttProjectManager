@@ -1,0 +1,11 @@
+;  Enter your initialization code here
+Do method InitPrintParams
+Do method LoadPaperList
+Do inherited
+
+Enter data
+If flag true
+	Set report name rGanttUI
+	Print report {(ivLayer,refGantt,cvPrintParams)}
+End If
+Do $cinst.$close()

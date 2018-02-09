@@ -1,0 +1,22 @@
+;  action     ;; add a suspension period to a phase
+;       ;; we initialy add a 1 day period, the user can than resize it as appropriate
+;  params     ;; pPhaseFromId=create relation from this phase
+;       ;; pPhaseToId=to this phase
+;       ;; pType=the type of the relationship
+;       ;; pDelay=delay of relationship in seconds
+
+
+
+;  get a new suspension ID
+Calculate theSuspensionID as ivGanttData.$get_new_phase_susp_id()
+
+;  add the suspension
+Do $cinst.$gaddsuspension(thePhaseId,theSuspensionID,theSplitDate,1)
+
+;  update the control
+If pCallerObj
+	;  we may need to update columns in the left-hand tree
+	Do method phase_modified (pCallerObj,thePhaseId)
+	Do pCallerObj.$gredraw()
+End If
+Quit method theSuspensionID

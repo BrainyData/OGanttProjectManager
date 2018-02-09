@@ -1,0 +1,23 @@
+{
+	"ident": 1039,
+	"order": 14,
+	"objtype": "kToolMenuButton",
+	"properties": {
+		"enabled": true,
+		"helpfile": 0,
+		"iconid": "k32x32+2013",
+		"longpress": false,
+		"menuname": {
+			"type": 0,
+			"calc": "mGanttScale"
+		},
+		"text": {
+			"type": 0,
+			"calc": "Scale"
+		},
+		"tooltip": "",
+		"userinfo": "",
+		"users": "12345678",
+		"varwidthtextplatforms": "kVWTMSWindows,kVWTmacOS,kVWTUnix"
+	}
+}

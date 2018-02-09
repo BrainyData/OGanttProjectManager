@@ -1,0 +1,14 @@
+[
+	{
+		"name": "GCWH_GANTT_ID",
+		"unique": false,
+		"uppercase": false,
+		"parts": [
+			{
+				"name": "GCWH_GANTT_ID",
+				"fieldlength": 0,
+				"uppercase": false
+			}
+		]
+	}
+]

@@ -1,0 +1,26 @@
+[
+	{
+		"name": "GREL_GANTT_ID",
+		"unique": false,
+		"uppercase": false,
+		"parts": [
+			{
+				"name": "GREL_GANTT_ID",
+				"fieldlength": 0,
+				"uppercase": false
+			}
+		]
+	},
+	{
+		"name": "GREL_GREL_ID",
+		"unique": false,
+		"uppercase": false,
+		"parts": [
+			{
+				"name": "GREL_GREL_ID",
+				"fieldlength": 0,
+				"uppercase": false
+			}
+		]
+	}
+]

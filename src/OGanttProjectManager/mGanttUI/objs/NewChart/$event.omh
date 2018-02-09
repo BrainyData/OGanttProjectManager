@@ -1,0 +1,6 @@
+Test for window open {wGanttDlgNewChart}
+If flag true
+	Bring window instance to front wGanttDlgNewChart
+Else
+	Open window instance wGanttDlgNewChart/*/CEN ($cinst)
+End If

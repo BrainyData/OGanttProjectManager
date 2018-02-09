@@ -1,0 +1,9 @@
+If ivLayer.$modified
+	Do ivGanttUI.$show_message_ync(kFalse,'messSaveChanges')
+	If msgcancelled()
+		Quit method kFalse
+	Else If flag true
+		Do ivLayer.$save_chart()
+	End If
+End If
+Quit method kTrue

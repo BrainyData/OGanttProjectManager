@@ -1,0 +1,45 @@
+;  CHANGE_16DEC08_1 various changes throughout
+Switch pScale
+	Case kGanttScaleMinute
+		Calculate ivScaleMajor as kGanttScaleHour
+		Calculate ivScaleMinor as kGanttScaleMinute
+		Calculate MajorDateFormat as "h:N A - w, d n y"
+		Calculate SnapMinutes as 1     ;; CHANGE_29JUN10_1
+	Case kGanttScale15Minute     ;; CHANGE_20130823 new 15 minute scale
+		Calculate ivScaleMajor as kGanttScaleHour
+		Calculate ivScaleMinor as kGanttScale15Minute
+		Calculate MajorDateFormat as "Dm'Y - hA"
+		Calculate SnapMinutes as 1     ;; CHANGE_29JUN10_1
+	Case kGanttScaleHour
+		Calculate ivScaleMajor as kGanttScaleDay
+		Calculate ivScaleMinor as kGanttScaleHour
+		Calculate MajorDateFormat as "w, d n y"
+		Calculate SnapMinutes as 15     ;; CHANGE_29JUN10_1
+	Case kGanttScale2Hour,kGanttScale4Hour,kGanttScale6Hour     ;; CHANGE_20130823 new 2 and 6 hour scales
+		Calculate ivScaleMajor as kGanttScaleDay
+		Calculate ivScaleMinor as pScale     ;; CHANGE_20130823
+		Calculate MajorDateFormat as "V, D m 'Y"
+		Calculate MinorDateFormat as "H:N"
+		Calculate MinorColWidth as 40
+		Calculate SnapMinutes as 30     ;; CHANGE_29JUN10_1
+	Case kGanttScaleDay
+		Calculate ivScaleMajor as kGanttScaleWeek
+		Calculate ivScaleMinor as kGanttScaleDay
+		Calculate MajorDateFormat as "D m 'Y (G)"
+		Calculate SnapMinutes as 60     ;; CHANGE_29JUN10_1
+	Case kGanttScaleWeek
+		Calculate ivScaleMajor as kGanttScaleMonth
+		Calculate ivScaleMinor as kGanttScaleWeek
+		Calculate MajorDateFormat as "m 'Y"
+		Calculate MinorDateFormat as "D"
+		Calculate SnapMinutes as 60*24     ;; CHANGE_29JUN10_1
+	Case kGanttScaleMonth
+		Calculate ivScaleMajor as kGanttScaleYear
+		Calculate ivScaleMinor as kGanttScaleMonth
+		Calculate SnapMinutes as 60*24     ;; CHANGE_29JUN10_1
+End Switch
+
+Do $cinst.$objs.Gantt.$GSetScale(ivScaleMajor,ivScaleMinor,MajorDateFormat,MinorDateFormat,MinorColWidth,SnapMinutes)     ;; CHANGE_29JUN10_1
+Do method RedrawGantt
+
+Do ivGanttUI.$message_send_tb($cinst,refGantt,$cinst.$get_layer(),'gantt_set_scale',pScale)

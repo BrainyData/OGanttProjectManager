@@ -1,0 +1,29 @@
+;  load our strings from string table
+Do ivGanttUI.$load_instance
+
+;  on windows, we must manually reduce the font sizes for now until OGantt has font styles
+If sys(6)<>'X'
+	Calculate refGantt.$calfontsize as 8
+	Calculate refGantt.$gfontsize as 8
+	Calculate refGantt.$headfontsize as 10
+	Calculate refGantt.$tlfontsize as 8
+	Calculate $cinst.$toolbaroptions as kTBOptionShowText+kTBOptionVarTextWidth
+End If
+
+;  set initial scale
+Do method doSetScale (kGanttScaleDay)
+
+;  must construct toolbars after window fields
+Calculate $cinst.$toolbarnames as "tbGanttUI"
+
+;  load the gantt chart
+Do ivLayer.$load_custom_text(refGantt)
+If pGanttId
+	Do ivLayer.$load_chart(refGantt,pGanttId)
+Else
+	Do ivLayer.$new_chart(refGantt,pGanttName,pSingleRecord,pCreateSampleData)
+End If
+Calculate ivGanttName as pGanttName
+Calculate $cinst.$title as ivGanttName
+Do method RedrawGantt (kTrue)
+Do method doExpandOrCollapse

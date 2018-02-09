@@ -1,0 +1,14 @@
+;  get the info about the resource
+Do pLayer.$get_data_resource(resourceInfo) Returns #F
+If flag true
+	Calculate refNewGrp.$enabled as resourceInfo.IsCategory
+	Calculate refNewRes.$enabled as resourceInfo.IsCategory
+	Calculate refUnindent.$enabled as resourceInfo.ParentID>0
+	Calculate refIndent.$enabled as kTrue
+	Calculate refDelete.$enabled as kTrue
+	Calculate refIcon.$enabled as kTrue
+Else
+	Do $cinst.$objs.$sendall($ref.$enabled.$assign(kFalse))
+	Calculate refNewGrp.$enabled as kTrue
+	Calculate refNewRes.$enabled as kTrue
+End If

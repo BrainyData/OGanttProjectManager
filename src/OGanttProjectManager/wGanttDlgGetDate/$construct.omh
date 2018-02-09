@@ -1,0 +1,25 @@
+;  CONSTRUCT METHOD FOR WINDOWS
+;  do not overide this method
+;  implement all construct code in $construct_init
+
+;  except in this case as this requires Enter date to return a value
+;  it will never be used as a sub-window
+
+;  show our calendar month
+Calculate ivCurDate as pCurDateTime
+Calculate ivCurTime as pCurDateTime
+Calculate refCalendar.$currday as ivCurDate
+Do method redrawCalTitle
+
+;  load the strings
+Do inherited
+
+Enter data
+If flag true
+	Calculate pCurDateTime as con(ivCurDate,' ',ivCurTime)
+	Queue close [$cinst().$name]
+	Quit method kTrue
+Else
+	Queue close [$cinst().$name]
+	Quit method kFalse
+End If

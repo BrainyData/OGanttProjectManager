@@ -1,0 +1,2 @@
+On evClick
+	Do $cwind.$message($cinst,$cfield,$cwind.$get_layer(),"gantt_copy_bitmap")

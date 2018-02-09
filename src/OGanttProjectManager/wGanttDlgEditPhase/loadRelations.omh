@@ -1,0 +1,15 @@
+;  build list of relationships
+Do ivLayer.$get_data_phase_rel(ivRelationsList,ivPhaseList.PhaseId) Returns #F
+;  add columns for display
+Do ivRelationsList.$cols.$add(LinkedLabel)
+Do ivRelationsList.$cols.$add(LinkedStartDate)
+Do ivRelationsList.$cols.$add(LinkedEndDate)
+;  populate additional columns
+For ivRelationsList.$line from 1 to ivRelationsList.$linecount step 1
+	Calculate linkedPhase as pick(ivRelationsList.PhaseFromId=ivPhaseList.PhaseId,ivRelationsList.PhaseFromId,ivRelationsList.PhaseToId)
+	Do ivLayer.$get_data_phase(linkedPhaseInfo,linkedPhase)
+	Calculate ivRelationsList.LinkedStartDate as linkedPhaseInfo.StartDate
+	Calculate ivRelationsList.LinkedEndDate as linkedPhaseInfo.EndDate
+	Calculate ivRelationsList.LinkedLabel as con(ivLayer.$get_data_resource_name(linkedPhaseInfo.ResourceId),' / ',linkedPhaseInfo.TextLeft)
+End For
+Do refRelationsList.$redraw()

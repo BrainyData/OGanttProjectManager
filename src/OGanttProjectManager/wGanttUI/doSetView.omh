@@ -1,0 +1,31 @@
+Calculate ivView as pMessage     ;; 11062009_CHANGE
+Switch pMessage
+	Case 'gantt_view_normal'
+		Hide fields {PhaseDetails}
+		Calculate refPhaseDetails.$classname as ''
+		Do refGantt.$showdiagram.$assign(kFalse)
+		Do refGantt.$showtotsection.$assign(kFalse)
+	Case 'gantt_view_graph'
+		Hide fields {PhaseDetails}
+		Calculate refPhaseDetails.$classname as ''
+		Calculate ivGraphType as kGanttGraphTypeCurve
+		Do refGantt.$grsetgraphtype(ivGraphType)
+		Do refGantt.$showdiagram.$assign(kTrue)
+	Case 'gantt_view_totals'
+		Hide fields {PhaseDetails}
+		Calculate refPhaseDetails.$classname as ''
+		Calculate ivGraphType as kGanttGraphTypeNone
+		Do refGantt.$grsetgraphtype(ivGraphType)
+		Do refGantt.$showtotsection.$assign(kTrue)
+	Case 'gantt_view_phase'
+		Do ivGanttUI.$append_param_named(pParams,"pResourceId",resourceId.$ref,kFalse)
+		Do ivGanttUI.$append_param_named(pParams,"pPhaseId",phaseId.$ref,kFalse)
+		Do refGantt.$showdiagram.$assign(kFalse)
+		Do refGantt.$showtotsection.$assign(kFalse)
+		Do refPhaseDetails.$classname.$assign('wGanttDlgEditPhase')
+		Do refPhaseDetails.$construct_sub($cinst,refGantt,pLayerObj,pParams)
+		Show fields {PhaseDetails}
+End Switch
+
+;  inform toolbars
+Do $cwind.$toolbars.$sendall($ref.$message(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams))

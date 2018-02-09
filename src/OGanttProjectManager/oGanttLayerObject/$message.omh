@@ -1,0 +1,77 @@
+;  start a DB update
+
+Do ivGanttData.$begin_update(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)
+
+Switch pMessage
+	Case 'gantt_set_language'
+		Do $cinst.$mess_set_language(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)
+		
+	Case 'gantt_tl_make_current'
+		Do $cinst.$mess_tl_make_current(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)
+		
+	Case 'gantt_tl_new_cat','gantt_tl_new_res'
+		Do $cinst.$mess_tl_create(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)
+		
+	Case 'gantt_tl_delete'
+		Do $cinst.$mess_tl_delete(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)
+		
+	Case 'gantt_tl_dragdrop'
+		Do $cinst.$mess_tl_dragdrop(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)
+		
+	Case 'gantt_tl_indent'
+		Do $cinst.$mess_tl_indent(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)
+		
+	Case "gantt_tl_unindent"
+		Do $cinst.$mess_tl_unindent(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)
+		
+	Case "gantt_tl_set_icon"
+		Do $cinst.$mess_tl_set_icon(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)
+		
+	Case "gantt_tl_text_changed"
+		Do $cinst.$mess_tl_text_changed(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)
+		
+	Case "gantt_tl_expand"
+		Do $cinst.$mess_tl_expand(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)
+		
+	Case "gantt_tl_collapse"
+		Do $cinst.$mess_tl_collapse(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)
+		
+	Case 'gantt_phase_create'
+		Do $cinst.$mess_phase_create(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)
+		
+	Case 'gantt_phase_make_current'
+		Do $cinst.$mess_phase_make_current(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)
+		
+	Case 'gantt_phase_update'
+		Do $cinst.$mess_phase_update(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)
+		
+	Case 'gantt_phase_update_susp'
+		Do $cinst.$mess_phase_update_susp(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)
+		
+	Case 'gantt_phase_moved'
+		Do $cinst.$mess_phase_moved(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)
+		
+	Case 'gantt_phase_add_rel'
+		Do $cinst.$mess_phase_add_rel(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)
+		
+	Case 'gantt_phase_add_susp'
+		Do $cinst.$mess_phase_add_susp(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)
+		
+	Case 'gantt_phase_change_progress'
+		;  there is nothing to do here
+		
+	Case "gantt_phase_set_color"
+		Do $cinst.$mess_phase_set_color(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)
+		
+	Case "gantt_phase_delete"
+		Do $cinst.$mess_phase_delete(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)
+		
+	Case "gantt_phase_delete_rel"
+		Do $cinst.$mess_phase_delete_rel(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)
+		
+	Case 'gantt_phase_delete_susp'
+		Do $cinst.$mess_phase_delete_susp(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)
+End Switch
+
+;  now pass message to our DB object for updating data
+Do ivGanttData.$end_update(pCallerClass,pCallerObj,pLayerObj,pMessage,pParams)

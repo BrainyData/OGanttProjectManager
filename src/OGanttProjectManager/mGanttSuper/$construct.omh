@@ -1,0 +1,2 @@
+;  load our strings from string table
+Do ivGanttUI.$load_instance

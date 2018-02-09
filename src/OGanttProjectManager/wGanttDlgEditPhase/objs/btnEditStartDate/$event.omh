@@ -1,0 +1,6 @@
+On evClick     ;; Event Parameters - pRow( Itemreference )
+	Do method promptDate (ivPhaseList.StartDate) Returns #F
+	If flag true
+		Calculate ivPhaseList.Duration as -1
+		Do method phaseChanged
+	End If

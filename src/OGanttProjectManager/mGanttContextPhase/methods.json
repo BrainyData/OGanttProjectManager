@@ -1,0 +1,42 @@
+[
+	{
+		"name": "send_message",
+		"ident": 0,
+		"order": 2,
+		"pvardefs": [
+			{
+				"name": "pMessage",
+				"order": 1,
+				"type": "kCharacter",
+				"subtype": "kSimplechar",
+				"sublen": 255,
+				"param": 1
+			}
+		],
+		"lvardefs": [
+			{
+				"name": "pPhaseId",
+				"order": 2,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"initval": "$topwind.$get_current_phase()"
+			},
+			{
+				"name": "pResourceId",
+				"order": 3,
+				"type": "kInteger",
+				"subtype": "k32bitint",
+				"sublen": 0,
+				"initval": "$topwind.$get_current_resource()"
+			},
+			{
+				"name": "theParams",
+				"order": 4,
+				"type": "kRow",
+				"subtype": "",
+				"sublen": 0
+			}
+		]
+	}
+]

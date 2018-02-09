@@ -1,0 +1,6 @@
+;  called during $construct after strings are loaded
+;  in this method we deal with states of our window fields
+;  such as disabling enabling, etc
+;  sub-classes shoould override this method
+
+Calculate refOpenChart.$enabled as ivChartList.$line>0

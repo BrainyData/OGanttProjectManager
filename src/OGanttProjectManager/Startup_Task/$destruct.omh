@@ -1,0 +1,4 @@
+Do inherited
+Do tStrings.$str_unload_all()
+Do tStrings.$deleteref()
+Do method CloseDataFile

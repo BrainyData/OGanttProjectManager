@@ -1,0 +1,4 @@
+On evClick
+	Calculate ivScale as kGanttScale4Hour
+	Do $cwind.$message($cinst,$cfield,$cwind.$get_layer(),"gantt_scale",ivScale)
+	Do $cinst.$set_field_states

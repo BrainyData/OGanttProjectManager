@@ -1,0 +1,10 @@
+;  create global sample working hours
+
+;  default working hours for every day
+Do dataCalWorkingHours.$add(0,#D,#D,0,'09:00','13:00',#NULL)
+Do dataCalWorkingHours.$add(0,#D,#D,0,'14:00','18:00',#NULL)
+;  working hours exceptions with date on which they apply
+Do dataCalWorkingHours.$add(0,#D,#D,0,'09:00','13:00','24 DEC 2008')     ;; half day on the 24th of December
+
+;  update DB emidietly
+Do method save_data (0,'fGanttCalWorkingHours','GCWH_',dataCalWorkingHours,kFalse)

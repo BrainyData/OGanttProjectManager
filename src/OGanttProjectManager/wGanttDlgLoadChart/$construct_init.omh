@@ -1,0 +1,7 @@
+;  MAIN CONSTRUCT METHOD FOR BOTH WINDOWS AND SUB-WINDOWS
+;  overide and implement construct code in this method
+;  you must call Do inherited when done or prior to code
+;  that requires strings to be loaded
+
+Calculate ivChartList as ivGanttData.$get_chart_list()
+Do inherited

@@ -1,0 +1,9 @@
+;  return a list of chart names and IDs stored in the DB
+Begin reversible block
+	Set read-only files {fGantt}
+	Set main file {fGantt}
+	Set current list theList
+End reversible block
+Do theList.$define(fGantt.G_NAME,fGantt.G_GANTT_ID)
+Build list from file on fGantt.G_NAME
+Quit method theList

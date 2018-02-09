@@ -1,0 +1,22 @@
+;  a phase has been modified via the interface
+
+;  we can use the mod phase list to update our tree
+
+;  get the mod list
+Do $cinst.$ggetmodlistphase Returns listPhases
+
+;  loop through the mod rows and update the tree columns
+For listPhases.$line from 1 to listPhases.$linecount step 1
+	Do method upd_tree_columns (pGanttRef,listPhases.ResourceID) Returns #F
+	If flag true
+		Calculate changed as kTrue
+	End If
+End For
+
+;  redraw the tree
+If changed
+	Do pGanttRef.$tlredraw(kGanttNoFirstLoad)
+End If
+
+;  accumulate changes
+Quit method changed

@@ -1,0 +1,3 @@
+;  these methods are responsible for updating our DB smart lists
+;  no data is written back to the DB until the user requests a save,
+;  or auto-save is set to kTrue

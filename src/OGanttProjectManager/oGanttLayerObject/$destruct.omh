@@ -1,0 +1,3 @@
+;  delete our object references
+Do ivGanttUI.$deleteref()
+Do ivGanttData.$deleteref()

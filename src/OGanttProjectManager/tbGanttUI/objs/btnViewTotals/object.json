@@ -1,0 +1,21 @@
+{
+	"ident": 1024,
+	"order": 20,
+	"objtype": "kToolCommandButton",
+	"properties": {
+		"enabled": true,
+		"helpfile": 0,
+		"iconid": 10033,
+		"text": {
+			"type": 0,
+			"calc": "Totals"
+		},
+		"tooltip": {
+			"type": 0,
+			"calc": "Show Totals"
+		},
+		"userinfo": "",
+		"users": "12345678",
+		"varwidthtextplatforms": "kVWTMSWindows,kVWTmacOS,kVWTUnix"
+	}
+}

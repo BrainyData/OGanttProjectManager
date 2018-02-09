@@ -1,0 +1,9 @@
+;  apply changes to GANTT component and reload everything
+
+;  we send an update message to the caller
+Calculate pPhaseData as ivPhaseList.[ivPhaseList.$line]
+Calculate theParams as ivParams
+Do ivGanttUI.$append_params(theParams,pPhaseData.$ref)
+Do refCaller.$message(refCaller,refGantt,ivLayer,'gantt_phase_update',theParams)
+;  reload
+Do method loadPhaseDetails

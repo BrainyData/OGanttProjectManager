@@ -1,0 +1,18 @@
+{
+	"ident": 1028,
+	"order": 15,
+	"objtype": "kToolCommandButton",
+	"properties": {
+		"enabled": true,
+		"helpfile": 0,
+		"iconid": 10062,
+		"text": {
+			"type": 0,
+			"calc": "Weeks"
+		},
+		"tooltip": "",
+		"userinfo": "ogantt.Weeks",
+		"users": "12345678",
+		"varwidthtextplatforms": "kVWTMSWindows,kVWTmacOS,kVWTUnix"
+	}
+}

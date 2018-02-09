@@ -1,0 +1,14 @@
+;  here we load our resource table and complete other initialization
+
+;  IMPORTANT DEVELOPER NOTE:
+;  you must create an instance of this object using $newref and Object reference variables
+;  this insures that when the object is destroyed, $destruct is called, it is important see $destruct
+
+;  attach this object to the windows gantt object
+Set reference refGantt to pGanttRef
+
+;  create our DB handler object
+Calculate ivGanttData as $objects.oGanttDataObject.$newref()
+
+;  create our UI handler object     ;; also handles our string table
+Calculate ivGanttUI as $objects.oGanttUI.$newref($cinst,"ogantt")

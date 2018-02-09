@@ -1,0 +1,38 @@
+[
+	{
+		"name": "GRES_GANTT_ID",
+		"unique": false,
+		"uppercase": false,
+		"parts": [
+			{
+				"name": "GRES_GANTT_ID",
+				"fieldlength": 0,
+				"uppercase": false
+			}
+		]
+	},
+	{
+		"name": "GRES_PARENT_ID",
+		"unique": false,
+		"uppercase": false,
+		"parts": [
+			{
+				"name": "GRES_PARENT_ID",
+				"fieldlength": 0,
+				"uppercase": false
+			}
+		]
+	},
+	{
+		"name": "GRES_GRES_ID",
+		"unique": false,
+		"uppercase": false,
+		"parts": [
+			{
+				"name": "GRES_GRES_ID",
+				"fieldlength": 0,
+				"uppercase": false
+			}
+		]
+	}
+]

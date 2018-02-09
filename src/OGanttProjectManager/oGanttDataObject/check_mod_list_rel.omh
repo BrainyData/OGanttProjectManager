@@ -1,0 +1,24 @@
+
+;  get the resource changes from the layer object
+Do pLayerObj.$ggetmodlistrel Returns modList
+Do pLayerObj.$gfreemodlistrel
+
+;  write changes to our DB smart list
+For modList.$line from 1 to modList.$linecount step 1
+	;  Send to trace log {check_mod_list_rel    id=[modList.RelationID]    reason=[pick(modList.ModReason,'none','Add','Mod','Del')]}
+	Switch modList.ModReason
+		Case kGanttModReasonAdd
+			Do dataRelations.$add(0,#D,#D,dataGantt.G_GANTT_ID,modList.RelationId,modList.PhaseFromId,modList.PhaseToId,modList.RelationType,modList.RelationDelay)
+		Case kGanttModReasonDel
+			Do dataRelations.$search($ref.GREL_GREL_ID=modList.RelationId,1,0,0,0) Returns dataRelations.$line
+			If dataRelations.$line
+				Do dataRelations.$remove(dataRelations.$line)
+			End If
+		Case kGanttModReasonMod
+			Do dataRelations.$search($ref.GREL_GREL_ID=modList.RelationId,1,0,0,0) Returns dataRelations.$line
+			If dataRelations.$line
+				Do dataRelations.$assigncols(,,#D,dataGantt.G_GANTT_ID,modList.RelationId,modList.PhaseFromId,modList.PhaseToId,modList.RelationType,modList.RelationDelay)
+			End If
+	End Switch
+	Calculate ivModified as kTrue
+End For

@@ -1,0 +1,2 @@
+Do method ShowMessage ('ny',pShowIcon,pTextID,pTitleID) Returns #F
+Quit method #F

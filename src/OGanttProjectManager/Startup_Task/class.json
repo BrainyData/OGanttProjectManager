@@ -1,0 +1,42 @@
+{
+	"classtype": "kTask",
+	"internalversion": 1,
+	"tvardefs": [
+		{
+			"name": "tStrings",
+			"order": 1,
+			"type": "kObjectref",
+			"subtype": "oGanttStringTable",
+			"sublen": 0,
+			"desc": "our global string object"
+		}
+	],
+	"cvardefs": [
+		{
+			"name": "strStringTablePath",
+			"order": 1,
+			"type": "kCharacter",
+			"subtype": "kSimplechar",
+			"sublen": 100000000,
+			"initval": "$cinst.$str_path"
+		}
+	],
+	"ivardefs": [
+
+	],
+	"properties": {
+		"collectperformancedata": false,
+		"componenticon": 0,
+		"componenttype": "kCompStoreHidden",
+		"createdate": "2007-03-05 09:49:54",
+		"desc": "",
+		"editor": "",
+		"editordata": "",
+		"external": false,
+		"issupercomponent": false,
+		"moddate": "2018-02-09 11:23:27",
+		"showascheckedout": false,
+		"userinfo": "",
+		"version": ""
+	}
+}

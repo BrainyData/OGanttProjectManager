@@ -1,0 +1,31 @@
+;  set-up working hours and holidays
+;  OGantt expects three lists
+;  1. standard working hours that apply to all days
+;  2. list of exception working hours for specific days
+;  3. list of holidays, i.e. national holidays/bank holidays
+;  NOTES: we get the working hours from our DB object, but our DB stores a flat list of records
+;  for both standard and exception working hours. OGantt expects two seperate lists format differently
+;  so we need to do some extra work
+
+;  1. build list of standard working hours
+;  we call ivGanttData.$get_cal_working_hours asking for standard un-dated working hours
+Do method define_calendar_list (listWorkHours,kCalendarWorkingHours)
+Do ivGanttData.$get_cal_working_hours(listWorkHours,theDate,kTrue)
+
+;  2. build list of working hours exceptions
+Do method define_calendar_list (listWorkHoursExceptions,kCalendarWorkingHoursEx)
+Repeat
+	Do method define_calendar_list (tmpList,kCalendarWorkingHours)
+	Do ivGanttData.$get_cal_working_hours(tmpList,theDate,kFalse) Returns #F
+	If flag true
+		Do listWorkHoursExceptions.$add(theDate,tmpList)
+	End If
+Until flag false
+
+;  3. build list of holidays
+Do method define_calendar_list (listHolidays,kCalendarHolidays)
+Do ivGanttData.$get_cal_holidays(listHolidays) Returns #F
+
+;  FINALLY we can set the lists to the layer object
+Do $cinst.$gsetcalendar(listWorkHours,listHolidays,listWorkHoursExceptions)
+Quit method kTrue

@@ -1,0 +1,8 @@
+If not(cvPrintParamsInit)     ;; 2009_09_11_CHANGE_1
+	Calculate cvPrintParamsInit as kTrue     ;; 2009_09_11_CHANGE_1
+	Do cvPrintParams.$define()
+	If cvPrintParams.$cols.$count=0
+		Do cvPrintParams.$define(PrintTreeAllPages,THLines,TVLines,GHlines,GVLines,ColsToPrint,PrintSequence,DiagMinDim,DiagMaxDim,MarginLeft,MarginUp,MarginRight,MarginDown,StartDate,EndDate,Landscape,Copies,Scale,Paper)
+		Do cvPrintParams.$assigncols(PrintTreeAllPages,THLines,TVLines,GHlines,GVLines,ColsToPrint,PrintSequence,DiagMinDim,DiagMaxDim,MarginLeft,MarginUp,MarginRight,MarginDown,StartDate,EndDate,Landscape,Copies,Scale,Paper)
+	End If
+End If

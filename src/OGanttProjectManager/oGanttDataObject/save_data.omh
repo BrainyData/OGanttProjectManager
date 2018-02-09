@@ -1,0 +1,45 @@
+;  save the data for a single file using the history list
+
+Begin reversible block
+	Set read/write files {[pFileName]}
+	Set main file {[pFileName]}
+	Set current list pList
+End reversible block
+
+For cnt from 1 to pList.$history.$linecount step 1
+	Calculate row_no as pList.$history.[cnt].$rownumber
+	Switch pList.$history.[cnt].$status
+		Case kRowUnchanged
+			;  nothing to do
+		Case kRowUpdated
+			Single file find on [field_SEQ] (Exact match) {pList.[row_no].[field_SEQ]}
+			If flag true
+				Calculate pList.[row_no].[field_MODIFIED] as #D
+				Prepare for edit
+				Do pList.[row_no].$loadcols()
+				Update files
+				Do pList.[row_no].$assigncols()
+			Else
+				Breakpoint {should not get here}
+			End If
+		Case kRowInserted
+			Calculate pList.[row_no].[field_CREATED] as #D
+			Calculate pList.[row_no].[field_MODIFIED] as #D
+			Prepare for insert
+			Do pList.[row_no].$loadcols()
+			Calculate [pFileName].[field_GANTT_ID] as pGanttId     ;; must assign given Gantt ID
+			Update files
+			Do pList.[row_no].$assigncols()     ;; reload data into our smartlist
+		Case kRowDeleted
+			Calculate old_data as pList.$history.[cnt].$oldcontents
+			If old_data.[field_SEQ]
+				Single file find on [field_SEQ] (Exact match) {old_data.[field_SEQ]}
+				If flag true
+					Delete
+				Else
+					Breakpoint {should not get here}
+				End If
+			End If
+	End Switch
+End For
+Do pList.$savelistwork()

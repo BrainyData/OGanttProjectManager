@@ -1,0 +1,9 @@
+
+Do $cinst.$tlbuild(kGanttNoFirstLoad)
+Do $cinst.$gbuild(kGanttNoFirstLoad)
+If pGanttRef
+	Do method redraw_control (pGanttRef)
+End If
+If pGanttRef&pResourceId
+	Do method upd_tree_columns (pGanttRef,pResourceId)
+End If

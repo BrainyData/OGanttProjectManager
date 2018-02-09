@@ -1,0 +1,32 @@
+;  Send to trace log {$end_update: pMessage=[pMessage]    pCallerClass=[pCallerClass().$name]     pCallerObj=[pCallerObj().$name]    pLayerObj=[pLayerObj().$name]}
+
+;  most changes are tracked by OGantt and are handled by check_mod_list_all
+;  some changes made via code must be handled specifically
+Switch pMessage
+	
+	Case 'gantt_save'
+		Do method check_mod_list_all (pLayerObj,pMessage)
+		Do $cinst.$save_chart
+		Quit method
+		
+	Case 'gantt_phase_update'
+		Do pLayerObj.$get_data_phase(theData,pParams.pPhaseId)
+		Do method update_phase (pParams.pPhaseId,theData)
+		Calculate ivModified as kTrue
+		
+	Case 'gantt_tl_set_icon'
+		Do method find_resource (pParams.pResourceId)
+		Calculate dataResources.GRES_TL_ICON as pParams.pIcon
+		Calculate ivModified as kTrue
+		
+	Case 'gantt_tl_text_changed'
+		Do method find_resource (pParams.pResourceId)
+		If pParams.pColumnNumber=1
+			Calculate dataResources.GRES_TL_NAME as pLayerObj.$get_data_resource_name(pParams.pResourceId)
+		Else
+			Calculate dataResources.GRES_TL_NOTES as pLayerObj.$get_data_resource_description(pParams.pResourceId)
+		End If
+		Calculate ivModified as kTrue
+		
+End Switch
+Do method check_mod_list_all (pLayerObj,pMessage)

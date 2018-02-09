@@ -1,0 +1,11 @@
+
+If len(pPrefix)
+	Calculate prefix as pPrefix
+End If
+If len(pID)
+	Calculate text_id as con(prefix,pID)
+End If
+Calculate pObjRef.$text as replace(StringTable.$gettext(text_id),'$',pString)
+If cvDebug
+	Do $cinst.$debug(pObjRef,pObjRef.$text)
+End If
